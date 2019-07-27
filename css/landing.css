@@ -119,7 +119,7 @@ ul ol {
 header.masthead {
   padding-top: 10rem;
   padding-bottom: calc(10rem - 72px);
-  background:url("../img/bg-masthead.jpg");
+  background: #6c757d;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -150,3 +150,26 @@ header.masthead h1 {
     font-size: 3.5rem;
   }
 }
+
+/* Cursor efecto typed */
+#typed-strings {
+  margin-bottom: 20px;
+}
+
+#typed {
+  display: inline;
+}
+
+.typed-cursor {
+  color: #fff;
+  font-size: 3em;
+  
+}
+
+@media only screen and (max-width: 600px) {
+  .text-landing {
+    display: none;
+  }
+
+}
+

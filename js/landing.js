@@ -39,3 +39,18 @@
   // Collapse the navbar when page is scrolled
   $(window).scroll(navbarCollapse);
 
+
+})(jQuery); // End of use strict
+
+let typed = new Typed('#typed', {
+  strings: ["Crea tu propio sito web"],
+  showCursor: true,
+  cursorChar: '|',
+  autoInsertCss: true,
+  typeSpeed: 60,
+  backSpeed: 50,
+  contentType: 'html',
+  shuffle: true,
+  loop: false
+  
+});
