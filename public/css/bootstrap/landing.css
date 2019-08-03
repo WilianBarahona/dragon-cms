@@ -1,3 +1,4 @@
+
 html {
   font-family: sans-serif;
   line-height: 1.15;
@@ -45,6 +46,106 @@ ul ul,
 ol ul,
 ul ol {
   margin-bottom: 0;
+}
+
+
+header.masthead {
+  padding-top: 10rem;
+  padding-bottom: calc(10rem - 72px);
+  background: url('../img/bg-landing.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+}
+
+header.masthead h1 {
+  font-size: 2.25rem;
+}
+
+@media (max-width: 992px) {
+  header.masthead {
+    height: 100vh;
+    min-height: 40rem;
+    padding-top: 72px;
+    padding-bottom: 0;
+  }
+  header.masthead p {
+    font-size: 1.15rem;
+  }
+  header.masthead h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 992px) {
+  header.masthead {
+    height: 100vh;
+    min-height: 40rem;
+    padding-top: 72px;
+    padding-bottom: 0;
+  }
+  header.masthead p {
+    font-size: 1.15rem;
+  }
+  header.masthead h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  header.masthead h1 {
+    font-size: 3.5rem;
+  }
+}
+
+/* Cursor efecto typed */
+#typed-strings {
+  margin-bottom: 20px;
+}
+
+#typed {
+  display: inline;
+}
+
+.typed-cursor {
+  color: #000000;
+  font-size: 3em;
+  
+}
+
+@media only screen and (max-width: 600px) {
+  .text-landing {
+    display: block;
+  }
+
+}
+
+.btn-primary {
+  background-color: #033454;
+  border-color: #033454;
+  color: white;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+    opacity: .97;
+}
+
+#particles-js {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%; 
+
 }
 
 #mainNav {
@@ -116,65 +217,10 @@ ul ol {
   }
 }
 
-header.masthead {
-  padding-top: 10rem;
-  padding-bottom: calc(10rem - 72px);
-  background: url('../img/bg-landing.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-size: cover;
+.color-icon {
+  color:#61C8B6;
 }
 
-header.masthead h1 {
-  font-size: 2.25rem;
-}
-
-@media (min-width: 992px) {
-  header.masthead {
-    height: 100vh;
-    min-height: 40rem;
-    padding-top: 72px;
-    padding-bottom: 0;
-  }
-  header.masthead p {
-    font-size: 1.15rem;
-  }
-  header.masthead h1 {
-    font-size: 3rem;
-  }
-}
-
-@media (min-width: 1200px) {
-  header.masthead h1 {
-    font-size: 3.5rem;
-  }
-}
-
-/* Cursor efecto typed */
-#typed-strings {
-  margin-bottom: 20px;
-}
-
-#typed {
-  display: inline;
-}
-
-.typed-cursor {
-  color: #000000;
-  font-size: 3em;
-  
-}
-
-@media only screen and (max-width: 600px) {
-  .text-landing {
-    display: none;
-  }
-
-}
-
-.btn-primary {
-  background-color: #033454;
-  border-color: #033454;
-  color: white;
+i .color-icon:hover {
+  color:#61C8B6;
 }
