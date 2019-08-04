@@ -1,19 +1,28 @@
 $colors: (
     //JSON colors
     primary:#61C8B6,
-    primary-hover:#49ad9d,
+    primary-hover:#289c89,
     secondary: #033454,
     secondary-hover: #1b608d,
+    footer:#24242D,
+    footer-social:#42424C,
     white:#fff,
+    white-hover:#ccc5c5,
     black:#000,
     gray: #6c757d,
-    gray-dark: #212529,
+    gray-dark: #060708,
     black-opacity: rgba(0, 0, 0, 0.15),
-    bg-section: linear-gradient(0deg, rgba(247,243,251,0.8) 0%, #F7F3FB 100%)
+    bg-section: linear-gradient(0deg, rgba(247,243,251,0.8) 0%, #F7F3FB 100%),
+    card-blogger: #1b608d,
+    card-premium: #8071A8,
+    card-business: #438C7D,
+    card-check:#272525
+
 );
 
 
 $bg-header: url("../../../img/bg-landing.jpg");
+$gif-loader: url('../../../img/page-loader.gif') 50% 50% no-repeat rgb(249,249,249);
 
 // Function
 @function color($color-name) {
@@ -70,6 +79,16 @@ ul ol {
     margin-bottom: 0;
 }
 
+.loader {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background:$gif-loader;
+  background-size: 110px;
+}
 
 #text-logo-1{
     color:color(secondary);
@@ -281,3 +300,149 @@ header.masthead {
   .section {
     background-image:color(bg-section);
   }
+
+  #plan {
+    .btn {
+      font-size: 80%;
+      border-radius: 1.5rem;
+      letter-spacing:2px;
+      font-weight: bold;
+      padding: .8rem;
+      opacity: 0.99;
+      transition: all 0.3s;
+    }
+
+    .card {
+      border: none;
+      border-radius: .5rem .5rem 1rem 1rem;
+      transition: all 0.3s;
+      box-shadow: 0 0.5rem 1rem 0 color(black-opacity);
+      margin-bottom: 20px;
+    }
+
+    .card-title {
+      margin: 0.5rem 0;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+  
+    .card:hover {
+      margin-top: -.6rem;
+      margin-bottom: .6rem;
+    }
+  
+    .card:hover .btn {
+      opacity: 1;
+    }
+   
+    .btn-primary {
+      background-color: color(secondary);
+      border-color:color(secondary);
+    }
+    
+    .btn-primary:hover {
+      background-color:color(secondary-hover);
+      border-color: color(secondary-hover);
+    }
+    
+    .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+      background-color: color(secondary);
+      border-color:color(secondary);
+    }
+
+    .card-title {
+      color:color(secondary)
+    }
+    .card-header-blogger{
+      border-radius: 1rem 1rem 0rem 0rem;
+      background: color(card-blogger);
+      padding: 3px;
+    }
+
+    .card-header-premium{
+      border-radius: 1rem 1rem 0rem 0rem;
+      background: color(card-premium);
+      padding: 3px;
+    }
+
+    .card-header-business{
+      border-radius: 1rem 1rem 0rem 0rem;
+      background: color(card-business);
+      padding: 3px;
+    }
+
+    .card-text-price {
+      font-size: 2.5rem;
+      span {
+        font-size: 1rem;
+       
+      }
+  
+    }
+
+    .fa-ul {
+     li {
+       margin-left:-1rem;
+
+       .fa-times {
+         color:color(gray)
+       }
+        h6{
+          color:color(card-check);
+          span {
+            margin-left: 10px;
+          }
+          strike {
+            color:color(gray);
+          }
+        }
+      }
+    }
+  
+
+  }
+
+
+  footer {
+    .footer-social{
+      width: 100%;
+      padding-top: 10px;
+      padding-bottom: 20px;
+      background-color:color(secondary);
+
+      .icon-fb{
+        margin-right: 40px!important;
+      }
+  
+      .icon-tw{
+        margin-right: 40px!important;
+      }
+  
+      .icon-ig:hover{
+        color:color(white-hover);
+      }
+
+      a:hover{
+        color:color(white-hover)!important;
+      }
+    }
+
+    .footer-info{
+      background-color:color(secondary-hover);
+      color:color(white);
+
+      a{
+        color:white;
+        &:hover{
+          color:color(white-hover);
+          text-decoration: none;
+        }
+      }
+
+      .col-center{
+        text-align:left;
+      }
+    }
+
+  }
+  

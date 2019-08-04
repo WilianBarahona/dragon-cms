@@ -15,6 +15,11 @@
     }
   });
 
+  $(document).ready(function() {
+   $(".loader").fadeOut(200);
+  });
+
+
   // Closes responsive menu when a scroll trigger link is clicked
   $('.js-scroll-trigger').click(function() {
     $('.navbar-collapse').collapse('hide');
@@ -55,6 +60,7 @@ let typed = new Typed('#typed', {
   
 });
 
+//Particles JS
 particlesJS('particles-js',
   
   {

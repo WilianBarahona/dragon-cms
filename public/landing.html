@@ -12,6 +12,7 @@
 
   <link rel="stylesheet" href="plugin/font-awesome/css/all.min.css">
   <link href="plugin/magnific-popup/css/magnific-popup.css" rel="stylesheet">
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 
   <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">\
   <link rel="stylesheet" href="plugin/font-awesome/css/all.min.css">
@@ -21,11 +22,12 @@
 
 <body id="page-top">
   
+  <div class="loader"></div>
   <!-- NavBar -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
       <!-- Logo -->
-      <img src="img/logo1.svg" class="logo" href="#page-top" width="50" height="50">
+      <img src="img/logo.svg" class="logo" href="#page-top" width="50" height="50">
           <span id="text-logo-1">DINO</span>
           <span id="text-logo-2">CMS</span>
        </img>
@@ -35,16 +37,16 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto my-2 my-lg-0">
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#about">Acerca</a>
+            <a class="nav-link js-scroll-trigger" href="#">Acerca</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#services">Contacto</a>
+            <a class="nav-link js-scroll-trigger" href="#">Contacto</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#portfolio">Registro</a>
+            <a class="nav-link js-scroll-trigger" href="#">Registro</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#contact">Login</a>
+            <a class="nav-link js-scroll-trigger" href="#">Login</a>
           </li>
         </ul>
       </div>
@@ -106,51 +108,163 @@
   </section>
 
   <!--Section precios-->
-  <section>
-    <div class="container-fluid">
+  <section id="plan">
+    <div class="container-fluid mt-5 mb-5">
       <div class="row">
         <div class="col-12 col-md-4">
-          <!-- Inicio Card -->
+          <!-- Inicio Card Blogger-->
           <div class="card">
+              <div class="card-header-blogger"></div>
               <div class="card-body">
-                <h5 class="card-title">Special title treatment</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <h5 class="card-title text-center">Blogger</h5><hr>
+                <h4 class="card-text-price text-center ">$0<span>/mes</span></h4>
+                <p class="card-text">Crea tu blog con un dominio .dino y empieza a disfrutar de los multiples beneficios</p><hr>
+                <ul class="fa-ul">
+                  <li><h6><i class="fas fa-check"><span>Crea tu blog</span></i></h6></li>
+                  <li><h6><i class="fas fa-check"><span>Numero maximo de blogs 3</span></i></h6></li>
+                  <li><h6><i class="fas fa-check"><span>Espacio de almacenamiento 1GB</span></i></h6></li>
+                  <li><h6><i class="fas fa-check"><span>Consejos para hacer crecer tu comunidad</span></i></h6></li>
+                  <li><h6><i class="fas fa-times"><strike><span>Carga plantillas web</span></strike></i></h6></li>
+                  <li><h6><i class="fas fa-times"><strike><span>Instalacion de plugins</span></strike></i></h6></li>
+                  <li><h6><i class="fas fa-times"><strike><span>Personaliza el dominio de tu sitio</span></strike></i></h6></li>
+                  <li><h6><i class="fas fa-times"><strike><span>Visualiza estadisticas</span></strike></i></h6></li>
+                  <li><h6><i class="fas fa-times"><strike><span>Elimina los anuncios de Dino CMS</span></strike></i></h6></li>
+                  <li><h6><i class="fas fa-times"><strike><span>Opciones avanzadas para redes sociales</span></strike></i></h6></li>
+                </ul>
+                <a href="" class="btn btn-block btn-primary">Continuar Gratis</a>
               </div>
             </div>
-          <!-- Fin Card -->
+          <!-- Fin Card Blogger -->
         </div>
         <div class="col-12 col-md-4">
-            <!-- Inicio Card -->
-            <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Special title treatment</h5>
-                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-            <!-- Fin Card -->
-        </div>
-        <div class="col-12 col-md-4">
-          <!-- Inicio Card -->
+            <!-- Inicio Card Premium-->
           <div class="card">
+              <div class="card-header-premium"></div>
               <div class="card-body">
-                <h5 class="card-title">Special title treatment</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <h5 class="card-title text-center">Premium</h5><hr>
+                <h4 class="card-text-price text-center ">$5<span>/mes</span></h4>
+                <p class="card-text">Crea una pagina web profesional con todo lo que necesites, diseña edita y controla tu contenido</p><hr>
+                <ul class="fa-ul">
+                  <li><h6><i class="fas fa-check"><span>Crea tu pagina web</span></i></h6></li>
+                  <li><h6><i class="fas fa-check"><span>Un dominio gratuito por un año</span></i></h6></li>
+                  <li><h6><i class="fas fa-check"><span>Espacio de almacenamiento 500GB</span></i></h6></li>
+                  <li><h6><i class="fas fa-check"><span>Monetizacion web</span></i></h6></li>
+                  <li><h6><i class="fas fa-check"><span>Carga plantillas web</span></i></h6></li>
+                  <li><h6><i class="fas fa-check"><span>Instalacion de plugins</span></i></h6></li>
+                  <li><h6><i class="fas fa-check"><span>Personaliza el dominio de tu sitio</span></strike></i></h6></li>
+                  <li><h6><i class="fas fa-check"><span>Visualiza estadisticas</span></strike></i></h6></li>
+                  <li><h6><i class="fas fa-check"><span>Elimina los anuncios de Dino CMS</span></strike></i></h6></li>
+                  <li><h6><i class="fas fa-check"><span>Opciones avanzadas para redes sociales</span></strike></i></h6></li>
+                </ul>
+                <a href="" class="btn btn-block btn-primary">Registrate</a>
               </div>
             </div>
-          <!-- Fin Card -->
+          <!-- Fin Card Premium -->
+        </div>
+        <div class="col-12 col-md-4">
+            <!-- Inicio Card Business -->
+          <div class="card">
+              <div class="card-header-business"></div>
+              <div class="card-body">
+                <h5 class="card-title text-center">Business</h5><hr>
+                <h4 class="card-text-price text-center ">$12<span>/mes</span></h4>
+                <p class="card-text">Impulsa tu negocio con un diseño profesional integrada con Google Analytics.</p><hr>
+                <ul class="fa-ul">
+                  <li><h6><i class="fas fa-check"><span>Crea tu pagina web</span></i></h6></li>
+                  <li><h6><i class="fas fa-check"><span>Un dominio gratuito por 2 años</span></i></h6></li>
+                  <li><h6><i class="fas fa-check"><span>Espacio de almacenamiento 2TB</span></i></h6></li>
+                  <li><h6><i class="fas fa-check"><span>Integracion de Google ANalytics</span></i></h6></li>
+                  <li><h6><i class="fas fa-check"><span>Carga plantillas web</span></i></h6></li>
+                  <li><h6><i class="fas fa-check"><span>Instalacion de plugins</span></i></h6></li>
+                  <li><h6><i class="fas fa-check"><span>Personaliza el dominio de tu sitio</span></i></h6></li>
+                  <li><h6><i class="fas fa-check"><span>Acceso a herramientas de marketing</span></i></h6></li>
+                  <li><h6><i class="fas fa-check"><span>Elimina los anuncios de Dino CMS</span></i></h6></li>
+                  <li><h6><i class="fas fa-check"><span>Opciones avanzadas para redes sociales</span></i></h6></li>
+                </ul>
+                <a href="" class="btn btn-block btn-primary">Registrate</a>
+              </div>
+            </div>
+          <!-- Fin Card Business-->
         </div>
       </div>
-      <hr>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
+      <div class="container-fluid" style="position:static">
+        <!-- Row Social -->
+        <div class="row">
+          <div class="col-12 footer-social">
+            <div class="row">
+                <div class="col-4 mt-3 text-center text-white">
+                  <h4>Siguenos</h4>
+                </div>
+                <div class="col-8 mt-3 text-white">
+                    <a class="fab fa-facebook-f fa-2x icon-fb"></a>
+                    <a class="fab fa-twitter fa-2x icon-tw"></a>
+                    <a class="fab fa-instagram fa-2x icon-ig"></a>
+                </div>
+            </div>
+          </div>
+        </div>
+        <!-- Fin Row Social -->
+      </div>
+      <!-- Fin container footer Social -->
+      
+
+      <!-- Inicio container Footer info -->
+      <div class="container-fluid footer-info">
+        <!-- Row Info Footer -->
+        <div class="row">
+            <div class="col-md mt-5">
+                <h2>¿Quienes Somos?</h2>
+                <p class="text-justify">
+                  Dino CMS es la plataforma mas popular del mundo, que te permite gestionar tu contenido web de una manera muy sencilla.<br><br>
+                  Ya seas blogger o dueño de una empresa sabemos que existen alternativas para montar tu sitio web, pero ninguna supera a nuestra plataforma.
+                </p>
+            </div>
+            <div class="col-md mt-5">
+                <h2>Informacion de contacto</h2>
+                <ul class="list-unstyled">
+                  <li><a href="#" class="py-2 d-block">Tegucigalma M.D.C, Honduras C.A</a></li>
+                  <li><a href="#" class="py-2 d-block">+504 2222-2222</a></li>
+                  <li><a href="#" class="py-2 d-block">info@dinocms.com</a></li>
+                </ul>
+            </div>
+            <div class="col-md mt-5">
+              <div class="">
+                <h2>Enlaces</h2>
+                <ul class="list-unstyled">
+                  <li><a href="#" class="py-2 d-block">Inicio</a></li>
+                  <li><a href="#" class="py-2 d-block">Acerca</a></li>
+                  <li><a href="#" class="py-2 d-block">Servicios</a></li>
+                  <li><a href="#" class="py-2 d-block">Contactos</a></li>
+                  <li><a href="#" class="py-2 d-block">Registrate</a></li>
+                </ul>
+              </div> 
+            </div>
+            
+          </div>
+          <!-- Fin Row Info Footer -->
+
+          <!-- Inico Row Copyright -->
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <p>Copyright &copy;2018 Wilian Barahona</p>
+            </div>
+          </div>
+          <!-- Fin Row Copyright -->
+      </div>
+      <!-- Fin Container Footer  info-->
+
 
   </footer>
+
+
+
+        
+   
 
 
    <script src="plugin/jquery/jquery.min.js"></script>
