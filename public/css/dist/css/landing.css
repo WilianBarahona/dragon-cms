@@ -155,7 +155,7 @@ header .btn-primary {
   border-color: #033454;
   color: #fff;
   font-size: 80%;
-  border-radius: 1.5rem;
+  border-radius: 1.4rem;
   letter-spacing: 2px;
   font-weight: bold;
   padding: 1rem;
@@ -250,7 +250,7 @@ header .btn-primary:hover {
 
 #plan .btn {
   font-size: 80%;
-  border-radius: 1.5rem;
+  border-radius: 1.4rem;
   letter-spacing: 2px;
   font-weight: bold;
   padding: .8rem;

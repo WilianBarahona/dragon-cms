@@ -16,7 +16,8 @@ $colors: (
     card-blogger: #1b608d,
     card-premium: #8071A8,
     card-business: #438C7D,
-    card-check:#272525
+    card-check:#272525,
+    body: #212529
 
 );
 
@@ -43,7 +44,7 @@ body {
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
-    color: #212529;
+    color:color(body);
     text-align: left;
     background-color: color(white);
 }
@@ -189,7 +190,7 @@ header.masthead {
       border-color: color(secondary);
       color: color(white);
       font-size: 80%;
-      border-radius: 1.5rem;
+      border-radius: 1.4rem;
       letter-spacing:2px;
       font-weight: bold;
       padding: 1rem;
@@ -304,7 +305,7 @@ header.masthead {
   #plan {
     .btn {
       font-size: 80%;
-      border-radius: 1.5rem;
+      border-radius: 1.4rem;
       letter-spacing:2px;
       font-weight: bold;
       padding: .8rem;
