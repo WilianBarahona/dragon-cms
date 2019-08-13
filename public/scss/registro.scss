@@ -1,0 +1,44 @@
+$colors: (
+    //JSON colors
+    primary:#61C8B6,
+    primary-hover:#289c89,
+    secondary: #033454,
+    secondary-hover: #1b608d,
+    success:#00AAA7,
+    white:#fff,
+    white-hover:#ccc5c5,
+    black:#000,
+    gray: #6c757d,
+    gray-hover: #3a3c3d,
+    gray-dark: #060708,
+    black-opacity: rgba(0, 0, 0, 0.15),
+    bg-section: linear-gradient(0deg, rgba(247,243,251,0.8) 0%, #F7F3FB 100%),
+    input-activate:#1e90ff,
+    green: #28a745,
+    redIsInvalid:#dc3545,
+
+);
+
+
+$bg-login: url("../../../img/bg-login.jpg") no-repeat center center fixed;
+$gif-loader: url('../../../img/page-loader.gif') 50% 50% no-repeat rgb(249,249,249);
+$img-check: url('../../../img/check.svg');
+
+$col-sm:"(max-width: 768px)";
+$col-md:"(max-width: 992px)";
+
+// Function
+@function color($color-name) {
+    //map-get ==> metodo para obtener el valor los objetos internos del json
+    @return map-get($colors,$color-name);
+}
+
+
+body{
+    
+
+
+
+
+
+}

@@ -63,6 +63,7 @@ ul ol {
   font-weight: 800;
   padding: 5px 0 0 10px;
   text-transform: uppercase;
+  margin-left: -33px;
 }
 
 #text-logo-2 {
