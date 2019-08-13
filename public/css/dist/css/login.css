@@ -1,11 +1,10 @@
 body {
   font-family: sans-serif;
-  background: url("../../../img/bg-login.jpg") no-repeat center center fixed;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-body .loader {
+.loader {
   position: fixed;
   left: 0px;
   top: 0px;
@@ -16,12 +15,68 @@ body .loader {
   background-size: 110px;
 }
 
-body button {
-  border: 0;
-  background-color: #fff;
+.color-blue-i {
+  color: #033454 !important;
+  opacity: 0.8;
 }
 
-body .card {
+.color-success-i {
+  color: #00AAA7 !important;
+  opacity: 0.8;
+}
+
+.was-validated .form-control:valid, .form-control.is-valid {
+  border-color: #00AAA7;
+  background-image: url("../../../img/check.svg");
+}
+
+.was-validated .form-control:valid:focus, .form-control.is-valid:focus {
+  -webkit-box-shadow: 0 0 5px 0 #00AAA7 !important;
+          box-shadow: 0 0 5px 0 #00AAA7 !important;
+  border-color: #00AAA7 !important;
+}
+
+.was-validated .form-control:invalid:focus, .form-control.is-invalid:focus {
+  -webkit-box-shadow: 0 0 5px 0 #dc3545 !important;
+          box-shadow: 0 0 5px 0 #dc3545 !important;
+  border-color: #dc3545 !important;
+}
+
+.color-black {
+  color: #000 !important;
+}
+
+.font-08rem {
+  font-size: .8rem;
+}
+
+.font-09rem {
+  font-size: .9rem;
+}
+
+.font-1rem {
+  font-size: 1rem;
+}
+
+.text-logo-1 {
+  color: #033454;
+  font-size: 26px;
+  font-weight: 800;
+  padding: 5px 0 0 10px;
+  text-transform: uppercase;
+  margin-left: -25px;
+}
+
+.text-logo-2 {
+  color: #61C8B6;
+  font-size: 26px;
+  font-weight: 800;
+  margin-left: -14px;
+  padding: 5px 0 0 10px;
+  text-transform: uppercase;
+}
+
+.card {
   margin-top: 80px;
   border-radius: .5rem;
   padding: 0;
@@ -31,7 +86,7 @@ body .card {
   width: 90%;
 }
 
-body .card .btn-primary {
+.card .btn-primary {
   background-color: #033454;
   border-color: #033454;
   color: #fff;
@@ -45,55 +100,65 @@ body .card .btn-primary {
   transition: all 0.3s;
 }
 
-body .card .btn-primary:hover {
+.card .btn-primary:hover {
   background-color: #1b608d;
 }
 
-body .card .btn-primary:not(:disabled):not(.disabled).active, body .card .btn-primary:not(:disabled):not(.disabled):active, body .card .show > .btn-primary.dropdown-toggle {
+.card .btn-primary:not(:disabled):not(.disabled).active, .card .btn-primary:not(:disabled):not(.disabled):active, .card .show > .btn-primary.dropdown-toggle {
   color: #fff;
   background-color: #61C8B6;
   border-color: #6c757d;
 }
 
 @media (max-width: 992px) {
-  body .card {
+  .card {
     width: 100%;
   }
 }
 
-body .card .link {
+.card .link {
   text-decoration: none !important;
   padding: 0;
   color: #1b608d;
 }
 
-body .card .link:hover {
+.card .link:hover {
   color: #033454;
 }
 
-body .card .form-signin {
+.card .form-signin {
   width: 100%;
   max-width: 90%;
   margin: 0 auto;
 }
 
-body .card .form-group {
+.card .form-group {
   margin-bottom: 20px;
 }
 
-body .card .form-group input {
+.card .form-group input {
   border-radius: 8px;
 }
 
-body .card .input-icon input {
-  padding-left: 40px;
-}
-
-body .card .input-icon {
+.card .input-icon {
   position: relative;
 }
 
-body .card .input-icon i {
+.card .input-icon input {
+  padding-left: 40px;
+}
+
+.card .input-icon input:focus {
+  -webkit-box-shadow: 0 0 5px 0 #033454;
+          box-shadow: 0 0 5px 0 #033454;
+  border-color: #033454;
+}
+
+.card .input-icon input:focus + i {
+  color: #033454;
+}
+
+.card .input-icon i {
   position: absolute;
   left: 0;
   top: 2px;
@@ -105,74 +170,7 @@ body .card .input-icon i {
   margin: 0;
 }
 
-body .card .input-icon input:focus {
-  -webkit-box-shadow: 0 0 5px 0 #033454;
-          box-shadow: 0 0 5px 0 #033454;
-  border-color: #033454;
-}
-
-body .card .input-icon input:focus + i {
-  color: #033454;
-}
-
-body .color-blue-i {
-  color: #033454 !important;
-  opacity: 0.8;
-}
-
-body .color-success-i {
-  color: #00AAA7 !important;
-  opacity: 0.8;
-}
-
-body .was-validated .form-control:valid, body .form-control.is-valid {
-  border-color: #00AAA7;
-  background-image: url("../../../img/check.svg");
-}
-
-body .was-validated .form-control:valid:focus, body .form-control.is-valid:focus {
-  -webkit-box-shadow: 0 0 5px 0 #00AAA7 !important;
-          box-shadow: 0 0 5px 0 #00AAA7 !important;
-  border-color: #00AAA7 !important;
-}
-
-body .was-validated .form-control:invalid:focus, body .form-control.is-invalid:focus {
-  -webkit-box-shadow: 0 0 5px 0 #dc3545 !important;
-          box-shadow: 0 0 5px 0 #dc3545 !important;
-  border-color: #dc3545 !important;
-}
-
-body .color-black {
-  color: #000 !important;
-}
-
-body .font-08rem {
-  font-size: .8rem;
-}
-
-body .font-09rem {
-  font-size: .9rem;
-}
-
-body .font-1rem {
-  font-size: 1rem;
-}
-
-body #text-logo-1 {
-  color: #033454;
-  font-size: 26px;
-  font-weight: 800;
-  padding: 5px 0 0 10px;
-  text-transform: uppercase;
-  margin-left: -25px;
-}
-
-body #text-logo-2 {
-  color: #61C8B6;
-  font-size: 26px;
-  font-weight: 800;
-  margin-left: -14px;
-  padding: 5px 0 0 10px;
-  text-transform: uppercase;
+body {
+  background: url("../../../img/bg-login.jpg") no-repeat center center fixed;
 }
 /*# sourceMappingURL=login.css.map */

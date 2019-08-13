@@ -1,3 +1,81 @@
+body {
+  font-family: sans-serif;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.loader {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url("../../../img/page-loader.gif") 50% 50% no-repeat #f9f9f9;
+  background-size: 110px;
+}
+
+.color-blue-i {
+  color: #033454 !important;
+  opacity: 0.8;
+}
+
+.color-success-i {
+  color: #00AAA7 !important;
+  opacity: 0.8;
+}
+
+.was-validated .form-control:valid, .form-control.is-valid {
+  border-color: #00AAA7;
+  background-image: url("../../../img/check.svg");
+}
+
+.was-validated .form-control:valid:focus, .form-control.is-valid:focus {
+  -webkit-box-shadow: 0 0 5px 0 #00AAA7 !important;
+          box-shadow: 0 0 5px 0 #00AAA7 !important;
+  border-color: #00AAA7 !important;
+}
+
+.was-validated .form-control:invalid:focus, .form-control.is-invalid:focus {
+  -webkit-box-shadow: 0 0 5px 0 #dc3545 !important;
+          box-shadow: 0 0 5px 0 #dc3545 !important;
+  border-color: #dc3545 !important;
+}
+
+.color-black {
+  color: #000 !important;
+}
+
+.font-08rem {
+  font-size: .8rem;
+}
+
+.font-09rem {
+  font-size: .9rem;
+}
+
+.font-1rem {
+  font-size: 1rem;
+}
+
+.text-logo-1 {
+  color: #033454;
+  font-size: 26px;
+  font-weight: 800;
+  padding: 5px 0 0 10px;
+  text-transform: uppercase;
+  margin-left: -25px;
+}
+
+.text-logo-2 {
+  color: #61C8B6;
+  font-size: 26px;
+  font-weight: 800;
+  margin-left: -14px;
+  padding: 5px 0 0 10px;
+  text-transform: uppercase;
+}
+
 html {
   font-family: sans-serif;
   line-height: 1.15;
@@ -44,41 +122,6 @@ ul ul,
 ol ul,
 ul ol {
   margin-bottom: 0;
-}
-
-.loader {
-  position: fixed;
-  left: 0px;
-  top: 0px;
-  width: 100%;
-  height: 100%;
-  z-index: 9999;
-  background: url("../../../img/page-loader.gif") 50% 50% no-repeat #f9f9f9;
-  background-size: 110px;
-}
-
-#text-logo-1 {
-  color: #033454;
-  font-size: 26px;
-  font-weight: 800;
-  padding: 5px 0 0 10px;
-  text-transform: uppercase;
-  margin-left: -34px;
-}
-
-#text-logo-2 {
-  color: #61C8B6;
-  font-size: 26px;
-  font-weight: 800;
-  margin-left: -15px;
-  padding: 5px 0 0 10px;
-  text-transform: uppercase;
-}
-
-@media only screen and (max-width: 992px) {
-  #text-logo-2 {
-    margin-right: auto;
-  }
 }
 
 header.masthead {
@@ -389,5 +432,9 @@ footer .footer-info a:hover {
 
 footer .footer-info .col-center {
   text-align: left;
+}
+
+.text-logo-1 {
+  margin-left: -30px !important;
 }
 /*# sourceMappingURL=landing.css.map */
