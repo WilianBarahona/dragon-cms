@@ -123,26 +123,7 @@ body {
            }
         }
 
-      .input-icon{
-        .input-pass{
-          padding-right: 40px;
-        }
-
-        button{
-          position: absolute;
-          right:0;
-          top:2px;
-        }
-
-        .btn-link{
-          color:color(gray);
-          &:hover{
-            color:color(gray-hover)!important;
-           
-          }
-        }
-
-      }
+    
     
       .input-icon input {
         padding-left: 40px;
@@ -220,8 +201,26 @@ body {
     font-size: 1rem;
   }
   
- 
- 
+
+  #text-logo-1{
+    color:color(secondary);
+    font-size: 26px;
+    font-weight: 800;
+    padding: 5px 0 0 10px;
+    text-transform: uppercase;
+    margin-left: -25px;
+  }
+
+  #text-logo-2{
+      color:color(primary);
+      font-size: 26px;
+      font-weight: 800;
+      margin-left: -14px;
+      padding: 5px 0 0 10px;
+      text-transform: uppercase;
+  }
+  
+  
 
 
 }

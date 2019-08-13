@@ -35,10 +35,154 @@ $col-md:"(max-width: 992px)";
 
 
 body{
+    font-family: sans-serif;
+    background:$bg-login;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .loader {
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        background:$gif-loader;
+        background-size: 110px;
+    }
+
+    .container{
+        margin-top:80px;
+
+        .card-body{
+            padding: 20px 0px 20px 15px;
+            border-radius: 7px;
+            width: 90%;
+            @media #{$col-md}{
+                width: 100%;
+              }
+        }
+
+
+        #formulario-registro{
+            .card{
+                border-radius: 5px;
+                border-radius: .5rem;
+                background-color: color(white);
+                box-shadow:0px 0px 10px color(primary)!important;
+                
+            }
+
+            #text-logo-1{
+                color:color(secondary);
+                font-size: 26px;
+                font-weight: 800;
+                padding: 5px 0 0 10px;
+                text-transform: uppercase;
+                margin-left: -25px;
+            }
+            
+            #text-logo-2{
+                color:color(primary);
+                font-size: 26px;
+                font-weight: 800;
+                margin-left: -14px;
+                padding: 5px 0 0 10px;
+                text-transform: uppercase;
+            }
+
+            .color-blue-i{
+                color: color(secondary)!important;
+                opacity: 0.8;
+              }
+            
+              .color-success-i{
+                color: color(success)!important;
+                opacity: 0.8;
+              }
+            
+              .was-validated .form-control:valid, .form-control.is-valid {
+                border-color: color(success);
+                background-image: $img-check;
+              }
+            
+              .was-validated .form-control:valid:focus, .form-control.is-valid:focus {
+                box-shadow: 0 0 5px 0 color(success)!important;
+                border-color:color(success)!important;
+              }
+            
+              .was-validated .form-control:invalid:focus, .form-control.is-invalid:focus {
+                box-shadow: 0 0 5px 0 color(redIsInvalid)!important;
+                border-color:color(redIsInvalid)!important;
+              }
+
+             
+
+            .input-icon {
+                position: relative;
+                
+                input{
+                    padding-left: 40px;
+                    &:focus{
+                        box-shadow: 0 0 5px 0 color(secondary);
+                        border-color:color(secondary);
+                    }
+                }
+
+                i{
+                    position: absolute;
+                    left: 1;
+                    top: 2px;
+                    padding: 9px;
+                    margin-left: -20px;
+                    color: #aaa;
+                    transition: 0.3s;
+                    margin: 0;
+                }
+
+              }
+              
+                    
+                        
+        }
+
+    }
     
 
+    .color-black{
+        color: color(black)!important;
+    }
+
+    .font-08rem{
+    font-size: .8rem;
+    }
+
+    .font-09rem{
+    font-size: .9rem;
+    }
+
+    .font-1rem{
+    font-size: 1rem;
+    }
+        
 
 
+    .btn-primary {
+        margin-top:10px;
+        background-color:color(secondary);
+        border-color: color(secondary);
+        color: color(white);
+        font-size: 80%;
+        border-radius: 0.7rem;
+        letter-spacing:2px;
+        font-weight: bold;
+        padding: 0.6rem;
+        opacity: 0.99;
+        transition: all 0.3s;
 
+        &:hover{
+            background-color: color(secondary-hover);
+        }
+    }
 
 }

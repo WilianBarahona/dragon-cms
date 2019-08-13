@@ -85,24 +85,6 @@ body .card .form-group input {
   border-radius: 8px;
 }
 
-body .card .input-icon .input-pass {
-  padding-right: 40px;
-}
-
-body .card .input-icon button {
-  position: absolute;
-  right: 0;
-  top: 2px;
-}
-
-body .card .input-icon .btn-link {
-  color: #6c757d;
-}
-
-body .card .input-icon .btn-link:hover {
-  color: #3a3c3d !important;
-}
-
 body .card .input-icon input {
   padding-left: 40px;
 }
@@ -174,5 +156,23 @@ body .font-09rem {
 
 body .font-1rem {
   font-size: 1rem;
+}
+
+body #text-logo-1 {
+  color: #033454;
+  font-size: 26px;
+  font-weight: 800;
+  padding: 5px 0 0 10px;
+  text-transform: uppercase;
+  margin-left: -25px;
+}
+
+body #text-logo-2 {
+  color: #61C8B6;
+  font-size: 26px;
+  font-weight: 800;
+  margin-left: -14px;
+  padding: 5px 0 0 10px;
+  text-transform: uppercase;
 }
 /*# sourceMappingURL=login.css.map */

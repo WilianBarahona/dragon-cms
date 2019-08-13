@@ -1,16 +1,8 @@
 $(document).ready(function() {
-   $(".loader").fadeOut(200);
-});
-
-$("#chk-show").click(()=>{
-   if ($('#txt-password').attr('type') == 'text') {
-     $('#txt-password').attr('type', 'password');
-   } else {
-     $('#txt-password').attr('type', 'text');
-   }
- })
-
- $("#btn-ingresar").click(()=> { 
+    $(".loader").fadeOut(200);
+ });
+ 
+$("#btn-registrarse").click(()=> {  
    validarRegistro()
  });
 
@@ -25,8 +17,12 @@ $("#chk-show").click(()=>{
 =====================================
 */
 let camposForm = [
+   {id:'txt-nombre', isValid:false},
+   {id:'txt-apellido', isValid:false},
    {id:'txt-email', isValid:false},
-   {id:'txt-password', isValid:false}
+   {id:'txt-password-1', isValid:false},
+   {id:'txt-password-2', isValid:false}
+
  ]
  
  
@@ -42,11 +38,13 @@ let camposForm = [
      if(!camposForm[i].isValid)
        return  // Si hay un campo invalido salir de  la funcion registrar
 
+    
     let email = validarEmail()
     if(!email)
       return
     
-     
+
+
    
  
    let json = {
@@ -73,11 +71,8 @@ let camposForm = [
  }
 
  function validarEmail(){
-  let reEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-  let reTest = reEmail.test($("#txt-email").val())
-  marcarInput("txt-email",reTest)
-  return reTest
-}
-
-   
- 
+    let reEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    let reTest = reEmail.test($("#txt-email").val())
+    marcarInput("txt-email",reTest)
+    return reTest
+ }

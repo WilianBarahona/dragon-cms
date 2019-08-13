@@ -18,46 +18,48 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <div class="card-title mb-4 mt-2">
-                            <img class="" src="img/logo1.1.svg" width="100" height="50">
-                            <h3>Iniciar Sesión</h3> 
+                <!-- Inicio de card -->
+                <div class="card card-body">
+                    
+                    <div id="formulario-registro" class="row justify-content-center">
+                            <div class="col-12 text-center">
+                                <img src="img/logo.svg" class="mb-4" width="65" height="50">
+                                <span id="text-logo-1">DINO</span>
+                                <span id="text-logo-2">CMS</span>
+                            </div>
+                            <div class="col-11 input-icon mb-2">
+                                <input id="txt-nombre" type="text" class="form-control font-09rem" placeholder="Nombre">
+                                <i class="fas fa-user fa-lg fa-fw color-blue-i"  aria-hidden="true"></i>
+                                <div class="text-left invalid-feedback">Nombre vacio</div>
+                            </div>
+                            <div class="col-11 input-icon mb-2">
+                                <input id="txt-apellido" type="text" class="form-control font-09rem" placeholder="Apellido">
+                                <i class="fas fa-user fa-lg fa-fw color-blue-i"  aria-hidden="true"></i>
+                                <div class="text-left invalid-feedback">Apellido vacio</div>
+                            </div>
+                            <div class="col-11 input-icon mb-2">
+                                <input id="txt-email" type="email" class="form-control font-09rem" placeholder="Email">
+                                <i class="fas fa-envelope-open fa-lg fa-fw color-blue-i"  aria-hidden="true"></i>
+                                <div class="text-left invalid-feedback">Email invalido</div>
+
+                            </div>
+                            <div class="col-11 input-icon mb-2">
+                                <input id="txt-password-1" type="password" class="form-control font-09rem" placeholder="Contraseña">
+                                <i class="fas fa-key fa-lg fa-fw color-blue-i"  aria-hidden="true"></i>
+                                <div class="text-left invalid-feedback">Contraseña vacia</div>
+                            </div>
+                            <div class="col-11 input-icon mb-2">
+                                <input  id="txt-password-2" type="password" class="form-control font-09rem" placeholder="Repita la contraseña">
+                                <i class="fas fa-key fa-lg fa-fw color-blue-i"  aria-hidden="true"></i>
+                                <div class="text-left invalid-feedback">Contraseña vacia</div>
+                            </div>
+                            <div class="col-11">
+                                <button id="btn-registrarse" type="button" class="btn btn-block btn-primary">Registrarse</button>
+                            </div>
                         </div>
-                        <!-- Inicio Form Login -->
-                        <form class="form-signin">
-                            <div class="form-group input-icon mb-3">
-                                <input  id="txt-email" class="form-control color-black font-09rem" type="email" placeholder="Correo electrónico">
-                                <i class="fas fa-at fa-lg fa-fw color-blue-i"  aria-hidden="true"></i>
-                                <!-- <div class="text-left valid-feedback mb-n2 color-blue-i">Ok!</div> -->
-                                <div class="text-left invalid-feedback mb-n2">Email no valido</div>
-                            </div>   
-                            <div id="div-pass" class="form-group input-icon mb-3">
-                                <input id="txt-password"  class="form-control input-pass color-black font-09rem" type="password" placeholder="Contraseña">
-                                <i id="i-lock" class="fas fa-lock fa-lg fa-fw color-blue-i" aria-hidden="true"></i>
-                                <!-- <button id="hidden-pass" type="button" class="btn btn-link"><span class="fas fa-eye fa-1x" aria-hidden="true"></span></button>
-                                <button  id="show-pass" type="button" class="btn btn-link"><span  class="fas fa-eye-slash fa-1x" aria-hidden="true"></span></button> -->
-                                <div class="text-left invalid-feedback">Contaseña vacia</div>
-                                <!-- <div class="text-left valid-feedback mb-n2 color-blue-i">Ok!</div> -->
-                                <div class="custom-control custom-checkbox text-left mt-2">
-                                    <input type="checkbox" class="custom-control-input" style="background-color: black!important;" name="chk-show[]" id="chk-show">
-                                    <label class="custom-control-label font-09rem" for="chk-show">Mostrar contraseña</label>
-                                </div>                
-                            </div>
-                            <div class="text-right mb-3 mt-n3">
-                                <button type="button" class="btn btn-link link font-09rem">Olvidate tu contraseña?</button>
-                            </div>
-                            <div class="form-group text-center">
-                                <button id="btn-ingresar" type="button" class="btn btn-block btn-primary">Ingresar</button>
-                            </div>
-                        </form>
-                        <!-- Fin Form Login -->
-                    </div>
-                    <div class="card-footer text-center">
-                        <small class="text-muted font-1rem">Nuevo en Dino CMS</small>
-                        <button type="button" class="btn btn-link link font-09rem">Registrate</button>
-                    </div>
+                        
                 </div>
+                <!-- Fin card -->
             </div>
         </div>
     </div>

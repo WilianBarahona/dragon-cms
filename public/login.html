@@ -21,26 +21,28 @@
                 <div class="card">
                     <div class="card-body text-center">
                         <div class="card-title mb-4 mt-2">
-                            <img class="" src="img/logo1.1.svg" width="100" height="50">
-                            <h3>Iniciar Sesión</h3> 
+                            <div class="col-12 text-center mb-n2">
+                                <img src="img/logo.svg" class="mb-3" width="65" height="50">
+                                <span id="text-logo-1">DINO</span>
+                                <span id="text-logo-2">CMS</span>
+                            </div>
+                            <!-- <h5>Iniciar Sesión</h5>  -->
                         </div>
                         <!-- Inicio Form Login -->
                         <form class="form-signin">
                             <div class="form-group input-icon mb-3">
                                 <input  id="txt-email" class="form-control color-black font-09rem" type="email" placeholder="Correo electrónico">
-                                <i class="fas fa-at fa-lg fa-fw color-blue-i"  aria-hidden="true"></i>
-                                <!-- <div class="text-left valid-feedback mb-n2 color-blue-i">Ok!</div> -->
+                                <i class="fas fa-envelope-open fa-lg fa-fw color-blue-i"  aria-hidden="true"></i>
                                 <div class="text-left invalid-feedback mb-n2">Email no valido</div>
                             </div>   
                             <div id="div-pass" class="form-group input-icon mb-3">
                                 <input id="txt-password"  class="form-control input-pass color-black font-09rem" type="password" placeholder="Contraseña">
-                                <i id="i-lock" class="fas fa-lock fa-lg fa-fw color-blue-i" aria-hidden="true"></i>
+                                <i id="i-lock" class="fas fa-key fa-lg fa-fw color-blue-i" aria-hidden="true"></i>
                                 <!-- <button id="hidden-pass" type="button" class="btn btn-link"><span class="fas fa-eye fa-1x" aria-hidden="true"></span></button>
                                 <button  id="show-pass" type="button" class="btn btn-link"><span  class="fas fa-eye-slash fa-1x" aria-hidden="true"></span></button> -->
                                 <div class="text-left invalid-feedback">Contaseña vacia</div>
-                                <!-- <div class="text-left valid-feedback mb-n2 color-blue-i">Ok!</div> -->
                                 <div class="custom-control custom-checkbox text-left mt-2">
-                                    <input type="checkbox" class="custom-control-input" style="background-color: black!important;" name="chk-show[]" id="chk-show">
+                                    <input type="checkbox" class="custom-control-input" name="chk-show[]" id="chk-show">
                                     <label class="custom-control-label font-09rem" for="chk-show">Mostrar contraseña</label>
                                 </div>                
                             </div>
