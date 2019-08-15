@@ -22,8 +22,14 @@ $colors: (
     card-premium: #8071A8,
     card-business: #438C7D,
     card-check:#272525,
-    body: #212529
+    body: #212529,
+);
 
+$grid-breakpoints: (
+  xs: 0,
+  sm: 480px,
+  md: 768px,
+  lg: 1024px
 );
 
 $bg-header: url("../../../img/bg-landing.jpg");
@@ -33,3 +39,4 @@ $img-check: url('../../../img/check.svg');
 
 $col-sm:"(max-width: 768px)";
 $col-md:"(max-width: 992px)";
+
