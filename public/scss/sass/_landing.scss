@@ -1,5 +1,4 @@
 html {
-    font-family: sans-serif;
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: color(black);
@@ -128,9 +127,14 @@ header.masthead {
       border-radius: 1.4rem;
       letter-spacing:2px;
       font-weight: bold;
-      padding: 1rem;
+      padding: .8rem;
       opacity: 0.99;
       transition: all 0.3s;
+    }
+
+    .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+      background-color: color(secondary);
+      border-color:color(secondary);
     }
 
     .btn-primary:hover {
@@ -362,6 +366,18 @@ header.masthead {
 
   }
 
-  .text-logo-1{
-    margin-left:-30px!important;
+
+#logo{
+  .text-color-1{
+    margin-left: -11px;
   }
+
+  .text-color-2{
+    margin-left: -4px;
+  }
+
+  .dragon{
+    margin-left: 20px;
+  }
+
+}

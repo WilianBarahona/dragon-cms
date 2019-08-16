@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Dino CMS</title>
+  <title>Dragon CMS</title>
 
   <link href="vendor/magnific-popup/css/magnific-popup.css" rel="stylesheet">
   <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
@@ -22,40 +22,88 @@
       <!-- Logo -->
      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
        <div class="sidebar-brand-icon">
-         <img src="img/logo.svg" width="50" height="40">
+          <i class="fas fa-dragon color-primary dragon"></i>
        </div>
-       <div class="sidebar-brand-text ml-n1"><span class="texto-logo-1">Dino</span><span class="texto-logo-2">CMS</span></div>
+       <div class="sidebar-brand-text ml-1">
+         <span>Dragon</span><span class="color-primary">CMS</span></div>
      </a>
 
      <hr class="sidebar-divider my-0">
      <!-- Item Simple -->
      <li class="nav-item">
        <a class="nav-link" href="#">
-         <i class="fas fa-fw fa-tachometer-alt"></i>
-         <span>Dashboard</span></a>
+         <i class="fas fa-home fa-fw"></i>
+         <span><b>Inicio</b></span></a>
      </li>
 
      <hr class="sidebar-divider">
      <!-- Encabezado -->
      <div class="sidebar-heading">
-       Interface
+      Sitio Web
      </div>
 
      <!-- Item collapsado-->
      <li class="nav-item">
-       <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-         <i class="fas fa-fw fa-cog"></i>
-         <span>Components</span>
+       <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse-item-1" aria-expanded="true" aria-controls="collapseTwo">
+         <i class="fas fa-pen fa-fw"></i>
+         <span>Sitio Web</span>
        </a>
-       <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+       <div id="collapse-item-1" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
          <div class="bg-white py-2 collapse-inner rounded">
-           <h6 class="collapse-header">Custom Components:</h6>
-           <a class="collapse-item" href="#">Buttons</a>
-           <a class="collapse-item" href="#">Cards</a>
+           <h6 class="collapse-header">Opciones:</h6>
+           <a class="collapse-item" href="#">Paginas</a>
+           <a class="collapse-item" href="#">Entradas</a>
+           <a class="collapse-item" href="#">Comentarios</a>
          </div>
        </div>
      </li>
      <hr class="sidebar-divider d-none d-md-block">
+
+      <!-- Encabezado -->
+     <div class="sidebar-heading">
+      Gestion
+     </div>
+
+     <!-- Item collapsado-->
+     <li class="nav-item">
+       <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse-item-2" aria-expanded="true" aria-controls="collapseTwo">
+         <i class="fas fa-user-cog fa-fw"></i>
+         <span>Administracion</span>
+       </a>
+       <div id="collapse-item-2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+         <div class="bg-white py-2 collapse-inner rounded">
+           <h6 class="collapse-header">Opciones:</h6>
+           <a class="collapse-item" href="#">Banco de archivos</a>
+           <a class="collapse-item" href="#">Menus y breadcrumb</a>
+           <a class="collapse-item" href="#">Temas</a>
+           <a class="collapse-item" href="#">Usuarios</a>
+         </div>
+       </div>
+     </li>
+     <hr class="sidebar-divider d-none d-md-block">
+
+     <!-- Encabezado -->
+     <div class="sidebar-heading">
+      Ajustes
+     </div>
+
+     <!-- Item collapsado-->
+     <li class="nav-item">
+       <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse-item-3" aria-expanded="true" aria-controls="collapseTwo">
+         <i class="fas fa-fw fa-cog"></i>
+         <span>Configuraciones</span>
+       </a>
+       <div id="collapse-item-3" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+         <div class="bg-white py-2 collapse-inner rounded">
+           <h6 class="collapse-header">Opciones:</h6>
+           <a class="collapse-item" href="#">Configuracion del sitio</a>
+           <a class="collapse-item" href="#">CSS personalizado</a>
+           <a class="collapse-item" href="#">JS personalizado</a>
+         </div>
+       </div>
+     </li>
+     <hr class="sidebar-divider d-none d-md-block">
+
 
      <!-- Button para ocultar o mostrar el SideBar) -->
      <div class="text-center d-none d-md-inline">
@@ -69,66 +117,100 @@
 
    <!-- Contenido -->
    <div id="content-wrapper" class="d-flex flex-column">
-     <div id="content">
+      <div id="content">
+          <!-- Inicio del Navbar -->
+          <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+            <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+              <i class="fa fa-bars"></i>
+            </button>
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item dropdown no-arrow">
+                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <!-- Incluir la clase d-none en caso de querer ocultar el nombre para pantallas <= md -->
+                  <span class="mr-2 d-lg-inline text-gray-600 small"><b>Wilian Barahona</b></span>
+                  <img class="img-profile rounded-circle" src="img/user.jpg">
+                </a>
+                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                      <a class="dropdown-item" href="#">
+                        <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                        Perfil
+                      </a>
+                      <a class="dropdown-item" href="#">
+                        <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                        Configuraciones
+                      </a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                        Cerrar sesion
+                      </a>
+                </div>
+              </li>
+            </ul>
+          </nav>
+          <!-- Fin del NavBar -->
 
-      <!-- Inicio del Navbar -->
-       <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-         <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-           <i class="fa fa-bars"></i>
-         </button>
-         <ul class="navbar-nav ml-auto">
-           <li class="nav-item dropdown no-arrow">
-             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-               <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
-               <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
-             </a>
-             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-               <a class="dropdown-item" href="#">
-                 <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                 Profile
-               </a>
-               <a class="dropdown-item" href="#">
-                 <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                 Settings
-               </a>
-               <a class="dropdown-item" href="#">
-                 <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                 Activity Log
-               </a>
-               <div class="dropdown-divider"></div>
-               <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                 Logout
-               </a>
-             </div>
-           </li>
-
-         </ul>
-
-       </nav>
-       <!-- Fin del NavBar -->
-
-       <div class="container-fluid">
+       <!-- Container ==> El contenido se llenara dinamicamente -->
+       <div id="container" class="container-fluid">
          <div class="row">
-           <h4>Hola que hace!</h4>
+           <div class="col-12">
+              <nav class="navbar navbar-expand-lg navbar-light bg-primary" style="border-radius: 5px;">
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-img" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                
+                  <div class="collapse navbar-collapse" id="navbar-img">
+                    <ul class="navbar-nav mr-auto">
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Todos</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Imagenes</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="#">Videos</a>
+                        </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Dropdown
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="#">Action</a>
+                          <a class="dropdown-item" href="#">Another action</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                      </li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                  </div>
+                </nav>
+           </div>
          </div>
+
        </div>
        
-
      </div>
+     <!-- Fin Contenido -->
     
    </div>
-   <!-- Fin del contenido-->
+   <!-- Fin del contenido del wrapper-->
 
  </div>
  <!-- Fin del wrapper -->
-
 
 
  <script src="vendor/jquery/jquery.min.js"></script>
  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
  <script src="js/pages/dashboard.js"></script>
+ <div class="script"></div>
 
 </body>
 

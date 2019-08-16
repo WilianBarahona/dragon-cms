@@ -1,3 +1,17 @@
 body{
     background:$bg-login;
 }
+
+#logo{
+    margin-bottom:30px;
+    .text-color-1{
+        padding-top: 1px;
+        margin-left: -11px;
+        font-size: 23px;
+    }
+
+    .text-color-2{
+        margin-left: -4px;
+        font-size: 23px;
+    }
+}

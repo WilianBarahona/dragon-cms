@@ -41,20 +41,54 @@
 }
 
 
-.text-logo-1{
-color:color(secondary);
-font-size: 26px;
-font-weight: 800;
-padding: 5px 0 0 10px;
-text-transform: uppercase;
-margin-left: -25px;
-}
-
-.text-logo-2{
-    color:color(primary);
+.text-color-1{
+    color:color(secondary)!important;
     font-size: 26px;
     font-weight: 800;
-    margin-left: -14px;
     padding: 5px 0 0 10px;
     text-transform: uppercase;
+}
+
+.text-color-2{
+    color:color(primary)!important;
+    font-size: 26px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.text-color-3{
+    color:color(white)!important;
+    font-size: 26px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+
+.color-primary{
+ color:color(primary)!important;
+}
+
+.color-primary-hover{
+    color:color(primary)!important;
+}
+
+.color-secondary{
+    color:color(secondary)!important;
+}
+
+.color-secondary-hover{
+    color:color(secondary-hover)!important;
+}
+
+.color-gray{
+    color:color(gray)!important;
+}
+
+.bg-bg-section{
+    background:color(bg-section)!important;
+}
+
+
+.dragon{
+    font-size: 2.2rem;
 }
