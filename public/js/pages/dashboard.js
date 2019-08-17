@@ -60,3 +60,13 @@ $('#btn-sidebar-files').click(()=>{
     <script src="js/controllers/file-bank.js"></script>
   `)
 })
+
+$('#btn-sidebar-pages').click(()=>{
+  $('#container').html('')
+  $('#script').html('')
+  
+  $('#container').load('templates/pages/pages.html')
+  $('#script').append(`
+    <script src="js/controllers/pages.js"></script>
+  `)
+})
