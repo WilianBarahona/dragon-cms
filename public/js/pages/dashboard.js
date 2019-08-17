@@ -47,5 +47,16 @@
     });
   
   })(jQuery); // End of use strict
+
+
+// Carga de datos con AJAX en el sidebard
   
-  console.log("xxxdddd")
+$('#btn-sidebar-files').click(()=>{
+  $('#container').html('')
+  $('#script').html('')
+  
+  $('#container').load('templates/pages/file-bank.html')
+  $('#script').append(`
+    <script src="js/controllers/file-bank.js"></script>
+  `)
+})

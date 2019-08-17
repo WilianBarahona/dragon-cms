@@ -1,0 +1,97 @@
+@import "variables.scss";
+@import "functions.scss";
+
+.file-bank{
+    .navbar-light .navbar-nav .nav-link {
+        color: color(gray-300);
+        font-weight: 500;
+        &:hover{
+            color:color(white);
+        }
+        @media #{$col-sm}{
+            font-size: .8rem;
+        }
+
+    }
+
+    .navbar{
+        border-radius: 5px;
+        padding-top:5px;
+        padding-bottom: 5px;
+        input{
+            font-size: .8rem;
+        }
+
+        span{
+            color:color(gray-300);
+            border: 0;
+            font-size: 1.01rem;
+        }
+
+        .arrow{
+            color:color(gray-300);
+            &:hover{
+                color:color(white);
+            }
+        }
+
+        .btn{
+            font-size: .8rem;
+            background-color:color(primary);
+            &:hover{
+                background-color:color(primary-hover);
+            }
+        }
+
+        .btn-success:not(:disabled):not(.disabled).active, .btn-success:not(:disabled):not(.disabled):active, .show>.btn-success.dropdown-toggle {
+            background-color: color(primary-hover);
+            border-color:color(primary-hover);
+          }
+    }
+
+    .cards-files{
+        margin-top:20px;
+        .img-thumbnail{
+            margin: 0;
+            padding: 0;
+        }
+
+        .tarjeta{
+            margin-top:20px;
+        }
+
+        .card{
+            border:0;
+            padding:0;
+            margin: 0;
+            cursor: pointer;
+
+            &:hover{
+               box-shadow: 1px 1px 10px 0px color(secondary-opacity);
+            }
+            .img-card-thumbnail{
+                width: 100%;
+                height: 110px;
+                border-radius: 5px;
+                @media #{$col-sm}{
+                    height: 160px;;
+                }
+            }
+
+            .thumbnail{
+                position: relative;
+                top:0;
+                left: 0;
+                .type{
+                    position: absolute;
+                    top:0;
+                    color:color(gray-200);
+                    margin: 2px 2px 2px 4px;
+                }
+            }
+        }
+
+
+    }
+       
+}
