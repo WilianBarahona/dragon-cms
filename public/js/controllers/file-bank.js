@@ -32,7 +32,8 @@ function llenarTodos(){
 function llenarImagenes(){
     $('#container-files').append(`
         <div class="col-12">
-            <h5 class="mb-n3">Imagenes</h5>
+            <h5>Imagenes</h5>
+            <hr>
         </div>
     `)
     
@@ -56,7 +57,8 @@ function llenarImagenes(){
 function llenarVideos(){
     $('#container-files').append(`
         <div class="col-12">
-            <h5 id="title-videos" class="mb-n3 mt-4">Videos</h5>
+            <h5 id="title-videos" class="mt-4">Videos</h5>
+            <hr>
         </div>
     `)
     
@@ -81,7 +83,8 @@ function llenarVideos(){
 function llenarOtros(){
     $('#container-files').append(`
         <div class="col-12">
-            <h5 id="title-others" class="mb-n3 mt-4">Archivos genericos</h5>
+            <h5 id="title-others" class="mt-4">Archivos genericos</h5>
+            <hr>
         </div>
     `)
     

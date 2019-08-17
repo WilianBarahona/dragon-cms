@@ -2,6 +2,7 @@
 @import "functions.scss";
 
 .file-bank{
+
     .navbar-light .navbar-nav .nav-link {
         color: color(gray-300);
         font-weight: 500;
@@ -12,6 +13,10 @@
             font-size: .8rem;
         }
 
+    }
+
+    h1,h2,h3,h4,h5,h6{
+        color:color(gray-800);
     }
 
     .navbar{
@@ -38,18 +43,13 @@
         .btn{
             font-size: .8rem;
             background-color:color(primary);
-            &:hover{
-                background-color:color(primary-hover);
-            }
         }
-
-        .btn-success:not(:disabled):not(.disabled).active, .btn-success:not(:disabled):not(.disabled):active, .show>.btn-success.dropdown-toggle {
-            background-color: color(primary-hover);
-            border-color:color(primary-hover);
-          }
     }
 
     .cards-files{
+        hr{
+            margin-top: 5px;
+        }
         margin-top:20px;
         .img-thumbnail{
             margin: 0;
@@ -57,7 +57,7 @@
         }
 
         .tarjeta{
-            margin-top:20px;
+            margin-top:10px;
         }
 
         .card{
@@ -92,6 +92,23 @@
         }
 
 
+    }
+
+    .btn{
+        font-size: .9rem;
+    }
+    
+    .btn-success{
+        border-color: color(primary);
+        background-color:color(primary);
+        &:hover{
+            background-color:color(primary-hover);
+        }
+    }
+
+    .btn-success:not(:disabled):not(.disabled).active, .btn-success:not(:disabled):not(.disabled):active, .show>.btn-success.dropdown-toggle {
+        background-color: color(primary-hover);
+        border-color:color(primary-hover);
     }
        
 }
