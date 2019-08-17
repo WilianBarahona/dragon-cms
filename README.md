@@ -1,2 +1,2 @@
-# dino-cms
+# Dragon CMS
 Sistema gestor de contenido
