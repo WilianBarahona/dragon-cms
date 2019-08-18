@@ -32,6 +32,12 @@
       }
   }
 
+  .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color:color(secondary-hover);
+    border-color:colo(secondary-hover);
+  }
+
   .input-icon {
     position: relative;
     

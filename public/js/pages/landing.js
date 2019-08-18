@@ -59,3 +59,7 @@ let typed = new Typed('#typed', {
   loop: false
   
 });
+
+$('#btn-empezar').click(()=>{
+  window.open('https://github.com/WilianBarahona/dragon-cms', '_blank')
+})

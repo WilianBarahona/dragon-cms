@@ -25,7 +25,7 @@ $("#chk-show").click(()=>{
 =====================================
 */
 let camposForm = [
-   {id:'txt-email', isValid:false},
+  //  {id:'txt-email', isValid:false},
    {id:'txt-password', isValid:false}
  ]
  
@@ -37,24 +37,23 @@ let camposForm = [
    // let email = validarEmail()
    // if (!validoChk || !validoRadio || !email)
    //   return
+
+   let email = validarEmail()
    
    for (let i = 0; i < camposForm.length; i++)
      if(!camposForm[i].isValid)
        return  // Si hay un campo invalido salir de  la funcion registrar
 
-    let email = validarEmail()
     if(!email)
       return
-    
-     
-   
- 
+  
    let json = {
      email: $("#txt-email").val(),
      password: $("#txt-password").val(),
    }
 
-   console.log(json)
+  console.log(json)
+  window.location.href = 'index.html'
  
    return json
    
@@ -79,5 +78,8 @@ let camposForm = [
   return reTest
 }
 
+$('#btn-registro').click(()=>{
+  window.location.href = 'registro.html'
+})
    
  

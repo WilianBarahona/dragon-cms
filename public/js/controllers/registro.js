@@ -30,22 +30,16 @@ let camposForm = [
    for (let i = 0; i < camposForm.length; i++)
      camposForm[i].isValid = marcarInput(camposForm[i].id,($(`#${camposForm[i].id}`).val() == "" || $(`#${camposForm[i].id}`).val() == 0) ? false : true)
    
-   // let email = validarEmail()
-   // if (!validoChk || !validoRadio || !email)
-   //   return
+   let email = validarEmail()
    
    for (let i = 0; i < camposForm.length; i++)
      if(!camposForm[i].isValid)
        return  // Si hay un campo invalido salir de  la funcion registrar
 
     
-    let email = validarEmail()
     if(!email)
       return
     
-
-
-   
  
    let json = {
      email: $("#txt-email").val(),
@@ -53,7 +47,8 @@ let camposForm = [
    }
 
    console.log(json)
- 
+   window.location.href = 'index.html'
+
    return json
    
  }

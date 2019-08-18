@@ -1,9 +1,9 @@
 $(document).ready(()=>{
-    llenarPages()
+    var pages = ["Acerca de", "Contactos", "Informacion", "Derechos reservador", "Terminos y condiciones"]
+    llenarPages(pages)
 })
 
-let pages = ["Acerca de", "Contactos", "Informacion", "Derechos reservador", "Terminos y condiciones"]
-function llenarPages(){
+function llenarPages(pages){
     $('#container-pages').html('')
     for (let i = 0; i < pages.length; i++) {
         $('#container-pages').append(`
