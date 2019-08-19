@@ -5,16 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Code Mirror</title>
-    <link rel="stylesheet" href="../vendor/code-mirror/lib/codemirror.css">
+    <link rel="stylesheet" href="../vendor/codemirror/lib/codemirror.css">
+    <link rel="stylesheet" href="../vendor/codemirror/theme/dragon.css">
 </head>
 <body>
 
-    
-    
-    <script src="../vendor/code-mirror/lib/codemirror.js"></script>
+
+    <textarea name="txt" id="txt" cols="30" rows="10"></textarea>
+    <script src="../vendor/codemirror/lib/codemirror.js"></script>
+    <script src="../vendor/codemirror/mode/javascript/javascript.js"></script>
     <script>
-        var myCodeMirror = CodeMirror(document.body,{
-            mode:"javascript"
+        var myCodeMirror = CodeMirror(document.textarea,{
+            mode:"javascript",
+            theme:"dragon",
+            lineNumbers:true
         });
     </script>
 </body>

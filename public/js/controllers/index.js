@@ -80,3 +80,11 @@ $('#btn-sidebar-entries').click(()=>{
     <script src="js/controllers/entries.js"></script>
   `)
 })
+
+
+// Toggle the side navigation
+$("#btn-sidebar-css").on('click', function(e) {
+  $("body").toggleClass("sidebar-toggled");
+  $(".sidebar").toggleClass("toggled");
+  $('.sidebar .collapse').collapse('hide');
+});

@@ -1,0 +1,53 @@
+/*
+
+    Name:       dragon
+    Author:     Michael Kaminsky (http://github.com/mkaminsky11)
+
+    Original dragon color scheme by Mattia Astorino (https://github.com/equinusocio/dragon-theme)
+
+*/
+
+.cm-s-dragon.CodeMirror {
+  background-color: #263238;
+  color: rgba(233, 237, 237, 1);
+}
+.cm-s-dragon .CodeMirror-gutters {
+  background: #263238;
+  color: rgb(83,127,126);
+  border: none;
+}
+.cm-s-dragon .CodeMirror-guttermarker, .cm-s-dragon .CodeMirror-guttermarker-subtle, .cm-s-dragon .CodeMirror-linenumber { color: rgb(83,127,126); }
+.cm-s-dragon .CodeMirror-cursor { border-left: 1px solid #f8f8f0; }
+.cm-s-dragon div.CodeMirror-selected { background: rgba(255, 255, 255, 0.15); }
+.cm-s-dragon.CodeMirror-focused div.CodeMirror-selected { background: rgba(255, 255, 255, 0.10); }
+.cm-s-dragon .CodeMirror-line::selection, .cm-s-dragon .CodeMirror-line > span::selection, .cm-s-dragon .CodeMirror-line > span > span::selection { background: rgba(255, 255, 255, 0.10); }
+.cm-s-dragon .CodeMirror-line::-moz-selection, .cm-s-dragon .CodeMirror-line > span::-moz-selection, .cm-s-dragon .CodeMirror-line > span > span::-moz-selection { background: rgba(255, 255, 255, 0.10); }
+
+.cm-s-dragon .CodeMirror-activeline-background { background: rgba(0, 0, 0, 0); }
+.cm-s-dragon .cm-keyword { color: rgba(199, 146, 234, 1); }
+.cm-s-dragon .cm-operator { color: rgba(233, 237, 237, 1); }
+.cm-s-dragon .cm-variable-2 { color: #80CBC4; }
+.cm-s-dragon .cm-variable-3, .cm-s-dragon .cm-type { color: #82B1FF; }
+.cm-s-dragon .cm-builtin { color: #DECB6B; }
+.cm-s-dragon .cm-atom { color: #F77669; }
+.cm-s-dragon .cm-number { color: #F77669; }
+.cm-s-dragon .cm-def { color: rgba(233, 237, 237, 1); }
+.cm-s-dragon .cm-string { color: #C3E88D; }
+.cm-s-dragon .cm-string-2 { color: #80CBC4; }
+.cm-s-dragon .cm-comment { color: #546E7A; }
+.cm-s-dragon .cm-variable { color: #82B1FF; }
+.cm-s-dragon .cm-tag { color: #80CBC4; }
+.cm-s-dragon .cm-meta { color: #80CBC4; }
+.cm-s-dragon .cm-attribute { color: #FFCB6B; }
+.cm-s-dragon .cm-property { color: #80CBAE; }
+.cm-s-dragon .cm-qualifier { color: #DECB6B; }
+.cm-s-dragon .cm-variable-3, .cm-s-dragon .cm-type { color: #DECB6B; }
+.cm-s-dragon .cm-tag { color: rgba(255, 83, 112, 1); }
+.cm-s-dragon .cm-error {
+  color: rgba(255, 255, 255, 1.0);
+  background-color: #EC5F67;
+}
+.cm-s-dragon .CodeMirror-matchingbracket {
+  text-decoration: underline;
+  color: white !important;
+}
