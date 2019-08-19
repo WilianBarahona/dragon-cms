@@ -1,0 +1,35 @@
+.pages, .entries{
+    .card{
+        margin-top:15px;
+        margin-bottom: 15px; 
+    }
+    
+    h1,h2,h3,h4,h5{
+        color:color(gray-900);
+    }
+
+    p{
+        color:color(gray-700);
+    }
+
+    hr{
+        margin-top:1px;
+    }
+
+    .btn-success{
+        font-size: .9rem;
+        border-color:color(primary);
+        background-color: color(primary);
+        color:color(gray-100);
+        &:hover{
+            background-color: color(primary-hover);
+        }
+        }
+    
+    .btn-success:not(:disabled):not(.disabled).active, .btn-success:not(:disabled):not(.disabled):active, .show>.btn-success.dropdown-toggle {
+        color: color(gray-100);
+        background-color:color(primary-hover);
+        border-color:colo(primary-hover);
+    }
+
+}

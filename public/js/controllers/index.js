@@ -70,3 +70,13 @@ $('#btn-sidebar-pages').click(()=>{
     <script src="js/controllers/pages.js"></script>
   `)
 })
+
+$('#btn-sidebar-entries').click(()=>{
+  $('#container').html('')
+  $('#script').html('')
+  
+  $('#container').load('templates/pages/entries.html')
+  $('#script').append(`
+    <script src="js/controllers/entries.js"></script>
+  `)
+})
