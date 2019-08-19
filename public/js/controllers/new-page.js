@@ -3,7 +3,7 @@ $(document).ready(()=>{
         uiColor: ''
     });
 
-    $('#btn-create-entry').click(()=>{
+    $('#btn-create-page').click(()=>{
         validarRegistro()
     })
     
@@ -14,7 +14,7 @@ $(document).ready(()=>{
     */
     let camposForm = [
       //  {id:'txt-email', isValid:false},
-        {id:'txt-title-entry', isValid:false}
+        {id:'txt-title-page', isValid:false}
       ]
       
       
@@ -29,7 +29,7 @@ $(document).ready(()=>{
     
       
         let json = {
-          email: $('#txt-title-entry').val(),
+          email: $('#txt-title-page').val(),
         }
     
       console.log(json)
