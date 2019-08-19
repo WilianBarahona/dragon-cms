@@ -15,8 +15,11 @@
   <link href="vendor/fonts/font-nunito.css" rel="stylesheet">
 
   <!-- Code Mirror -->
-  <link rel="stylesheet" href="vendor/codemirror/lib/codemirror.css">
-  <link rel="stylesheet" href="vendor/codemirror/theme/dragon.css">
+  <!-- <link rel="stylesheet" href="vendor/codemirror/lib/codemirror.css">
+  <link rel="stylesheet" href="vendor/codemirror/theme/dragon.css"> -->
+
+  <!-- Data Table -->
+  <link rel="stylesheet" href="vendor/datatable/datatables.min.css">
 
   <!-- Sytle  -->
   <link href="css/dist/minify/style.min.css" rel="stylesheet">
@@ -29,7 +32,6 @@
 <body>
 
  <div id="wrapper">
-    <div id="sidebar">
       <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
           <!-- Logo -->
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
@@ -125,10 +127,6 @@
       </ul>
       <!-- Fin del Sidebar -->
 
-   </div>
-   <!-- Fin SideBar -->
-
-
 
    <!-- Contenido -->
    <div id="content-wrapper" class="d-flex flex-column">
@@ -167,14 +165,42 @@
 
        <!-- Container ==> El contenido se llenara dinamicamente -->
        <div id="container" class="container-fluid">
-         <div class="row">
+         <!-- Inicio css y js personalizado-->
+         <!-- <div class="row">
            <div id="css" class="col-6">
               <textarea id="text-area-css" name="text-area-css" style="width: 100%;"></textarea>
            </div>
            <div class="col-6">
               <textarea  id="text-area-js" name="text-area-js" style="width: 100%;"></textarea>
            </div>
+         </div> -->
+         <!-- Fin css y js personalizado -->
+
+         <!-- Inicio administracion de usuarios -->
+         <div class="row users">
+           <div class="col-12">
+             <div class="card">
+               <div class="card-body">
+                 <h4>Administracion de usuarios</h4>
+                 <hr>
+               </div>
+             </div>
+           </div>
+           <div class="col-12">
+             <div class="card">
+               <div class="card-body">
+                 <h4>Miembros de tu equipo</h4>
+                 <div class="row">
+                   <div class="col-12">
+                     <!-- Table -->
+                   </div>
+                 </div>
+                 <hr>
+               </div>
+             </div>
+           </div>
          </div>
+         <!-- Fin administracion de usuarios -->
        </div>
        
      </div>
@@ -192,13 +218,16 @@
  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
  <script src="vendor/ckeditor/ckeditor.js"></script> 
 
+ <!-- Data Table -->
+ <script src="vendor/datatable/datatables.js"></script>
+
 
  <!-- Script -->
  <script src="js/controllers/index.js"></script>
  <div id="script"></div>
 
   <!-- Code Mirror -->
-  <script src="vendor/codemirror/lib/codemirror.js"></script>
+  <!-- <script src="vendor/codemirror/lib/codemirror.js"></script>
   <script src="vendor/codemirror/mode/javascript/javascript.js"></script>
   <script src="vendor/codemirror/mode/css/css.js"></script>
 
@@ -214,7 +243,7 @@
           theme:"dragon",
           lineNumbers:true
       });
-  </script>
+  </script> -->
 </body>
 
 </html>
