@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../vendor/data-tables/css/datatables.min.css">
+    <link rel="stylesheet" href="../css/dist/minify/style.min.css">
+</head>
+<body style>
+    
+   
+   <div class="container mt-5">
+       <div class="row">
+           <div class="col-11 col-sm-12">
+               <table id="example" class="table table-striped table-bordered" style="width: 100%"></table>
+           </div>
+       </div>
+   </div> 
+
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/data-tables/js/datatables.min.js"></script>
+
+    <script>    
+        $(document).ready(function() {
+            $('#example').DataTable({
+                pageLength: 10,
+                searching: true,
+                ordering: true,
+                paging: true,
+                responsive: true,
+                // ajax : {
+                //     "url" : "https://api.myjson.com/bins/14t4g",
+                //     dataSrc : ''
+                // },
+                ajax: 'data.json',
+                language: {
+                    url: "../vendor/data-tables/spanish.json",
+                    oPaginate: {
+                        sNext: '<i class="fas fa-forward"></i>',
+                        sPrevious: '<i class="fas fa-backward"></i>'
+                    }
+                 },
+                columns : [ 
+                 {data : "id", title:"Id"},
+                 {data : "name", title:"Nombre"}, 
+                 {data : "lon", title:"Longitud"},
+                 { data: null, title: "Opción",
+                 render: function (data, type, row) {
+                    return `<span class="badge badge-dark">Administrado</span>`
+                }}
+                            
+                ]
+            });
+        });
+
+    </script>
+</body>
+</html>
