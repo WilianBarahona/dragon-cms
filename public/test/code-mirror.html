@@ -11,11 +11,10 @@
 <body>
 
 
-    <textarea name="txt" id="txt" cols="30" rows="10"></textarea>
     <script src="../vendor/codemirror/lib/codemirror.js"></script>
     <script src="../vendor/codemirror/mode/javascript/javascript.js"></script>
     <script>
-        var myCodeMirror = CodeMirror(document.textarea,{
+        var myCodeMirror = CodeMirror(document.body,{
             mode:"javascript",
             theme:"dragon",
             lineNumbers:true

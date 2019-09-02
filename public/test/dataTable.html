@@ -6,7 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="../vendor/data-tables/css/datatables.min.css">
+    <link rel="stylesheet" href="../vendor/font-awesome/css/all.min.css">
     <link rel="stylesheet" href="../css/dist/minify/style.min.css">
+    <style>
+        .btn{
+            padding: 0;
+            border: 0;
+            margin: 0;
+            box-shadow: none!important;
+            margin-left: 9px;
+        }
+        .btn-edit{
+            color:green;
+        }
+    </style>
 </head>
 <body style>
     
@@ -25,7 +38,7 @@
     <script>    
         $(document).ready(function() {
             $('#example').DataTable({
-                pageLength: 10,
+                pageLength: 5,
                 searching: true,
                 ordering: true,
                 paging: true,
@@ -42,14 +55,40 @@
                         sPrevious: '<i class="fas fa-backward"></i>'
                     }
                  },
+                 columnDefs: [
+                {
+                    "targets": 1, // columna (Estado)
+                    "className": "text-center",
+                    //"width": "4%"
+                },
+                {
+                    "targets": 2, // columna (Estado)
+                    "className": "text-center",
+                    //"width": "4%"
+                }
+                ],
                 columns : [ 
-                 {data : "id", title:"Id"},
-                 {data : "name", title:"Nombre"}, 
-                 {data : "lon", title:"Longitud"},
-                 { data: null, title: "Opción",
+                 {data : "name", title:"Miembro del equipo",
+                 render:function (data, type, row){
+                    return `<span><img src="../img/user.jpg" class="mr-2" style="border-radius: 34px;">${row.name}</span>`
+                 }}, 
+                 { data: "rol", title: "Rol",
                  render: function (data, type, row) {
-                    return `<span class="badge badge-dark">Administrado</span>`
-                }}
+                    if(row.rol == "Administrador"){
+                        return `<span class="badge badge-success">${row.rol}</span>`
+                    }
+                    if(row.rol == "Registrado"){
+                        return `<span class="badge badge-info">${row.rol}</span>`
+                    }
+                    if(row.rol == "No registrado"){
+                        return `<span class="badge badge-secondary">${row.rol}</span>`
+                    }
+                }},
+                { data: null, title: "Accion",
+                 render: function (data, type, row) {
+                    return `<button type="button" class="btn btn-default btn-sm btn-edit"><span class="far fa-edit edit"></span></button>` +
+                           `<button type="button" class="btn btn-default btn-sm btn-delete"><span class="far fa-trash-alt trash"></span></button>`;
+                }},
                             
                 ]
             });
