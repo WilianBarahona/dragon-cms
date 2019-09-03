@@ -20,8 +20,6 @@ $(document).ready(()=>{
         
     })
 
-})
-
 function llenarTodos(){
     limpiarContainer()
     llenarImagenes()
@@ -107,4 +105,6 @@ function llenarOtros(){
 function limpiarContainer(){
     $('#container-files').html('')
 }
+
+})    
 

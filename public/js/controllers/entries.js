@@ -1,4 +1,5 @@
 $(document).ready(()=>{
+    var entries = ["La muerte de Iron Man", "Marvel 4ta fase" , "La bruja escarlata", "Muerte Black Widow", "Loki y el teseracto"]
     llenarEntries()
     
     $('#btn-new-entry').click(()=>{
@@ -10,9 +11,7 @@ $(document).ready(()=>{
         <script src="js/controllers/new-entrie.js"></script>
         `)
     })
-})
-
-var entries = ["La muerte de Iron Man", "Marvel 4ta fase" , "La bruja escarlata", "Muerte Black Widow", "Loki y el teseracto"]
+    
 
 function llenarEntries(){
     $('#container-entries-list').html('')
@@ -27,3 +26,4 @@ function llenarEntries(){
     }
     
 }
+})

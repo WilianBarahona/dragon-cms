@@ -9,7 +9,6 @@ $(document).ready(function() {
     $('#btn-agregar-usuario').click(()=>{
         validarRegistro()
     })
-});
 
 var rol = ["Administrador", "Registrado", "No Registrado"]
 
@@ -124,3 +123,7 @@ function marcarInput(id, isValid){
     }
     return isValid
 }
+
+
+});
+
