@@ -1,19 +1,20 @@
 $(document).ready(()=>{
-    var entries = ["La muerte de Iron Man", "Marvel 4ta fase" , "La bruja escarlata", "Muerte Black Widow", "Loki y el teseracto"]
-    llenarEntries(entries)
-
+    llenarEntries()
+    
     $('#btn-new-entry').click(()=>{
         $('#container-entries').html('')
         $('#script').html('')
-
+        
         $('#container-entries').load('templates/pages/new-entrie.html')
         $('#script').append(`
-            <script src="js/controllers/new-entrie.js"></script>
+        <script src="js/controllers/new-entrie.js"></script>
         `)
     })
 })
 
-function llenarEntries(entries){
+var entries = ["La muerte de Iron Man", "Marvel 4ta fase" , "La bruja escarlata", "Muerte Black Widow", "Loki y el teseracto"]
+
+function llenarEntries(){
     $('#container-entries-list').html('')
     for (let i = 0; i < entries.length; i++) {
         $('#container-entries-list').append(`

@@ -2,50 +2,62 @@
   "data":[
       {"id":"1",
        "name":"wilian",
+       "email":"email@email.com",
        "rol":"Administrador"
       },
       {"id":"2",
         "name":"Ana",
+        "email":"email@email.com",
         "rol":"Administrador"
        },
        {"id":"2",
         "name":"Raquel",
+        "email":"email@email.com",
         "rol":"Administrador"
        },
        {"id":"4",
         "name":"Nils",
+        "email":"email@email.com",
         "rol":"Registrado"
        },
        {"id":"5",
         "name":"Norton",
+        "email":"email@email.com",
         "rol":"Registrado"
        },
        {"id":"5",
         "name":"Lou",
+        "email":"email@email.com",
         "rol":"No registrado"
        },
        {"id":"5",
         "name":"Ducker",
+        "email":"email@email.com",
         "rol":"Registrado"
        },
        {"id":"5",
         "name":"Jeger",
+        "email":"email@email.com",
         "rol":"Administrador"
        },
        {"id":"5",
         "name":"Le Provost",
+        "email":"email@email.com",
         "rol":"Administrador"
        },
        {"id":"5",
         "name":"Antonius",
+        "email":"email@email.com",
         "rol":"Administrador"
        },
        {"id":"5",
         "name":"George",
+        "email":"email@email.com",
         "rol":"Administrador"
        },
        {"id":"5",
         "name":"Winnah",
+        "email":"email@email.com",
         "rol":"Administrador"
        }
   ]

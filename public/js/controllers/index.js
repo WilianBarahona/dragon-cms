@@ -52,39 +52,42 @@
 // Carga de datos con AJAX en el sidebard
   
 $('#btn-sidebar-files').click(()=>{
-  $('#container').html('')
-  $('#script').html('')
-  
-  $('#container').load('templates/pages/file-bank.html')
-  $('#script').append(`
-    <script src="js/controllers/file-bank.js"></script>
-  `)
+    $('#container').html('')
+    $('#script').html('')
+    
+    $('#container').load('templates/pages/file-bank.html')
+    $('#script').append(`
+      <script src="js/controllers/file-bank.js"></script>
+    `)
 })
 
 $('#btn-sidebar-pages').click(()=>{
-  $('#container').html('')
-  $('#script').html('')
-  
-  $('#container').load('templates/pages/pages.html')
-  $('#script').append(`
-    <script src="js/controllers/pages.js"></script>
-  `)
+    $('#container').html('')
+    $('#script').html('')
+    
+    $('#container').load('templates/pages/pages.html')
+    $('#script').append(`
+      <script src="js/controllers/pages.js"></script>
+    `)
 })
 
 $('#btn-sidebar-entries').click(()=>{
-  $('#container').html('')
-  $('#script').html('')
-  
-  $('#container').load('templates/pages/entries.html')
-  $('#script').append(`
-    <script src="js/controllers/entries.js"></script>
-  `)
+    $('#container').html('')
+    $('#script').html('')
+    
+    $('#container').load('templates/pages/entries.html')
+    $('#script').append(`
+      <script src="js/controllers/entries.js"></script>
+    `)
 })
 
+$('#btn-sidebar-users').click(()=>{
+    $('#container').html('')
+    $('#script').html('')
+    
+    $('#container').load('templates/pages/users.html')
+    $('#script').append(`
+      <script src="js/controllers/users.js"></script>
+    `)
+})
 
-// Toggle the side navigation
-$("#btn-sidebar-css").on('click', function(e) {
-  $("body").toggleClass("sidebar-toggled");
-  $(".sidebar").toggleClass("toggled");
-  $('.sidebar .collapse').collapse('hide');
-});

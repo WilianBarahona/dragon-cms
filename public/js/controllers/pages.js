@@ -1,19 +1,20 @@
 $(document).ready(()=>{
-    var pages = ["Acerca de", "Contactos", "Informacion", "Derechos reservador", "Terminos y condiciones"]
-    llenarPages(pages)
-
+    llenarPages()
+    
     $('#btn-new-page').click(()=>{
         $('#container-paginas').html('')
         $('#script').html('')
-
+        
         $('#container-paginas').load('templates/pages/new-page.html')
         $('#script').append(`
-            <script src="js/controllers/new-page.js"></script>
+        <script src="js/controllers/new-page.js"></script>
         `)
     })
 })
 
-function llenarPages(pages){
+var pages = ["Acerca de", "Contactos", "Informacion", "Derechos reservador", "Terminos y condiciones"]
+
+function llenarPages(){
     $('#container-pages').html('')
     for (let i = 0; i < pages.length; i++) {
         $('#container-pages').append(`

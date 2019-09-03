@@ -16,6 +16,11 @@
         margin-top:1px;
     }
 
+    td{
+        color:color(gray-700);
+        box-sizing: none;
+    }
+
     .btn-success{
         font-size: .9rem;
         border-color:color(primary);
@@ -30,6 +35,23 @@
         color: color(gray-100);
         background-color:color(primary-hover);
         border-color:colo(primary-hover);
+    }
+
+    .accion{
+        .btn{
+            padding: 0;
+            border: 0;
+            margin: 0;
+            box-shadow: none!important;
+
+        }
+        .btn-edit{
+            color:color(green)!important; 
+            margin-right: 9px;
+        }
+        .btn-delete{
+            color:color(redIsInvalid)!important;
+        }
     }
 
 }
