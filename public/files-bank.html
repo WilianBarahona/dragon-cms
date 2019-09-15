@@ -154,51 +154,50 @@
 
        <!-- Container ==> El contenido se llenara dinamicamente -->
        <div id="container" class="container-fluid">
-            <div id="container-paginas" class="row pages">
-                <!-- Entradas del blog pagina por defecto -->
+         <!-- Inicio File Bank -->
+        <div class="file-bank">
+            <!-- Inicio Navbar filebank -->
+            <div class="row">
                 <div class="col-12">
-                    <div class="card card-body">
-                        <h4>Entradas del blog</h4>
-                        <hr>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, recusandae?</p>
-                    </div>
+                    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-file-bank" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <i class="fas fa-angle-down arrow"></i>
+                        </button>
+                        <span class="navbar-toggler mr-auto">Banco de archivos</span>
+                        <div class="collapse navbar-collapse" id="navbar-file-bank" >
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item">
+                                    <a id="btn-file-bank-all" class="nav-link">Todos</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a id="btn-file-bank-images" class="nav-link">Imagenes</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a id="btn-file-bank-videos" class="nav-link">Videos</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a id="btn-file-bank-others" class="nav-link">Otros</a>
+                                </li>  
+                            </ul>
+                            <form class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+                            <button class="btn btn-success my-2 my-sm-0" type="button">Buscar</button>
+                            </form>
+                        </div>
+                    </nav>
                 </div>
-            
-                <!-- Entradas creadas por el usuario -->
                 <div class="col-12">
-                    <div class="card card-body">
-                    <div class="row">
-                        <div class="col-12">
-                            <h4>Paginas</h4>
-                            <hr>
-                        </div>
-                        <div class="col-12">
-                            <button id="btn-new-page" type="button" class="btn btn-success">Añadir pagina</button>
-                        </div>
-                    </div>
-                    <div id="container-pages" class="row mt-3">
-                        <!-- Inicio Page -->
-                        <!-- <div class="col-12">
-                          <div class="row">
-                            <div class="col-8 page-info">
-                                <h5>Acerca de</h5>
-                                <p class="font-08rem"><span class="fas fa-history"></span>hace 8meses</p>
-                            </div>
-                            <div class="col-4 accion">
-                                <button type="button" class="btn btn-default btn-sm btn-view"><span class="fas fa-external-link-alt view"></span></button>
-                                <button type="button" class="btn btn-default btn-sm btn-edit"><span class="far fa-edit edit"></span></button>
-                                <button type="button" class="btn btn-default btn-sm btn-delete"><span class="far fa-trash-alt trash"></span></button>
-                            </div>
-                            <div class="col-12">
-                              <hr>
-                            </div>
-                          </div>   
-                        </div> -->
-                        <!-- Fin Page -->
-                    </div>
-                    </div>
+                    <button type="button" class="btn btn-success mt-4">Añadir archivo</button>
                 </div>
-             </div>
+                </div>
+                <!-- Fin Navbar filebank -->
+        
+            <!-- Inicio cards files -->
+            <div class="cards-files">
+                <div id="container-files"  class="row mb-4"></div>
+            </div>
+        </div>
+        <!-- Fin File Bank -->
        </div>
        
      </div>
@@ -210,16 +209,48 @@
  </div>
  <!-- Fin del wrapper -->
 
+ <!-- Inicio Modal Ver Detalle-->
+<div class="modal fade" id="modal-detalle-archivo" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title w-100 font-weight-bold">Detalle de archivo</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body mx-3">
+                <div id="modal-view" class="row mt-1">
+                    <!-- <div id="modal-view-img" class="col-12">
+                        <img src="files-bank/img/10.jpg" class="img-modal-view" alt="">
+                    </div>
+                    <div class="col-12 codigo-badge mt-1">
+                        <span class="badge badge-success">Codigo:</span>
+                        <span><button type="button" class="btn btn-link btn-tippy">08987239238a2ff234</button></span>
+                    </div> -->
+                </div>
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+                <button id="btn-eliminar" class="btn btn-danger btn-eliminar">Eliminar</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Fin Modal de registro -->
+
  <!-- Script Vendor -->
  <script src="vendor/jquery/jquery.min.js"></script>
  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
+ <script src="vendor/tippy/popper.min.js"></script>
+ <script src="vendor/tippy/tippy.min.js"></script>
+ 
  <!-- Script -->
  <script src="js/controllers/sidebar.js"></script>
- <script src="js/controllers/pages.js"></script>
- 
+ <script src="js/controllers/files-bank.js"></script>
+
 </body>
 
 </html>

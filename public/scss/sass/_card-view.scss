@@ -52,6 +52,11 @@
         .btn-delete{
             color:color(redIsInvalid)!important;
         }
+
+        .btn-view{
+            color:color(secondary)!important; 
+            margin-right: 9px;
+        }
     }
 
 }

@@ -2,11 +2,13 @@ $(document).ready(()=>{
     CKEDITOR.replace('editor1', {
         uiColor: ''
     });
+})
 
-    $('#btn-create-entry').click(()=>{
-        validarRegistro()
-    })
-    
+
+$('#btn-create-entry').click(()=>{
+  validarRegistro()
+})
+  
 /*
 =====================================
 =============Validaciones===============
@@ -48,7 +50,3 @@ function marcarInput(id, isValid){
   }
   return isValid
 }
-  
-
-})
-  
