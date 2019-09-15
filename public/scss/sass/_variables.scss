@@ -18,6 +18,7 @@ $colors: (
     input-activate:#1e90ff,
     green: #28a745,
     redIsInvalid:#dc3545,
+    redIsInvalid-hover:#b82a38,
     footer:#24242D,
     footer-social:#42424C,
     card-blogger: #1b608d,
@@ -34,6 +35,13 @@ $colors: (
     gray-700: #6e707e,
     gray-800: #5a5c69,
     gray-900: #3a3b45,
+    pdf:#dc3545,
+    pdf-hover:#ad2533,
+    word:#2B569A,
+    word-hover:rgb(28, 59, 109),
+    archive:#e1910e,
+    archive-hover: #b17009,
+
 );
 
 $grid-breakpoints: (

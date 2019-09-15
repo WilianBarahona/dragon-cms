@@ -3,6 +3,50 @@
 
 .file-bank{
 
+    .pdf{
+        color: color(pdf);
+        &:hover{
+            color:color(pdf-hover);
+        }
+    }
+
+    .word{
+        color: color(word);
+        &:hover{
+            color:color(word-hover);
+        }
+    }
+
+    .archive{
+        color: color(archive);
+        &:hover{
+            color:color(archive-hover);
+        }
+    }
+
+    .audio{
+        color: color(word);
+        &:hover{
+            color:color(word-hover);
+        }
+    }
+
+    .alt{
+        color: color(archive);
+        &:hover{
+            color:color(archive-hover);
+        }
+    }
+
+    .file{
+        color: color(archive);
+        &:hover{
+            color:color(archive-hover);
+        }
+    }
+
+    
+
     .navbar-light .navbar-nav .nav-link {
         color: color(gray-300);
         font-weight: 500;
@@ -74,7 +118,7 @@
                 height: 110px;
                 border-radius: 5px;
                 @media #{$col-sm}{
-                    height: 160px;;
+                    height: 150px;;
                 }
             }
 
@@ -86,7 +130,8 @@
                     position: absolute;
                     top:0;
                     color:color(gray-200);
-                    margin: 2px 2px 2px 4px;
+                    left: 0;
+                    margin: 2px 4px 2px 4px;
                 }
             }
         }
