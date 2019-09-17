@@ -13,6 +13,7 @@
   <link href="vendor/magnific-popup/css/magnific-popup.css" rel="stylesheet">
   <link href="vendor/font-awesome/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="vendor/fonts/font-nunito.css" rel="stylesheet">
+  <link rel="stylesheet" href="vendor/video-js/video-js.min.css">
 
   <!-- Sytle  -->
   <link href="css/dist/minify/style.min.css" rel="stylesheet">
@@ -213,31 +214,17 @@
 <div class="modal fade" id="modal-detalle-archivo" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header text-center">
-                <h4 class="modal-title w-100 font-weight-bold">Detalle de archivo</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
+            <div id="modal-header" class="modal-header text-center"></div>
             <div class="modal-body mx-3">
-                <div id="modal-view" class="row mt-1">
-                    <!-- <div id="modal-view-img" class="col-12">
-                        <img src="files-bank/img/10.jpg" class="img-modal-view" alt="">
-                    </div>
-                    <div class="col-12 codigo-badge mt-1">
-                        <span class="badge badge-success">Codigo:</span>
-                        <span><button type="button" class="btn btn-link btn-tippy">08987239238a2ff234</button></span>
-                    </div> -->
-                </div>
+                <div id="modal-view" class="row mt-1"></div>
             </div>
-            <div class="modal-footer d-flex justify-content-center">
-                <button id="btn-eliminar" class="btn btn-danger btn-eliminar">Eliminar</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-            </div>
+            <div id="modal-footer" class="modal-footer d-flex justify-content-center"></div>
         </div>
     </div>
 </div>
 <!-- Fin Modal de registro -->
+
+<iframe id="my_iframe" style="display:none;"></iframe>
 
  <!-- Script Vendor -->
  <script src="vendor/jquery/jquery.min.js"></script>
@@ -246,11 +233,12 @@
  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
  <script src="vendor/tippy/popper.min.js"></script>
  <script src="vendor/tippy/tippy.min.js"></script>
+ <!-- <script src="vendor/video-js/video.min.js"></script> -->
  
  <!-- Script -->
  <script src="js/controllers/sidebar.js"></script>
  <script src="js/controllers/files-bank.js"></script>
-
+ 
 </body>
 
 </html>
