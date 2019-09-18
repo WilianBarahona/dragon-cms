@@ -1,5 +1,5 @@
 $(document).ready(()=>{
-    llenarTodos()
+    llenarTodos()  
 })   
 
 $('#btn-file-bank-all').click(()=>{
@@ -21,6 +21,7 @@ $('#btn-file-bank-others').click(()=>{
     $('#title-others').removeClass('mt-4')
     
 })  
+
 
 
 function llenarTodos(){
@@ -439,3 +440,43 @@ function viewZip(codigo){
     link.href = 'files-bank/pdf/pdf.pdf';
     link.click();
  }
+
+ $('#btn-agregar-archivo').click(()=>{
+    $('#modal-view-file').html('')
+    $('#modal-view-file').append(`
+    <form action='/upload' method="POST" enctype="multipart/form-data">
+        <div class="row">
+            <div class="col-12">
+                <div class="custom-file">
+                    <input name="file" type="file" class="custom-file-input" id="customFile">
+                    <label class="custom-file-label" for="customFile">Seleccionar Archivo</label>
+                </div>
+            </div>
+            <div class="col-12 mb-n2">
+                <hr>
+            </div>
+            <div class="col-12 text-center">
+                <button type="submit" class="btn btn-success">Subir Archivo</button>
+            </div>
+        </div>
+    </form>
+    `)
+
+    $('#modal-header-file').html('')
+    $('#modal-header-file').append(`
+        <h4 class="modal-title w-100 font-weight-bold">Subir Archivo</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    `)
+
+    $('#modal-subir-archivo').modal('show')
+
+    $(".custom-file-input").on("change", function() {
+       var fileName = $(this).val().split("\\").pop();
+       $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+   });
+   
+ })
+
+
