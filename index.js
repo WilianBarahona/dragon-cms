@@ -1,9 +1,14 @@
-var express = require('express');
-var fileUpload = require('express-fileupload')
-var app = express();
+'use strict'
+const express = require('express');
+const fileUpload = require('express-fileupload')
+const database = require('./modules/database')
 
-//Exponer una carpeta como publica para archivos estaticos
-app.use(express.static("public"));
+const app = express();
+
+//Carpeta publica
+app.use(express.static("private"));
+
+//Middlewares
 app.use(fileUpload())
 
 app.listen(3333, function(){
@@ -13,7 +18,7 @@ app.listen(3333, function(){
 app.post('/upload',(req,res) => {
     let file = req.files.file
     let categoria = ''
-    let ruta = './public/files-bank'
+    let ruta = './private/files-bank'
     let img = ['image/jpeg','image/png','image/svg+xml']
     let video = ['video/3gpp','video/mp4']
     let text = ['text/plain', 'text/csv', 'text/html']

@@ -51,10 +51,10 @@ $grid-breakpoints: (
   lg: 1024px
 );
 
-$bg-header: url("../../../img/bg-landing.jpg");
-$bg-login: url("../../../img/bg-login.jpg") no-repeat center center fixed;
-$gif-loader: url('../../../img/page-loader.gif') 50% 50% no-repeat rgb(249,249,249);
-$img-check: url('../../../img/check.svg');
+$bg-header: url('../img/bg-landing.jpg');
+$bg-login: url("../img/bg-login.jpg") no-repeat center center fixed;
+$gif-loader: url('../img/page-loader.gif') 50% 50% no-repeat rgb(249,249,249);
+$img-check: url('../img/check.svg');
 
 $col: "(max-widht: 576)";
 $col-sm:"(max-width: 768px)";

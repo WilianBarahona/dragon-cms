@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Dragon CMS</title>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+
+  <!-- Styles vendor -->
+  <link href="vendor/magnific-popup/css/magnific-popup.css" rel="stylesheet">
+  <link href="vendor/font-awesome/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="vendor/fonts/font-nunito.css" rel="stylesheet">
+
+  <!-- Sytle  -->
+  <link href="css/style.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+ <div id="wrapper">
+      <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+          <!-- Logo -->
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+          <div class="sidebar-brand-icon">
+              <i class="fas fa-dragon color-primary dragon"></i>
+          </div>
+          <div class="sidebar-brand-text ml-1">
+            <span>Dragon</span><span class="color-primary">CMS</span></div>
+        </a>
+
+        <hr class="sidebar-divider my-0">
+        <!-- Item Simple -->
+        <li class="nav-item">
+          <a href="index.html" class="nav-link">
+            <i class="fas fa-home fa-fw"></i>
+            <span><b>Inicio</b></span></a>
+        </li>
+
+        <hr class="sidebar-divider">
+        <!-- Encabezado -->
+        <div class="sidebar-heading">
+          Sitio Web
+        </div>
+
+        <!-- Item collapsado-->
+        <li class="nav-item">
+          <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapse-item-1" aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-pen fa-fw"></i>
+            <span>Sitio Web</span>
+          </a>
+          <div id="collapse-item-1" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+              <h6 class="collapse-header">Opciones:</h6>
+              <a href="pages.html" class="collapse-item">Paginas</a>
+              <a href="entries.html" class="collapse-item">Entradas</a>
+              <a href="comments.html" class="collapse-item">Comentarios</a>
+            </div>
+          </div>
+        </li>
+        <hr class="sidebar-divider d-none d-md-block">
+
+          <!-- Encabezado -->
+        <div class="sidebar-heading">
+          Gestion
+        </div>
+
+        <!-- Item collapsado-->
+        <li class="nav-item">
+          <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapse-item-2" aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-user-cog fa-fw"></i>
+            <span>Administracion</span>
+          </a>
+          <div id="collapse-item-2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+              <h6 class="collapse-header">Opciones:</h6>
+              <a href="files-bank.html" class="collapse-item">Banco de archivos</a>
+              <a href="menus.html" class="collapse-item">Menus</a>
+              <a href="breadcrumbs.html" class="collapse-item">Breadcrumbs</a>
+              <a href="themes.html" class="collapse-item">Temas</a>
+              <a href="users.html" class="collapse-item">Usuarios</a>
+              <a href="roles.html" class="collapse-item">Roles</a>
+            </div>
+          </div>
+        </li>
+        <hr class="sidebar-divider d-none d-md-block">
+
+        <!-- Encabezado -->
+        <div class="sidebar-heading">
+          Ajustes
+        </div>
+
+        <!-- Item collapsado-->
+        <li class="nav-item">
+          <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapse-item-3" aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Configuraciones</span>
+          </a>
+          <div id="collapse-item-3" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+              <h6 class="collapse-header">Opciones:</h6>
+              <a href="site-settings.html" class="collapse-item">Configuracion del sitio</a>
+            </div>
+          </div>
+        </li>
+        <hr class="sidebar-divider d-none d-md-block">
+
+
+        <!-- Button para ocultar o mostrar el SideBar) -->
+        <div class="text-center d-none d-md-inline">
+          <button class="rounded-circle border-0" id="sidebarToggle"></button>
+        </div>
+
+      </ul>
+      <!-- Fin del Sidebar -->
+
+
+   <!-- Contenido -->
+   <div id="content-wrapper" class="d-flex flex-column">
+      <div id="content">
+          <!-- Inicio del Navbar -->
+          <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+            <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+              <i class="fa fa-bars"></i>
+            </button>
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item dropdown no-arrow">
+                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <!-- Incluir la clase d-none en caso de querer ocultar el nombre para pantallas <= md -->
+                  <span class="mr-2 d-lg-inline text-gray-600 small"><b>Wilian Barahona</b></span>
+                  <img class="img-profile rounded-circle" src="img/user.jpg">
+                </a>
+                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                      <a class="dropdown-item">
+                        <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                        Perfil
+                      </a>
+                      <a class="dropdown-item">
+                        <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                        Configuraciones
+                      </a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item">
+                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                        Cerrar sesion
+                      </a>
+                </div>
+              </li>
+            </ul>
+          </nav>
+          <!-- Fin del NavBar -->
+
+       <!-- Container ==> El contenido se llenara dinamicamente -->
+       <div id="container" class="container-fluid"></div>
+       
+     </div>
+     <!-- Fin Contenido -->
+    
+   </div>
+   <!-- Fin del contenido del wrapper-->
+
+ </div>
+ <!-- Fin del wrapper -->
+
+ <!-- Script Vendor -->
+ <script src="vendor/jquery/jquery.min.js"></script>
+ <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+ <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+ <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+ <!-- Script -->
+ <script src="js/controllers/sidebar.js"></script>
+</body>
+
+</html>
+
+ 
