@@ -444,7 +444,7 @@ function viewZip(codigo){
  $('#btn-agregar-archivo').click(()=>{
     $('#modal-view-file').html('')
     $('#modal-view-file').append(`
-    <form action='/upload' method="POST" enctype="multipart/form-data">
+    <form action='/files' method="POST" enctype="multipart/form-data">
         <div class="row">
             <div class="col-12">
                 <div class="custom-file">
