@@ -1,5 +1,6 @@
 'use strict'
 const File = require('../models/files')
+const mt = require('media-thumbnail')
 
 function getFile(req, res){
     File.findById(req.params.id)
@@ -31,9 +32,12 @@ function updateFile(req, res){
         {
             name: req.body.name,
             url: req.body.url,
+            description: req.body.description,
             category: req.body.category,
+            date: req.body.date,
             mimeType: req.body.mimeType,
-            size: req.body.size
+            size: req.body.size,
+            thumbnail: req.body.thumbnail,
         }
     )
     .then(data => {
@@ -66,6 +70,7 @@ function createFile(req, res){
     let  mimeType = file.mimetype //mimeType => tipo de archivo a subir
 
     let ruta = './private/files-bank' // ruta donde guardar
+    let url = `/files-bank/` //url para acceder al archivo 
     let categoria = ''
 
     let files = {
@@ -82,6 +87,7 @@ function createFile(req, res){
         if(img == mimeType){
             categoria = 'image'
             ruta = `${ruta}/images/${file.name}`
+            url = `${url}/images/${file.name}`
         }
     });
 
@@ -90,6 +96,7 @@ function createFile(req, res){
         if(video == mimeType){
             categoria = 'video'
             ruta = `${ruta}/videos/${file.name}`
+            url = `${url}/videos/${file.name}`
         }
     });
 
@@ -98,6 +105,7 @@ function createFile(req, res){
         if(audio == mimeType){
             categoria = 'audio'
             ruta = `${ruta}/audios/${file.name}`
+            url = `${url}/audios/${file.name}`
         }
     });
 
@@ -106,6 +114,7 @@ function createFile(req, res){
         if(word == mimeType){
             categoria = 'word'
             ruta = `${ruta}/word/${file.name}`
+            url = `${url}/word/${file.name}`
         }
      });
 
@@ -114,6 +123,7 @@ function createFile(req, res){
         if(text == mimeType){
             categoria = 'text'
             ruta = `${ruta}/text/${file.name}`
+            url = `${url}/text/${file.name}`
         }
     });
 
@@ -122,6 +132,7 @@ function createFile(req, res){
         if(archive == mimeType){
             categoria = 'compressed'
             ruta = `${ruta}/compressed/${file.name}`
+            url = `${url}/compressed/${file.name}`
         }
     });
 
@@ -129,86 +140,112 @@ function createFile(req, res){
     if(mimeType == 'application/pdf'){
         categoria = 'pdf'
         ruta = `${ruta}/pdf/${file.name}`
+        url = `${url}/pdf/${file.name}`
     }
 
     if(categoria == ''){
         categoria = 'others'
         ruta = `${ruta}/others/${file.name}`
+        url = `${url}/others/${file.name}`
     }
 
     switch(categoria){
         case 'image':
             file.mv(ruta ,err => {
                 if(err) return res.status(500).send({ message : err , err: 1})
-                saveFile(res, file, categoria, ruta)
+                saveFile(res, req, file, categoria, url)
             })
             break
         case 'video':
             file.mv(ruta ,err => {
                 if(err) return res.status(500).send({ message : err , err: 1})
-                 saveFile(res, file, categoria, ruta)
+                 saveFile(res, req, file, categoria, url)
             })
             break
         case 'audio':
             file.mv(ruta ,err => {
                 if(err) return res.status(500).send({ message : err , err: 1})
-                 saveFile(res, file, categoria, ruta)
+                 saveFile(res, req, file, categoria, url)
             })
             break
         case 'word':
             file.mv(ruta ,err => {
                 if(err) return res.status(500).send({ message : err , err: 1})
-                 saveFile(res, file, categoria, ruta)
+                 saveFile(res, req, file, categoria, url)
             })
             break
         case 'text':
             file.mv(ruta ,err => {
                 if(err) return res.status(500).send({ message : err , err: 1})
-                 saveFile(res, file, categoria, ruta)
+                 saveFile(res, req, file, categoria, url)
             })
             break
         case 'compressed':
             file.mv(ruta ,err => {
                 if(err) return res.status(500).send({ message : err , err: 1})
-                 saveFile(res, file, categoria, ruta)
+                 saveFile(res, req, file, categoria, url)
             })
             break
         case 'pdf':
             file.mv(ruta ,err => {
                 if(err) return res.status(500).send({ message : err , err: 1})
-                 saveFile(res, file, categoria, ruta)
+                 saveFile(res, req, file, categoria, url)
             })
             break
         case 'others':
             file.mv(ruta ,err => {
                 if(err) return res.status(500).send({ message : err , err: 1})
-                 saveFile(res, file, categoria, ruta)
+                 saveFile(res, req, file, categoria, url)
             })
             break
     }
 }
 
-function saveFile(res, file, categoria, ruta){
+function saveFile(res, req, file, categoria, ruta){
+    let thumbnail = ''
+    let thumbnailUrl = `/files-bank/videos/thumbnails/tb-${file.name}.png`
+   
     File.find({name: file.name})
     .then(data =>{
        if(data.length != 0) return res.send({message: 'El archivo ya existe', err: 1})
        let fs = new File({
                 name: file.name,
                 url: ruta,
+                description: req.body.description,
                 category: categoria,
                 mimeType: file.mimetype,
-                size: file.size
+                size: file.size,
+                thumbnail: thumbnailUrl
             })
     
-        fs.save()
-        .then(file=>{
-            res.send(file)
-            res.end()
-        })
-        .catch(err=>{
-            res.send(err)
-            res.end()
-        })
+        if(categoria == 'video'){
+            thumbnail = `./private/files-bank/videos/thumbnails/tb-${file.name}.png`
+            mt.forVideo(
+                `./private/files-bank/videos/${file.name}`,
+                    thumbnail,{
+                    width: 200
+                }).then(()=>{
+                    fs.save()
+                    .then(file=>{
+                        res.send(file)
+                        res.end()
+                    })
+                    .catch(err=>{
+                        res.send(err)
+                        res.end()
+                    })
+                })
+            }else{
+                fs.save()
+                .then(file=>{
+                    res.send(file)
+                    res.end()
+                })
+                .catch(err=>{
+                    res.send(err)
+                    res.end()
+                })
+            }
     })
     .catch(err => {
         res.send(err)

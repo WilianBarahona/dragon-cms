@@ -13,6 +13,7 @@
   <link href="vendor/magnific-popup/css/magnific-popup.css" rel="stylesheet">
   <link href="vendor/font-awesome/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="vendor/fonts/font-nunito.css" rel="stylesheet">
+  <link rel="stylesheet" href="vendor/jquery-confirm/css/jquery-confirm.css">
   <link rel="stylesheet" href="vendor/video-js/video-js.min.css">
 
   <!-- Sytle  -->
@@ -21,6 +22,8 @@
 
 <body>
 
+ <div class="loader"></div>
+ 
  <div id="wrapper">
       <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
           <!-- Logo -->
@@ -195,7 +198,17 @@
         
             <!-- Inicio cards files -->
             <div class="cards-files">
-                <div id="container-files"  class="row mb-4"></div>
+                <div id="container-files"  class="row mb-4">
+                  <div class="col-12">
+                      <div id="container-images" class="row"></div>
+                  </div>
+                  <div id="mt-videos" class="col-12">
+                      <div id="container-videos" class="row"></div>
+                  </div>
+                  <div id="mt-others" class="col-12">
+                    <div id="container-others" class="row"></div>
+                </div>
+                </div>
             </div>
         </div>
         <!-- Fin File Bank -->
@@ -236,11 +249,13 @@
   </div>
 </div>
 <!-- Fin Modal de registro -->
-
 <iframe id="my_iframe" style="display:none;"></iframe>
+
 
  <!-- Script Vendor -->
  <script src="vendor/jquery/jquery.min.js"></script>
+ <script src="vendor/jquery/jquery.form.min.js"></script>
+ <script src="vendor/jquery-confirm/js/jquery-confirm.js"></script>
  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>

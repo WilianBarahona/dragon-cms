@@ -14,6 +14,8 @@ const app = express();
 
 //Middlewares
 app.use(express.static("private")); //Carpeta publica
+app.use(express.static("public")); //Carpeta publica
+
 app.use(fileUpload())
 app.use(bodyParser.urlencoded({ extended: false })) 
 app.use(bodyParser.json())
