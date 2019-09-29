@@ -123,68 +123,137 @@ function addItemVideo(video){
 
 
 function llenarOtros(){
+    let audio = []
+    let word = []
+    let text = []
+    let compressed = []
+    let pdf = []
+    let others = []
     $('#container-others').html(`
         <div class="col-12">
             <h5>Others</h5>
             <hr>
         </div>
     `)
-    
-    // for (let i = 0; i < 5; i++) {
-    //     $('#container-files').append(`
-    //         <div onclick="detallePdf(${i+1})" class="col-6 col-md-3 col-lg-2 tarjeta text-center">
-    //             <i class="far fa-file-pdf fa-7x pdf"></i> 
-    //             <p>doc lorem...</p>
-    //         </div>
-    //     `) 
-    // }
+    let settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "/files",
+        "method": "GET",
+        "dataType": "json",
+        "headers": {
+          "content-type": "application/x-www-form-urlencoded"
+        }
+      }
 
-    // for (let i = 0; i < 5; i++) {
-    //     $('#container-files').append(`
-    //         <div onclick="detalleWord(${i+1})" class="col-6 col-md-3 col-lg-2 tarjeta text-center">
-    //             <i class="far fa-file-word fa-7x word"></i> 
-    //             <p>doc lorem...</p>
-    //         </div>
-    //     `) 
-    // }
+    $.ajax(settings).done((res)=>{
+        res.forEach(elem => {
+            if(elem.category == 'audio'){
+                audio.push(elem)
+            }
+            if(elem.category == 'word'){
+                word.push(elem)
+            }
+            if(elem.category == 'compressed'){
+                compressed.push(elem)
+            }
+            if(elem.category == 'text'){
+                text.push(elem)
+            }
+            if(elem.category == 'pdf'){
+                pdf.push(elem)
+            }
+            if(elem.category == 'others'){
+                others.push(elem)
+            }
+        });
 
-    // for (let i = 0; i < 5; i++) {
-    //     $('#container-files').append(`
-    //         <div onclick="detalleZip(${i+1})" class="col-6 col-md-3 col-lg-2 tarjeta text-center">
-    //             <i class="far fa-file-archive fa-7x archive"></i>   
-    //             <p>doc lorem...</p> 
-    //         </div>
-    //     `) 
-    // }
+        pdf.forEach(elem => {
+            addItemPdf(elem)
+        });
+        
+        word.forEach(elem => {
+            addItemWord(elem)
+        });
+        
+        compressed.forEach(elem => {
+            addItemCompressed(elem)
+        });
 
-    // for (let i = 0; i < 5; i++) {
-    //     $('#container-files').append(`
-    //         <div onclick="detalleAudio(${i+1})" class="col-6 col-md-3 col-lg-2 tarjeta text-center">
-    //             <i class="far fa-file-audio fa-7x audio"></i> 
-    //             <p>doc lorem...</p>
-    //         </div>
-    //     `) 
-    // }
+        audio.forEach(elem => {
+            addItemAudio(elem)
+        });
 
-    // for (let i = 0; i < 5; i++) {
-    //     $('#container-files').append(`
-    //         <div onclick="detalleTxt(${i+1})" class="col-6 col-md-3 col-lg-2 tarjeta text-center">
-    //             <i class="far fa-file-alt fa-7x alt"></i> 
-    //             <p>doc lorem...</p>
-    //         </div>
-    //     `) 
-    // }
+        text.forEach(elem => {
+            addItemText(elem)
+        });
 
-    // for (let i = 0; i < 5; i++) {
-    //     $('#container-files').append(`
-    //         <div onclick="detalleArchivo(${i+1})" class="col-6 col-md-3 col-lg-2 tarjeta text-center">
-    //             <i class="far fa-file fa-7x file"></i>  
-    //             <p>doc lorem...</p>
-    //         </div>
-    //     `) 
-    // }
-    
+        others.forEach(elem => {
+            addItemOther(elem)
+        });  
+    }) 
 }
+
+function addItemAudio(elem){
+    let name = (elem.name.toLowerCase(elem.name)).substr(0,13) + '...'
+    $('#container-others').append(`
+        <div onclick="detalleAudio('${elem._id}')" class="col-6 col-md-3 col-lg-2 tarjeta text-center">
+            <i class="far fa-file-audio fa-7x audio"></i> 
+            <p>${name}</p>
+        </div>
+    `) 
+}
+
+function addItemWord(elem){
+    let name = (elem.name.toLowerCase(elem.name)).substr(0,13) + '...'
+    $('#container-others').append(`
+        <div onclick="detalleWord('${elem._id}')" class="col-6 col-md-3 col-lg-2 tarjeta text-center">
+            <i class="far fa-file-word fa-7x word"></i> 
+            <p>${name}</p>
+        </div>
+    `) 
+}
+
+function addItemText(elem){
+    let name = (elem.name.toLowerCase(elem.name)).substr(0,13) + '...'
+    $('#container-others').append(`
+        <div onclick="detalleTxt('${elem._id}')" class="col-6 col-md-3 col-lg-2 tarjeta text-center">
+            <i class="far fa-file-alt fa-7x alt"></i>
+            <p>${name}</p>
+        </div>
+    `) 
+}
+
+function addItemCompressed(elem){
+    let name = (elem.name.toLowerCase(elem.name)).substr(0,13) + '...'
+    $('#container-others').append(`
+        <div onclick="detalleZip('${elem._id}')" class="col-6 col-md-3 col-lg-2 tarjeta text-center">
+            <i class="far fa-file-archive fa-7x archive"></i>   
+            <p>${name}</p>
+        </div>
+    `) 
+}
+
+function addItemPdf(elem){
+    let name = (elem.name.toLowerCase(elem.name)).substr(0,13) + '...'
+    $('#container-others').append(`
+        <div onclick="detallePdf('${elem._id}')" class="col-6 col-md-3 col-lg-2 tarjeta text-center">
+            <i class="far fa-file-pdf fa-7x pdf"></i> 
+            <p>${name}</p>
+        </div>
+    `) 
+}
+
+function addItemOther(elem){
+    let name = (elem.name.toLowerCase(elem.name)).substr(0,13) + '...'
+    $('#container-others').append(`
+        <div onclick="detalleArchivo('${elem._id}')" class="col-6 col-md-3 col-lg-2 tarjeta text-center">
+            <i class="far fa-file fa-7x file"></i>  
+            <p>${name}</p>
+        </div>
+    `) 
+}
+
 
 function limpiarContainer(){
     $('#container-images').html('')
@@ -205,16 +274,17 @@ function detalleImagen(codigo){
       }
 
     $.ajax(settings).done((res)=>{
+        let name = res.name.toLowerCase(res.name)
         $("#modal-view").html('')
         $("#modal-view").append(`
             <div id="modal-view-img" class="col-12 mb-1">
                 <img src="${res.url}" class="img-modal-view" alt="">
             </div>
             <div class="col-12 mb-n2">
-                <p>Nombre: ${res.name}</p>
+                <p><b>Nombre:</b> ${name}</p>
             </div>
             <div id="description-${res._id}" class="col-12 mb-n2">
-                <p>Descripción: ${res.description}<p>
+                <p><b>Descripción:</b> ${res.description}<p>
             </div>
             <div class="col-12 codigo-badge mt-1">
                 <span class="badge badge-success">Codigo:</span>
@@ -256,6 +326,7 @@ function detalleVideo(codigo){
       }
 
     $.ajax(settings).done((res)=>{
+        let name = res.name.toLowerCase(res.name)
         $("#modal-view").html('')
         $("#modal-view").append(`
             <div class="col-12 mb-2 text-center">
@@ -264,10 +335,10 @@ function detalleVideo(codigo){
                 </video>
             </div>
             <div class="col-12 mb-n2">
-                <p>Nombre: ${res.name}</p>
+                <p><b>Nombre:</b> ${name}</p>
             </div>
             <div id="description-${res._id}" class="col-12 mb-n2">
-                <p>Descripción: ${res.description}<p>
+                <p><b>Descripción:</b> ${res.description}<p>
             </div>
             <div class="col-12 codigo-badge mt-1">
                 <span class="badge badge-success">Codigo:</span>
@@ -296,194 +367,336 @@ function detalleVideo(codigo){
 }
 
 function detalleAudio(codigo){
-    $("#modal-view").html('')
-    $("#modal-view").append(`
-        <div class="col-12 mb-2 text-center">
-            <audio id="audio-${codigo}" controls style="width: 100%;">
-                <source src="files-bank/audios/audio.mp3" type="audio/mpeg">
-            </audio>
-        </div>
-        <div class="col-12 codigo-badge mt-1">
-            <span class="badge badge-success">Codigo:</span>
-            <span class="span-codigo">08982834y=eff787-${codigo}</span>
-        </div>
-    `)
+    let settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": `/files/${codigo}`,
+        "method": "GET",
+        "dataType": "json",
+        "headers": {
+          "content-type": "application/x-www-form-urlencoded"
+        }
+      }
 
-    $('#modal-header').html('')
-    $('#modal-header').append(`
-        <h4 class="modal-title w-100 font-weight-bold">Detalle de archivo</h4>
-        <button onclick="audioPause()" type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    `)
+    $.ajax(settings).done((res)=>{
+        let name = res.name.toLowerCase(res.name)
+        $("#modal-view").html('')
+        $("#modal-view").append(`
+            <div class="col-12 mb-2 text-center">
+                <audio id="audio-${res._id}" controls style="width: 100%;">
+                    <source src="${res.url}" type="${res.mimeType}">
+                </audio>
+            </div>
+            <div class="col-12 mb-n2">
+                <p><b>Nombre:</b> ${name}</p>
+            </div>
+            <div id="description-${res._id}" class="col-12 mb-n2">
+                <p><b>Descripción:</b> ${res.description}<p>
+            </div>
+            <div class="col-12 codigo-badge mt-1">
+                <span class="badge badge-success">Codigo:</span>
+                <span class="span-codigo">${res._id}</span>
+            </div>
+        `)
 
-    $('#modal-footer').html('')
-    $('#modal-footer').append(`
-        <button id="btn-eliminar" class="btn btn-danger btn-eliminar">Eliminar</button>
-        <button onclick="audioPause()" type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-    `)
+        $('#modal-header').html('')
+        $('#modal-header').append(`
+            <h4 class="modal-title w-100 font-weight-bold">Detalle de archivo</h4>
+            <button onclick="audioPause()" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        `)
 
-    $('#modal-detalle-archivo').modal('show')
+        $('#modal-footer').html('')
+        $('#modal-footer').append(`
+            <button id="btn-aceptar-${res._id}" onclick="editFile('${res._id}')" class="btn btn-primary d-none">Aceptar</button>
+            <button id="btn-editar-${res._id}"  onclick="fillContent('${res._id}')" class="btn btn-success">Editar</button>
+            <button id="btn-eliminar-${res._id}"  onclick="deleteFile('${res._id}','others')" class="btn btn-danger btn-eliminar">Eliminar</button>
+            <button onclick="audioPause()" type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        `)
+
+        $('#modal-detalle-archivo').modal('show')
+    })
+    
 }
 
 function detallePdf(codigo){
-    $("#modal-view").html('')
-    $("#modal-view").append(`
-        <div onclick="viewPdf(${codigo})" class="col-4 mb-2 text-center">
-            <i class="far fa-file-pdf fa-7x pdf"></i> 
-        </div>
-        <div class="col-8">
-            <p>Nombre: pdf-lorem-ipsum-dolor.pdf</p>
-        </div>
-        <div class="col-12 codigo-badge mt-1">
-            <span class="badge badge-success">Codigo:</span>
-            <span class="span-codigo">08982834y=eff787-${codigo}</span>
-        </div>
-    `)
+    let settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": `/files/${codigo}`,
+        "method": "GET",
+        "dataType": "json",
+        "headers": {
+          "content-type": "application/x-www-form-urlencoded"
+        }
+      }
 
-    $('#modal-header').html('')
-    $('#modal-header').append(`
-        <h4 class="modal-title w-100 font-weight-bold">Detalle de archivo</h4>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    `)
+    $.ajax(settings).done((res)=>{
+        let name = res.name.toLowerCase(res.name)
+        $("#modal-view").html('')
+        $("#modal-view").append(`
+            <div onclick="viewPdf('${res.url}')" class="col-4 mb-2 text-center">
+                <i class="far fa-file-pdf fa-7x pdf"></i> 
+            </div>
+            <div class="col-8">
+                <div class="row">
+                    <div class="col-12 mb-n2">
+                        <p><b>Nombre:</b> ${name}</p>
+                    </div>
+                    <div id="description-${res._id}" class="col-12 mb-n2">
+                        <p><b>Descripción:</b> ${res.description}<p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 codigo-badge mt-1">
+                <span class="badge badge-success">Codigo:</span>
+                <span class="span-codigo">${res._id}</span>
+            </div>
+        `)
 
-    $('#modal-footer').html('')
-    $('#modal-footer').append(`
-        <button id="btn-eliminar" class="btn btn-danger btn-eliminar">Eliminar</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-    `)
+        $('#modal-header').html('')
+        $('#modal-header').append(`
+            <h4 class="modal-title w-100 font-weight-bold">Detalle de archivo</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        `)
 
-    $('#modal-detalle-archivo').modal('show')
+        $('#modal-footer').html('')
+        $('#modal-footer').append(`
+            <button id="btn-aceptar-${res._id}" onclick="editFile('${res._id}')" class="btn btn-primary d-none">Aceptar</button>
+            <button id="btn-editar-${res._id}"  onclick="fillContent('${res._id}')" class="btn btn-success">Editar</button>
+            <button id="btn-eliminar-${res._id}"  onclick="deleteFile('${res._id}','others')" class="btn btn-danger btn-eliminar">Eliminar</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        `)
+
+        $('#modal-detalle-archivo').modal('show')
+    })
+    
 }
 
 function detalleWord(codigo){
-    $("#modal-view").html('')
-    $("#modal-view").append(`
-        <div onclick="viewWord(${codigo})" class="col-4 mb-2 text-center">
-            <i class="far fa-file-word fa-7x word"></i> 
-        </div>
-        <div class="col-8">
-            <p>Nombre: docx-lorem-ipsum-dolor.docx</p>
-        </div>
-        <div class="col-12 codigo-badge mt-1">
-            <span class="badge badge-success">Codigo:</span>
-            <span class="span-codigo">08982834y=eff787-${codigo}</span>
-        </div>
-    `)
+    let settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": `/files/${codigo}`,
+        "method": "GET",
+        "dataType": "json",
+        "headers": {
+          "content-type": "application/x-www-form-urlencoded"
+        }
+      }
 
-    $('#modal-header').html('')
-    $('#modal-header').append(`
-        <h4 class="modal-title w-100 font-weight-bold">Detalle de archivo</h4>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    `)
-
-    $('#modal-footer').html('')
-    $('#modal-footer').append(`
-        <button id="btn-eliminar" class="btn btn-danger btn-eliminar">Eliminar</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-    `)
-
-    $('#modal-detalle-archivo').modal('show')
+    $.ajax(settings).done((res)=>{
+        let name = res.name.toLowerCase(res.name)
+        $("#modal-view").html('')
+        $("#modal-view").append(`
+            <div onclick="viewWord('${res.url}','${res.name}')" class="col-4 mb-2 text-center">
+                <i class="far fa-file-word fa-7x word"></i> 
+            </div>
+            <div class="col-8">
+                <div class="row">
+                    <div class="col-12 mb-n2">
+                        <p><b>Nombre:</b> ${name}</p>
+                    </div>
+                    <div id="description-${res._id}" class="col-12 mb-n2">
+                        <p><b>Descripción:</b> ${res.description}<p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 codigo-badge mt-1">
+                <span class="badge badge-success">Codigo:</span>
+                <span class="span-codigo">${res._id}</span>
+            </div>
+        `)
+    
+        $('#modal-header').html('')
+        $('#modal-header').append(`
+            <h4 class="modal-title w-100 font-weight-bold">Detalle de archivo</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        `)
+    
+        $('#modal-footer').html('')
+        $('#modal-footer').append(`
+            <button id="btn-aceptar-${res._id}" onclick="editFile('${res._id}')" class="btn btn-primary d-none">Aceptar</button>
+            <button id="btn-editar-${res._id}"  onclick="fillContent('${res._id}')" class="btn btn-success">Editar</button>
+            <button id="btn-eliminar-${res._id}"  onclick="deleteFile('${res._id}','others')" class="btn btn-danger btn-eliminar">Eliminar</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        `)
+    
+        $('#modal-detalle-archivo').modal('show')
+    
+    })
 }
 
 function detalleZip(codigo){
-    $("#modal-view").html('')
-    $("#modal-view").append(`
-        <div onclick="viewZip(${codigo})" class="col-4 mb-2 text-center">
-            <i class="far fa-file-archive fa-7x archive"></i> 
-        </div>
-        <div class="col-8">
-            <p>Nombre: zip-lorem-ipsum-dolor.zip</p>
-        </div>
-        <div class="col-12 codigo-badge mt-1">
-            <span class="badge badge-success">Codigo:</span>
-            <span class="span-codigo">08982834y=eff787-${codigo}</span>
-        </div>
-    `)
+    let settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": `/files/${codigo}`,
+        "method": "GET",
+        "dataType": "json",
+        "headers": {
+          "content-type": "application/x-www-form-urlencoded"
+        }
+      }
 
-    $('#modal-header').html('')
-    $('#modal-header').append(`
-        <h4 class="modal-title w-100 font-weight-bold">Detalle de archivo</h4>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    `)
+    $.ajax(settings).done((res)=>{
+        let name = res.name.toLowerCase(res.name)
+        $("#modal-view").html('')
+        $("#modal-view").append(`
+            <div onclick="viewZip('${res.url}', '${res.name}')" class="col-4 mb-2 text-center">
+                <i class="far fa-file-archive fa-7x archive"></i> 
+            </div>
+            <div class="col-8">
+                <div class="row">
+                    <div class="col-12 mb-n2">
+                        <p><b>Nombre:</b> ${name}</p>
+                    </div>
+                    <div id="description-${res._id}" class="col-12 mb-n2">
+                        <p><b>Descripción:</b> ${res.description}<p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 codigo-badge mt-1">
+                <span class="badge badge-success">Codigo:</span>
+                <span class="span-codigo">${res._id}</span>
+            </div>
+        `)
+    
+        $('#modal-header').html('')
+        $('#modal-header').append(`
+            <h4 class="modal-title w-100 font-weight-bold">Detalle de archivo</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        `)
+    
+        $('#modal-footer').html('')
+        $('#modal-footer').append(`
+            <button id="btn-aceptar-${res._id}" onclick="editFile('${res._id}')" class="btn btn-primary d-none">Aceptar</button>
+            <button id="btn-editar-${res._id}"  onclick="fillContent('${res._id}')" class="btn btn-success">Editar</button>
+            <button id="btn-eliminar-${res._id}"  onclick="deleteFile('${res._id}','others')" class="btn btn-danger btn-eliminar">Eliminar</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        `)
+    
+        $('#modal-detalle-archivo').modal('show')
+    })
 
-    $('#modal-footer').html('')
-    $('#modal-footer').append(`
-        <button id="btn-eliminar" class="btn btn-danger btn-eliminar">Eliminar</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-    `)
-
-    $('#modal-detalle-archivo').modal('show')
 }
 
 function detalleTxt(codigo){
-    $("#modal-view").html('')
-    $("#modal-view").append(`
-        <div onclick="viewTxt(${codigo})" class="col-4 mb-2 text-center">
-            <i class="far fa-file-alt fa-7x alt"></i> 
-        </div>
-        <div class="col-8">
-            <p>Nombre: txt-lorem-ipsum-dolor.txt</p>
-        </div>
-        <div class="col-12 codigo-badge mt-1">
-            <span class="badge badge-success">Codigo:</span>
-            <span class="span-codigo">08982834y=eff787-${codigo}</span>
-        </div>
-    `)
+    let settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": `/files/${codigo}`,
+        "method": "GET",
+        "dataType": "json",
+        "headers": {
+          "content-type": "application/x-www-form-urlencoded"
+        }
+      }
 
-    $('#modal-header').html('')
-    $('#modal-header').append(`
-        <h4 class="modal-title w-100 font-weight-bold">Detalle de archivo</h4>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    `)
-
-    $('#modal-footer').html('')
-    $('#modal-footer').append(`
-        <button id="btn-eliminar" class="btn btn-danger btn-eliminar">Eliminar</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-    `)
-
-    $('#modal-detalle-archivo').modal('show')
+    $.ajax(settings).done((res)=>{
+        let name = res.name.toLowerCase(res.name)
+        $("#modal-view").html('')
+        $("#modal-view").append(`
+            <div onclick="viewTxt('${res.url}', '${res.name}')" class="col-4 mb-2 text-center">
+                <i class="far fa-file-alt fa-7x alt"></i> 
+            </div>
+            <div class="col-8">
+                <div class="row">
+                    <div class="col-12 mb-n2">
+                        <p><b>Nombre:</b> ${name}</p>
+                    </div>
+                    <div id="description-${res._id}" class="col-12 mb-n2">
+                        <p><b>Descripción:</b> ${res.description}<p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 codigo-badge mt-1">
+                <span class="badge badge-success">Codigo:</span>
+                <span class="span-codigo">${res._id}</span>
+            </div>
+        `)
+    
+        $('#modal-header').html('')
+        $('#modal-header').append(`
+            <h4 class="modal-title w-100 font-weight-bold">Detalle de archivo</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        `)
+    
+        $('#modal-footer').html('')
+        $('#modal-footer').append(`
+            <button id="btn-aceptar-${res._id}" onclick="editFile('${res._id}')" class="btn btn-primary d-none">Aceptar</button>
+            <button id="btn-editar-${res._id}"  onclick="fillContent('${res._id}')" class="btn btn-success">Editar</button>
+            <button id="btn-eliminar-${res._id}"  onclick="deleteFile('${res._id}','others')" class="btn btn-danger btn-eliminar">Eliminar</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        `)
+    
+        $('#modal-detalle-archivo').modal('show')
+    })
 }
 
 function detalleArchivo(codigo){
-    $("#modal-view").html('')
-    $("#modal-view").append(`
-        <div onclick="viewArchivo(${codigo})" class="col-4 mb-2 text-center">
-            <i class="far fa-file fa-7x file"></i> 
-        </div>
-        <div class="col-8">
-            <p>Nombre: other-lorem-ipsum-dolor.js</p>
-        </div>
-        <div class="col-12 codigo-badge mt-1">
-            <span class="badge badge-success">Codigo:</span>
-            <span class="span-codigo">08982834y=eff787-${codigo}</span>
-        </div>
-    `)
+    let settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": `/files/${codigo}`,
+        "method": "GET",
+        "dataType": "json",
+        "headers": {
+          "content-type": "application/x-www-form-urlencoded"
+        }
+      }
 
-    $('#modal-header').html('')
-    $('#modal-header').append(`
-        <h4 class="modal-title w-100 font-weight-bold">Detalle de archivo</h4>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    `)
+    $.ajax(settings).done((res)=>{
+        let name = res.name.toLowerCase(res.name)
+        $("#modal-view").html('')
+        $("#modal-view").append(`
+            <div onclick="viewArchivo('${res.url}', '${res.name}')" class="col-4 mb-2 text-center">
+                <i class="far fa-file fa-7x file"></i> 
+            </div>
+            <div class="col-8">
+                <div class="row">
+                    <div class="col-12 mb-n2">
+                        <p><b>Nombre:</b> ${name}</p>
+                    </div>
+                    <div id="description-${res._id}" class="col-12 mb-n2">
+                        <p><b>Descripción:</b> ${res.description}<p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 codigo-badge mt-1">
+                <span class="badge badge-success">Codigo:</span>
+                <span class="span-codigo">${res._id}</span>
+            </div>
+        `)
+    
+        $('#modal-header').html('')
+        $('#modal-header').append(`
+            <h4 class="modal-title w-100 font-weight-bold">Detalle de archivo</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        `)
+    
+        $('#modal-footer').html('')
+        $('#modal-footer').append(`
+            <button id="btn-aceptar-${res._id}" onclick="editFile('${res._id}')" class="btn btn-primary d-none">Aceptar</button>
+            <button id="btn-editar-${res._id}"  onclick="fillContent('${res._id}')" class="btn btn-success">Editar</button>
+            <button id="btn-eliminar-${res._id}"  onclick="deleteFile('${res._id}','others')" class="btn btn-danger btn-eliminar">Eliminar</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        `)
+    
+        $('#modal-detalle-archivo').modal('show')
 
-    $('#modal-footer').html('')
-    $('#modal-footer').append(`
-        <button id="btn-eliminar" class="btn btn-danger btn-eliminar">Eliminar</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-    `)
-
-    $('#modal-detalle-archivo').modal('show')
+    })
 }
 
 function audioPause(){
@@ -497,38 +710,39 @@ function audioPause(){
  }
 
 
- function viewPdf(codigo){
-     window.open('files-bank/pdf/pdf.pdf', '_blank')
+ function viewPdf(url){
+     window.open(url, '_blank')
  }
 
- function viewWord(codigo){
+ function viewWord(url, name){
    var link = document.createElement("a");
-   link.download = 'pdf2';
-   link.href = 'files-bank/pdf/pdf.pdf';
+   link.download = name;
+   link.href = url;
    link.click();
 }
 
-function viewZip(codigo){
+function viewZip(url, name){
     var link = document.createElement("a");
-    link.download = 'pdf2';
-    link.href = 'files-bank/pdf/pdf.pdf';
+    link.download = name;
+    link.href = url;
     link.click();
  }
 
- function viewTxt(codigo){
+ function viewTxt(url, name){
     var link = document.createElement("a");
-    link.download = 'pdf2';
-    link.href = 'files-bank/pdf/pdf.pdf';
+    link.download = name;
+    link.href = url;
     link.click();
  }
 
- function viewArchivo(codigo){
+ function viewArchivo(url, name){
     var link = document.createElement("a");
-    link.download = 'pdf2';
-    link.href = 'files-bank/pdf/pdf.pdf';
+    link.download = name;
+    link.href = url;
     link.click();
  }
-//action='/files' 
+
+
  $('#btn-agregar-archivo').click(()=>{
     $('#modal-view-file').html('')
     $('#modal-view-file').append(`
@@ -592,6 +806,7 @@ function viewZip(codigo){
         
              })
           }else{
+            console.log(res)
             $.alert({
                 title:'',
                 content: 'El archivo se ha subido con exito',
@@ -616,7 +831,33 @@ function viewZip(codigo){
 
              if(res.category == 'video'){
                 addItemVideo(res)
-            }
+             }
+
+             if(res.category == 'pdf'){
+                addItemPdf(res)
+             }
+
+             if(res.category == 'text'){
+                addItemText(res)
+             }
+
+             if(res.category == 'word'){
+                addItemWord(res)
+             }
+
+             if(res.category == 'audio'){
+                addItemAudio(res)
+             }
+
+             if(res.category == 'compressed'){
+                addItemCompressed(res)
+             }
+
+             if(res.category == 'others'){
+                addItemOther(res)
+             }
+
+
           }
        },
        error: err =>{
@@ -640,32 +881,34 @@ function viewZip(codigo){
 
     $.ajax(settings).done((data)=>{
        if(data.ok == 1){
-        $.alert({
-            title:'',
-            content: 'El archivo se ha eliminado con exito',
-            type:'blue',
-            closeIcon: true,
-            closeIconClass: 'fas fa-times',
-            theme: 'material',
-            buttons: {
-                Ok: {
-                text: 'Ok',
-                btnClass: 'btn-primary',
-                keys: ['enter', 'shift']
+            $.alert({
+                title:'',
+                content: 'El archivo se ha eliminado con exito',
+                type:'blue',
+                closeIcon: true,
+                closeIconClass: 'fas fa-times',
+                theme: 'material',
+                buttons: {
+                    Ok: {
+                    text: 'Ok',
+                    btnClass: 'btn-primary',
+                    keys: ['enter', 'shift']
+                    }
                 }
+        
+            })
+            
+            if(type == 'image'){
+                llenarImagenes()
             }
-    
-         })
-         $('#modal-detalle-archivo').modal('toggle')
-         if(type == 'image'){
-             llenarImagenes()
-         }
-         if(type == 'video'){
-            llenarVideos()
-        }
-        if(type == 'other'){
-            llenarOtros()
-        }
+            if(type == 'video'){
+                llenarVideos()
+            }
+            if(type == 'others'){
+                llenarOtros()
+            }
+            
+            $('#modal-detalle-archivo').modal('toggle')
        }
     })
 
@@ -686,7 +929,7 @@ function viewZip(codigo){
 
     $.ajax(settings).done((data)=>{
         $(`#description-${data._id}`).html(`
-            <p class="mb-1">Descripción:</p>
+            <p class="mb-1"><b>Descripción:</b></p>
             <input id="txt-description-${data._id}" type=text class="form-control mb-2" value="${data.description}">
         `)
         $(`#btn-editar-${data._id}`).addClass('d-none')
@@ -750,18 +993,41 @@ function viewZip(codigo){
                         }
                     }
             
-                 })
-                 if(data.category == 'image'){
+                })
+
+                if(data.category == 'image'){
                     detalleImagen(codigo)
                 }
-   
+
                 if(data.category == 'video'){
-                   detalleVideo(codigo)
-               }
-                // detalleImagen(codigo)
+                    detalleVideo(codigo)
+                }
+
+                if(data.category == 'text'){
+                    detalleTxt(codigo)
+                }
+
+                if(data.category == 'pdf'){
+                    detallePdf(codigo)
+                }
+
+                if(data.category == 'word'){
+                    detalleWord(codigo)
+                }
+
+                if(data.category == 'audio'){
+                    detalleAudio(codigo)
+                }
+
+                if(data.category == 'compressed'){
+                    detalleZip(codigo)
+                }
+
+                if(data.category == 'others'){
+                    detalleArchivo(codigo)
+                }
+
             }
         })
     })
  }
-
-

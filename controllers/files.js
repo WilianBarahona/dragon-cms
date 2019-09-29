@@ -1,6 +1,7 @@
 'use strict'
 const File = require('../models/files')
 const mt = require('media-thumbnail')
+const fs = require('fs')
 
 function getFile(req, res){
     File.findById(req.params.id)
@@ -51,6 +52,23 @@ function updateFile(req, res){
 }
 
 function deletFile(req, res){
+    File.findOne({_id: req.params.id}, {url: 1, category:1, thumbnail:1})
+    .then(response=>{
+        if (fs.existsSync(`./private${response.url}`)) {
+            fs.unlinkSync(`./private${response.url}`);
+        }
+        
+        if(response.category == 'video'){
+            if (fs.existsSync(`./private${response.thumbnail}`)) {
+                fs.unlinkSync(`./private${response.thumbnail}`);
+            }
+        }
+    })
+    .catch(err =>{
+        res.send(err)
+        res.end()
+    })
+
     File.deleteOne({_id: req.params.id})
     .then(data =>{
         res.send(data)
@@ -60,6 +78,7 @@ function deletFile(req, res){
         res.send(err)
         res.end()
     })
+
 }
 
 function createFile(req, res){
@@ -70,14 +89,14 @@ function createFile(req, res){
     let  mimeType = file.mimetype //mimeType => tipo de archivo a subir
 
     let ruta = './private/files-bank' // ruta donde guardar
-    let url = `/files-bank/` //url para acceder al archivo 
+    let url = `/files-bank` //url para acceder al archivo 
     let categoria = ''
 
     let files = {
         img:     ['image/jpeg','image/png','image/svg+xml'],
         video:   ['video/3gpp','video/mp4'],
         text:    ['text/plain', 'text/csv', 'text/html'],
-        audio:   ['audio/wave', 'audio/wav', 'audio/ogg', 'audio/mpeg3'],
+        audio:   ['audio/wave', 'audio/wav', 'audio/ogg', 'audio/mpeg3','audio/mp3'],
         word:    ['application/msword','application/vnd.openxmlformats-officedocument.wordprocessingml.document'],
         archive: ['application/zip','application/x-rar-compressed'],
     }
@@ -203,26 +222,27 @@ function createFile(req, res){
 
 function saveFile(res, req, file, categoria, ruta){
     let thumbnail = ''
-    let thumbnailUrl = `/files-bank/videos/thumbnails/tb-${file.name}.png`
+    if(categoria == 'video')
+        thumbnail = `/files-bank/videos/thumbnails/tb-${file.name}.png`
+
    
     File.find({name: file.name})
     .then(data =>{
        if(data.length != 0) return res.send({message: 'El archivo ya existe', err: 1})
        let fs = new File({
-                name: file.name,
-                url: ruta,
-                description: req.body.description,
-                category: categoria,
-                mimeType: file.mimetype,
-                size: file.size,
-                thumbnail: thumbnailUrl
-            })
-    
+            name: file.name,
+            url: ruta,
+            description: req.body.description,
+            category: categoria,
+            mimeType: file.mimetype,
+            size: file.size,
+            thumbnail: thumbnail
+        })
         if(categoria == 'video'){
-            thumbnail = `./private/files-bank/videos/thumbnails/tb-${file.name}.png`
+           let thumbnailRoute = `./private/files-bank/videos/thumbnails/tb-${file.name}.png`
             mt.forVideo(
                 `./private/files-bank/videos/${file.name}`,
-                    thumbnail,{
+                    thumbnailRoute,{
                     width: 200
                 }).then(()=>{
                     fs.save()
