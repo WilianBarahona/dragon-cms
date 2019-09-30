@@ -22,7 +22,7 @@
 </head>
 
 <body>
-
+ <div class="loader"></div>
  <div id="wrapper">
       <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
           <!-- Logo -->
@@ -203,24 +203,29 @@
             </div>
             <div class="modal-body mx-3">
                 <div class="row mt-3">
-                    <div class="col-12 col-md-12 mb-3">
-                        <input id="txt-nombre" class="form-control" type="text" placeholder="Nombre">
-                        <div class="invalid-feedback">Requerido</div>
-                    </div>
-                    <div class="col-12 col-md-12 mb-3">
-                        <input id="txt-apellido" class="form-control" type="text" placeholder="Apellido">
-                        <div class="invalid-feedback">Requerido</div>
-                    </div>
-                    <div class="col-12 col-md-12 mb-3">
-                        <input id="txt-email" class="form-control" type="email" placeholder="Email">
-                        <div class="invalid-feedback">Requerido</div>
-                    </div>
-                    <div class="col-12 mb-2">
-                        <select id="slc-rol" class="form-control">
-                            <option value="">Rol</option>
-                        </select>
-                        <div class="invalid-feedback">Requerido</div>
-                    </div> 
+                  <div id="formulario-registro" class="row justify-content-center">
+                          <div class="col-11 input-icon mb-2">
+                              <input id="txt-nombre" type="text" class="form-control font-09rem" placeholder="Nombre">
+                              <i class="fas fa-user fa-lg fa-fw color-blue-i"  aria-hidden="true"></i>
+                              <div class="text-left invalid-feedback">Nombre vacio</div>
+                          </div>
+                          <div class="col-11 input-icon mb-2">
+                              <input id="txt-apellido" type="text" class="form-control font-09rem" placeholder="Apellido">
+                              <i class="fas fa-user fa-lg fa-fw color-blue-i"  aria-hidden="true"></i>
+                              <div class="text-left invalid-feedback">Apellido vacio</div>
+                          </div>
+                          <div class="col-11 input-icon mb-2">
+                              <input id="txt-email" type="email" class="form-control font-09rem" placeholder="Email">
+                              <i class="fas fa-envelope-open fa-lg fa-fw color-blue-i"  aria-hidden="true"></i>
+                              <div class="text-left invalid-feedback">Email invalido</div>
+
+                          </div>
+                          <div class="col-11 input-icon mb-2">
+                              <input id="txt-password" type="password" class="form-control font-09rem" placeholder="Contraseña">
+                              <i class="fas fa-key fa-lg fa-fw color-blue-i"  aria-hidden="true"></i>
+                              <div class="text-left invalid-feedback">Contraseña vacia</div>
+                          </div>
+                      </div>
                 </div>
             </div>
             <div class="modal-footer d-flex justify-content-center">

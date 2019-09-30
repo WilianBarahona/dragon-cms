@@ -5,7 +5,8 @@ const bodyParser = require('body-parser')
 const config = require('./config')
 
 //Routers
-const filesRoute = require('./routes/files-route')
+const filesRoute = require('./routes/file-route')
+const usersRoute = require('./routes/user-route')
 
 //Modules 
 const database = require('./modules/database')
@@ -22,6 +23,7 @@ app.use(bodyParser.json())
 
 //Middlewares routers
 app.use('/files', filesRoute)
+app.use('/users', usersRoute)
 
 app.listen(config.port, function(){
     console.log(`Servidor levantado port: ${config.port}`);

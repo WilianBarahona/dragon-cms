@@ -18,10 +18,13 @@
   },
   "homepage": "https://github.com/WilianBarahona/dino-cms#readme",
   "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.19.0",
+    "crypto": "^1.0.1",
     "express": "^4.17.1",
-    "express-fileupload": "^1.1.6-alpha.4",
+    "express-fileupload": "^1.1.6-alpha.5",
     "media-thumbnail": "^1.0.0",
+    "moment": "^2.24.0",
     "mongoose": "^5.7.1"
   }
 }

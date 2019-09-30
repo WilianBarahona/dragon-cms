@@ -1,6 +1,6 @@
 'use strict'
 const express = require('express')
-const filesCtrl = require('../controllers/files')
+const filesCtrl = require('../controllers/file')
 
 const router = express.Router()
 

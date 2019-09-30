@@ -6,7 +6,7 @@ $("#btn-registrarse").click(()=> {
    validarRegistro()
  });
 
- $("#txt-email").keyup(()=> { 
+$("#txt-email").keyup(()=> { 
   validarEmail()
 });
 

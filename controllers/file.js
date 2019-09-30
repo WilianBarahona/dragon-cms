@@ -1,5 +1,5 @@
 'use strict'
-const File = require('../models/files')
+const File = require('../models/file')
 const mt = require('media-thumbnail')
 const fs = require('fs')
 
