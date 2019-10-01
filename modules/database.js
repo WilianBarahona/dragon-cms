@@ -5,7 +5,7 @@ const config = require('../config')
 class Database{
     constructor(){
         //Promesa
-        mongoose.connect(config.db,{useNewUrlParser: true, useUnifiedTopology: true })
+        mongoose.connect(config.db,{useNewUrlParser: true, useUnifiedTopology: true ,  useCreateIndex: true})
         .then(()=>{
             console.log(`Se conecto a mongo db port: 27017`)
         })

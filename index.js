@@ -1,6 +1,7 @@
 'use strict'
 const express = require('express');
 const fileUpload = require('express-fileupload')
+const session = require('express-session')
 const bodyParser = require('body-parser')
 const config = require('./config')
 
@@ -14,12 +15,19 @@ const database = require('./modules/database')
 const app = express();
 
 //Middlewares
-app.use(express.static("private")); //Carpeta publica
+let admin = app.use(express.static("admin")); //Carpeta admin
 app.use(express.static("public")); //Carpeta publica
 
 app.use(fileUpload())
 app.use(bodyParser.urlencoded({ extended: false })) 
 app.use(bodyParser.json())
+
+//Session 
+app.use(session({
+    secret:'SecretDog',
+    resave: true,
+    saveUninitialized: true,
+}))
 
 //Middlewares routers
 app.use('/files', filesRoute)

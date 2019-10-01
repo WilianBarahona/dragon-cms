@@ -54,13 +54,13 @@ function updateFile(req, res){
 function deletFile(req, res){
     File.findOne({_id: req.params.id}, {url: 1, category:1, thumbnail:1})
     .then(response=>{
-        if (fs.existsSync(`./private${response.url}`)) {
-            fs.unlinkSync(`./private${response.url}`);
+        if (fs.existsSync(`./admin${response.url}`)) {
+            fs.unlinkSync(`./admin${response.url}`);
         }
         
         if(response.category == 'video'){
-            if (fs.existsSync(`./private${response.thumbnail}`)) {
-                fs.unlinkSync(`./private${response.thumbnail}`);
+            if (fs.existsSync(`./admin${response.thumbnail}`)) {
+                fs.unlinkSync(`./admin${response.thumbnail}`);
             }
         }
     })
@@ -88,7 +88,7 @@ function createFile(req, res){
     let file = req.files.file
     let  mimeType = file.mimetype //mimeType => tipo de archivo a subir
 
-    let ruta = './private/files-bank' // ruta donde guardar
+    let ruta = './admin/files-bank' // ruta donde guardar
     let url = `/files-bank` //url para acceder al archivo 
     let categoria = ''
 
@@ -239,9 +239,9 @@ function saveFile(res, req, file, categoria, ruta){
             thumbnail: thumbnail
         })
         if(categoria == 'video'){
-           let thumbnailRoute = `./private/files-bank/videos/thumbnails/tb-${file.name}.png`
+           let thumbnailRoute = `./admin/files-bank/videos/thumbnails/tb-${file.name}.png`
             mt.forVideo(
-                `./private/files-bank/videos/${file.name}`,
+                `./admin/files-bank/videos/${file.name}`,
                     thumbnailRoute,{
                     width: 200
                 }).then(()=>{

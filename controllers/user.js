@@ -100,6 +100,12 @@ function singIn(req, res){
               email: user.email
           }
 
+          req.session._id = user._id
+          req.session.email = user.email
+          req.session.firstName = user.firstName
+          req.session.lastName = user.lastName
+          req.session.avatar = user.avatar
+
           return res.status(200).send({ message: 'Te has logueado correctamente', data, ok: 1})
         });
     

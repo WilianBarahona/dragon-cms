@@ -1,10 +1,31 @@
-.card{
-    margin-top:80px;
-    border-radius: .5rem;
-    padding:0;
-    background-color: color(white);
-    box-shadow:0px 0px 3px color(primary);
-    width: 95%;
+#login{
+    background: $bg-login;
+
+    #logo{
+        margin-bottom:30px;
+        .text-color-1{
+            padding-top: 1px;
+            margin-left: -11px;
+            font-size: 23px;
+        }
+
+        .text-color-2{
+            margin-left: -4px;
+            font-size: 23px;
+        }
+    }
+    
+    .card{
+      margin-top:80px;
+      border-radius: .5rem;
+      padding:0;
+      background-color: color(white);
+      box-shadow:0px 0px 3px color(primary);
+      width: 95%;
+
+      input{
+        color: color(gray-800)!important;
+      }
 
   
 
@@ -90,4 +111,5 @@
         }
     }
         
+  }
 }
