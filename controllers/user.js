@@ -84,14 +84,14 @@ function deleteUser(req, res){
 }
 
 
-function singIn(req, res){
+function loginUser(req, res){
     User.findOne({ email: req.body.email }, (err, user) => {
-        if (err) return res.status(500).send({ message: `Error al ingresar: ${err}` , err: 1})
-        if (!user) return res.status(404).send({ message: `No existe el usuario con email ${req.body.email}` , err: 1})
+        if (err) return res.send({ message: `Error al ingresar: ${err}` , err: 1})
+        if (!user) return res.send({ message: `No existe el usuario con email ${req.body.email}` , err: 1})
     
         return user.comparePassword(req.body.password, (err, isMatch) => {
-          if (err) return res.status(500).send({ message: `Error al ingresar: ${err}` , err: 1})
-          if (!isMatch) return res.status(404).send({ message: `Contraseña incorrecta!`, err:1 })
+          if (err) return res.send({ message: `Error al ingresar: ${err}` , err: 1})
+          if (!isMatch) return res.send({ message: `Contraseña incorrecta!`, err:1 })
 
           let data = {
               firstName: user.firstName,
@@ -106,10 +106,28 @@ function singIn(req, res){
           req.session.lastName = user.lastName
           req.session.avatar = user.avatar
 
-          return res.status(200).send({ message: 'Te has logueado correctamente', data, ok: 1})
+          return res.status(200).send({ message: 'Te has logueado correctamente', data, ok: 1, email: req.session.email})
         });
     
     }).select('_id firstName lastName avatar email + password');
+}
+
+function logoutUser(req, res){
+    req.session.destroy();
+    res.send({message: 'Ha cerrado sesion', ok: 1})
+}
+
+function authenticateUser(req, res, next){
+    if(req.session.email){
+        return next()
+    }else{
+        // res.redirect('login.html')
+        res.send({message: 'No tiene acceso', err: 1})
+    }
+}
+
+function denyUser(req, res){
+    authenticate()
 }
 
 
@@ -119,5 +137,8 @@ module.exports = {
     createUser,
     updateUser,
     deleteUser,
-    singIn
+    loginUser,
+    logoutUser,
+    authenticateUser,
+    denyUser
 }

@@ -46,7 +46,7 @@ function llenarImagenes(){
     let settings = {
         "async": true,
         "crossDomain": true,
-        "url": "/files",
+        "url": "/admin/files",
         "method": "GET",
         "dataType": "json",
         "headers": {
@@ -89,7 +89,7 @@ function llenarVideos(){
     let settings = {
         "async": true,
         "crossDomain": true,
-        "url": "/files",
+        "url": "/admin/files",
         "method": "GET",
         "dataType": "json",
         "headers": {
@@ -138,7 +138,7 @@ function llenarOtros(){
     let settings = {
         "async": true,
         "crossDomain": true,
-        "url": "/files",
+        "url": "/admin/files",
         "method": "GET",
         "dataType": "json",
         "headers": {
@@ -265,7 +265,7 @@ function detalleImagen(codigo){
     let settings = {
         "async": true,
         "crossDomain": true,
-        "url": `/files/${codigo}`,
+        "url": `/admin/files/${codigo}`,
         "method": "GET",
         "dataType": "json",
         "headers": {
@@ -317,7 +317,7 @@ function detalleVideo(codigo){
     let settings = {
         "async": true,
         "crossDomain": true,
-        "url": `/files/${codigo}`,
+        "url": `/admin/files/${codigo}`,
         "method": "GET",
         "dataType": "json",
         "headers": {
@@ -370,7 +370,7 @@ function detalleAudio(codigo){
     let settings = {
         "async": true,
         "crossDomain": true,
-        "url": `/files/${codigo}`,
+        "url": `/admin/files/${codigo}`,
         "method": "GET",
         "dataType": "json",
         "headers": {
@@ -424,7 +424,7 @@ function detallePdf(codigo){
     let settings = {
         "async": true,
         "crossDomain": true,
-        "url": `/files/${codigo}`,
+        "url": `/admin/files/${codigo}`,
         "method": "GET",
         "dataType": "json",
         "headers": {
@@ -480,7 +480,7 @@ function detalleWord(codigo){
     let settings = {
         "async": true,
         "crossDomain": true,
-        "url": `/files/${codigo}`,
+        "url": `/admin/files/${codigo}`,
         "method": "GET",
         "dataType": "json",
         "headers": {
@@ -536,7 +536,7 @@ function detalleZip(codigo){
     let settings = {
         "async": true,
         "crossDomain": true,
-        "url": `/files/${codigo}`,
+        "url": `/admin/files/${codigo}`,
         "method": "GET",
         "dataType": "json",
         "headers": {
@@ -592,7 +592,7 @@ function detalleTxt(codigo){
     let settings = {
         "async": true,
         "crossDomain": true,
-        "url": `/files/${codigo}`,
+        "url": `/admin/files/${codigo}`,
         "method": "GET",
         "dataType": "json",
         "headers": {
@@ -647,7 +647,7 @@ function detalleArchivo(codigo){
     let settings = {
         "async": true,
         "crossDomain": true,
-        "url": `/files/${codigo}`,
+        "url": `/admin/files/${codigo}`,
         "method": "GET",
         "dataType": "json",
         "headers": {
@@ -785,7 +785,7 @@ function viewZip(url, name){
    
    
    $('#form-file').ajaxForm({
-       url:'/files',
+       url:'/admin/files',
        dataType: 'json',
        success: function(res){
           if(res.err == 1){
@@ -871,7 +871,7 @@ function viewZip(url, name){
     let settings = {
         "async": true,
         "crossDomain": true,
-        "url": `/files/${codigo}`,
+        "url": `/admin/files/${codigo}`,
         "method": "DELETE",
         "dataType": "json",
         "headers": {
@@ -919,7 +919,7 @@ function viewZip(url, name){
     let settings = {
         "async": true,
         "crossDomain": true,
-        "url": `/files/${codigo}`,
+        "url": `/admin/files/${codigo}`,
         "method": "GET",
         "dataType": "json",
         "headers": {
@@ -944,7 +944,7 @@ function viewZip(url, name){
     let settings = {
         "async": true,
         "crossDomain": true,
-        "url": `/files/${codigo}`,
+        "url": `/admin/files/${codigo}`,
         "method": "GET",
         "dataType": "json",
         "headers": {
@@ -968,7 +968,7 @@ function viewZip(url, name){
         let sett = {
             "async": true,
             "crossDomain": true,
-            "url": `/files/${codigo}`,
+            "url": `/admin/files/${codigo}`,
             "method": "PUT",
             "dataType": "json",
             "data": dataUpdate,

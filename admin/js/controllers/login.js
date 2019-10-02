@@ -47,15 +47,27 @@ let camposForm = [
     if(!email)
       return
   
-   let json = {
+   let user = {
      email: $("#txt-email").val(),
-     password: $("#txt-password").val(),
+     password: $("#txt-password").val()
    }
 
-  console.log(json)
-  window.location.href = 'index.html'
- 
-   return json
+   let settings = {
+      "async": true,
+      "crossDomain": true,
+      "url": "/admin/users/users/login",
+      "method": "POST",
+      "dataType": "json",
+      "data": user,
+      "headers": {
+        "content-type": "application/x-www-form-urlencoded"
+      }
+    }
+
+  $.ajax(settings).done((res)=>{
+     console.log(res)
+  })
+
    
  }
  

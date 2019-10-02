@@ -1,9 +1,9 @@
-function authenticate(req, res, next){
-    if(req.session.email){
-        return next()
+function authenticateUser(req, res, next){
+    if(!req.session.email){
+        res.redirect('/admin/login')
     }else{
-        res.redirect('login.html')
+        next()
     }
 }
 
-module.exports = authenticate
+module.exports = authenticateUser

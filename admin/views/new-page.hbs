@@ -7,15 +7,15 @@
   <title>Dragon CMS</title>
 
   <!-- Favicon -->
-  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="/admin/img/favicon.ico" type="image/x-icon">
 
   <!-- Styles vendor -->
-  <link href="vendor/magnific-popup/css/magnific-popup.css" rel="stylesheet">
-  <link href="vendor/font-awesome/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="vendor/fonts/font-nunito.css" rel="stylesheet">
+  <link href="/admin/vendor/magnific-popup/css/magnific-popup.css" rel="stylesheet">
+  <link href="/admin/vendor/font-awesome/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="/admin/vendor/fonts/font-nunito.css" rel="stylesheet">
 
   <!-- Sytle  -->
-  <link href="css/style.min.css" rel="stylesheet">
+  <link href="/admin/css/style.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -23,7 +23,7 @@
  <div id="wrapper">
       <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
           <!-- Logo -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboard">
           <div class="sidebar-brand-icon">
               <i class="fas fa-dragon color-primary dragon"></i>
           </div>
@@ -34,7 +34,7 @@
         <hr class="sidebar-divider my-0">
         <!-- Item Simple -->
         <li class="nav-item">
-          <a href="index.html" class="nav-link">
+          <a href="dashboard" class="nav-link">
             <i class="fas fa-home fa-fw"></i>
             <span><b>Inicio</b></span></a>
         </li>
@@ -54,9 +54,9 @@
           <div id="collapse-item-1" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
               <h6 class="collapse-header">Opciones:</h6>
-              <a href="pages.html" class="collapse-item">Paginas</a>
-              <a href="entries.html" class="collapse-item">Entradas</a>
-              <a href="comments.html" class="collapse-item">Comentarios</a>
+              <a href="pages" class="collapse-item">Paginas</a>
+              <a href="entries" class="collapse-item">Entradas</a>
+              <a href="comments" class="collapse-item">Comentarios</a>
             </div>
           </div>
         </li>
@@ -76,12 +76,12 @@
           <div id="collapse-item-2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
               <h6 class="collapse-header">Opciones:</h6>
-              <a href="files-bank.html" class="collapse-item">Banco de archivos</a>
-              <a href="menus.html" class="collapse-item">Menus</a>
-              <a href="breadcrumbs.html" class="collapse-item">Breadcrumbs</a>
-              <a href="themes.html" class="collapse-item">Temas</a>
-              <a href="users.html" class="collapse-item">Usuarios</a>
-              <a href="roles.html" class="collapse-item">Roles</a>
+              <a href="files-bank" class="collapse-item">Banco de archivos</a>
+              <a href="menus" class="collapse-item">Menus</a>
+              <a href="breadcrumbs" class="collapse-item">Breadcrumbs</a>
+              <a href="themes" class="collapse-item">Temas</a>
+              <a href="users" class="collapse-item">Usuarios</a>
+              <a href="roles" class="collapse-item">Roles</a>
             </div>
           </div>
         </li>
@@ -101,7 +101,7 @@
           <div id="collapse-item-3" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
               <h6 class="collapse-header">Opciones:</h6>
-              <a href="site-settings.html" class="collapse-item">Configuracion del sitio</a>
+              <a href="site-settings" class="collapse-item">Configuracion del sitio</a>
             </div>
           </div>
         </li>
@@ -130,7 +130,7 @@
                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <!-- Incluir la clase d-none en caso de querer ocultar el nombre para pantallas <= md -->
                   <span class="mr-2 d-lg-inline text-gray-600 small"><b>Wilian Barahona</b></span>
-                  <img class="img-profile rounded-circle" src="img/user.jpg">
+                  <img class="img-profile rounded-circle" src="/admin/img/user.jpg">
                 </a>
                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                       <a class="dropdown-item">
@@ -154,52 +154,25 @@
 
        <!-- Container ==> El contenido se llenara dinamicamente -->
        <div id="container" class="container-fluid">
-            <div id="container-entries" class="row entries">
-                <!-- Entradas del blog pagina por defecto -->
-                <div class="col-12">
-                    <div class="card card-body">
-                        <h4>Entradas del blog</h4>
-                        <hr>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, recusandae?</p>
+            <div class="row pages">
+                <div class="col-12 mb-1">
+                    <h2>Nueva Pagina</h2>
+                    <hr>
+                </div>
+                <div class="col-12 mb-4">
+                    <div class="row">
+                    <div class="col-6">
+                        <input id="txt-title-page" type="text" class="form-control" placeholder="Titulo de la pagina">
+                    </div>
+                    <div class="col-6">
+                        <button id="btn-create-page" type="button" class="btn btn-success">Agregar pagina</button>
+                    </div>
                     </div>
                 </div>
-            
-                <!-- Entradas creadas por el usuario -->
                 <div class="col-12">
-                    <div class="card card-body">
-                        <div class="row">
-                            <div class="col-12">
-                                <h4>Entradas</h4>
-                                <hr>
-                            </div>
-                            <div class="col-12">
-                                <button id="btn-new-entry" type="button" class="btn btn-success">Añadir entrada</button>
-                            </div>
-                        </div>
-                        <div id="container-entries-list" class="row mt-3">
-                            <!-- Inicio Entry -->
-                            <!-- <div class="col-12">
-                                <div class="row">
-                                    <div class="col-8 page-info">
-                                        <h5>Acerca de</h5>
-                                        <p class="font-08rem"><span class="fas fa-history"></span>hace 8meses</p>
-                                    </div>
-                                    <div class="col-4 accion">
-                                        <button type="button" class="btn btn-default btn-sm btn-view"><span class="fas fa-external-link-alt view"></span></button>
-                                        <button type="button" class="btn btn-default btn-sm btn-edit"><span class="far fa-edit edit"></span></button>
-                                        <button type="button" class="btn btn-default btn-sm btn-delete"><span class="far fa-trash-alt trash"></span></button>
-                                    </div>
-                                    <div class="col-12">
-                                    <hr>
-                                    </div>
-                                </div>   
-                            </div> -->
-                            <!-- Fin Entry-->
-                        </div>
-                    </div>
+                    <textarea  id="editor1" name="editor1"></textarea>
                 </div>
             </div>
-
        </div>
        
      </div>
@@ -212,16 +185,20 @@
  <!-- Fin del wrapper -->
 
  <!-- Script Vendor -->
- <script src="vendor/jquery/jquery.min.js"></script>
- <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
- <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
- <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+ <script src="/admin/vendor/jquery/jquery.min.js"></script>
+ <script src="/admin/vendor/bootstrap/js/bootstrap.min.js"></script>
+ <script src="/admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+ <script src="/admin/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+
+ <!-- CKEditor -->
+ <script src="/admin/vendor/ckeditor/ckeditor.js"></script>
+
 
  <!-- Script -->
- <script src="js/controllers/sidebar.js"></script>
- <script src="js/controllers/entries.js"></script>
+ <script src="/admin/js/controllers/sidebar.js"></script>
+ <script src="/admin/js/controllers/new-page.js"></script>
 </body>
-
 </html>
 
  

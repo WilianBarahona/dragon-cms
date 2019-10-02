@@ -6,17 +6,44 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Code Mirror</title>
     <link rel="stylesheet" href="../vendor/codemirror/lib/codemirror.css">
-    <link rel="stylesheet" href="../vendor/codemirror/theme/dragon.css">
+    <link rel="stylesheet" href="../vendor/codemirror/theme/material.css">
 </head>
 <body>
 
+    <textarea id="html" style="resize: none; width: 100%; height: 200px;"></textarea>
+    <textarea id="css" style="resize: none; width: 100%; height: 200px;"></textarea>
+    <textarea id="js" style="resize: none; width: 100%; height: 200px;"></textarea>
+
 
     <script src="../vendor/codemirror/lib/codemirror.js"></script>
+    <script src="../vendor/codemirror/mode/css/css.js"></script>
+    <script src="../vendor/codemirror/mode/xml/xml.js"></script>
     <script src="../vendor/codemirror/mode/javascript/javascript.js"></script>
+    <script src="../vendor/codemirror/mode/htmlmixed/htmlmixed.js"></script>
     <script>
-        var myCodeMirror = CodeMirror(document.body,{
+        var mixedMode = {
+        name: "htmlmixed",
+        scriptTypes: [{matches: /\/x-handlebars-template|\/x-mustache/i,
+                       mode: null},
+                      {matches: /(text|application)\/(x-)?vb(a|script)/i,
+                       mode: "vbscript"}]
+        };
+
+        var html = CodeMirror.fromTextArea(document.getElementById('html'),{
+            mode: mixedMode,
+            theme:"material",
+            lineNumbers:true
+        });
+
+        var css = CodeMirror.fromTextArea(document.getElementById('css'),{
+            mode:"css",
+            theme:"material",
+            lineNumbers:true
+        });
+
+        var js = CodeMirror.fromTextArea(document.getElementById('js'),{
             mode:"javascript",
-            theme:"dragon",
+            theme:"material",
             lineNumbers:true
         });
     </script>
