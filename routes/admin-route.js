@@ -31,8 +31,12 @@ router.get('/pages', auth, (req, res)=>{
     res.render('pages')
 })
 
-router.get('/users', (req, res)=>{
+router.get('/users', auth, (req, res)=>{
     res.render('users')
+})
+
+router.get('*', auth, (req, res)=>{
+    res.render('dashboard')
 })
 
 module.exports = router

@@ -13,6 +13,7 @@
   <link href="/admin/vendor/magnific-popup/css/magnific-popup.css" rel="stylesheet">
   <link href="/admin/vendor/font-awesome/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="/admin/vendor/fonts/font-nunito.css" rel="stylesheet">
+  <link rel="stylesheet" href="/admin/vendor/jquery-confirm/css/jquery-confirm.css">
 
   <!-- Data Table -->
   <link rel="stylesheet" href="/admin/vendor/data-tables/css/datatables.min.css">
@@ -145,7 +146,7 @@
                         Configuraciones
                       </a>
                       <div class="dropdown-divider"></div>
-                      <a class="dropdown-item">
+                      <a class="dropdown-item" onclick="logoutUser()">
                         <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                         Cerrar sesion
                       </a>
@@ -241,6 +242,8 @@
  <script src="/admin/vendor/bootstrap/js/bootstrap.min.js"></script>
  <script src="/admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
  <script src="/admin/vendor/jquery-easing/jquery.easing.min.js"></script>
+ <script src="/admin/vendor/jquery-confirm/js/jquery-confirm.js"></script>
+
 
  <!-- Data Table -->
  <script src="/admin/vendor/data-tables/js/datatables.min.js"></script>
@@ -248,6 +251,8 @@
  <!-- Script -->
  <script src="/admin/js/controllers/sidebar.js"></script>
  <script src="/admin/js/controllers/users.js"></script>
+ <script src="/admin/js/global.js"></script>
+
 </body>
 
 </html>

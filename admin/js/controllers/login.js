@@ -65,10 +65,28 @@ let camposForm = [
     }
 
   $.ajax(settings).done((res)=>{
-     console.log(res)
+     if(res.err == 1){
+        $.alert({
+          title:'',
+          content: `${res.message}`,
+          type:'blue',
+          closeIcon: true,
+          closeIconClass: 'fas fa-times',
+          theme: 'material',
+          buttons: {
+              Ok: {
+              text: 'Ok',
+              btnClass: 'btn-primary',
+              keys: ['enter', 'shift']
+              }
+          }
+      })
+     }else{
+      renderDashboard()
+    }
+
   })
 
-   
  }
  
  
@@ -91,7 +109,10 @@ let camposForm = [
 }
 
 $('#btn-registro').click(()=>{
-  window.location.href = 'registro.html'
+  // window.location.href = '/admin/registro'
 })
-   
+
+function renderDashboard(){
+  window.location.href = '/admin/dashboard'
+}
  

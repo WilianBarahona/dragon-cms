@@ -13,6 +13,7 @@
   <link href="/admin/vendor/magnific-popup/css/magnific-popup.css" rel="stylesheet">
   <link href="/admin/vendor/font-awesome/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="/admin/vendor/fonts/font-nunito.css" rel="stylesheet">
+  <link rel="stylesheet" href="/admin/vendor/jquery-confirm/css/jquery-confirm.css">
 
   <!-- Sytle  -->
   <link href="/admin/css/style.min.css" rel="stylesheet">
@@ -130,7 +131,7 @@
                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <!-- Incluir la clase d-none en caso de querer ocultar el nombre para pantallas <= md -->
                   <span class="mr-2 d-lg-inline text-gray-600 small"><b>Wilian Barahona</b></span>
-                  <img class="img-profile rounded-circle" src="/adminimg/user.jpg">
+                  <img class="img-profile rounded-circle" src="/admin/img/user.jpg">
                 </a>
                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                       <a class="dropdown-item">
@@ -142,7 +143,7 @@
                         Configuraciones
                       </a>
                       <div class="dropdown-divider"></div>
-                      <a class="dropdown-item">
+                      <a class="dropdown-item" onclick="logoutUser()">
                         <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                         Cerrar sesion
                       </a>
@@ -196,10 +197,14 @@
  <script src="/admin/vendor/bootstrap/js/bootstrap.min.js"></script>
  <script src="/admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
  <script src="/admin/vendor/jquery-easing/jquery.easing.min.js"></script>
+ <script src="/admin/vendor/jquery-confirm/js/jquery-confirm.js"></script>
+
 
  <!-- Script -->
  <script src="/admin/js/controllers/sidebar.js"></script>
  <script src="/admin/js/controllers/pages.js"></script>
+ <script src="/admin/js/global.js"></script>
+
  
 </body>
 

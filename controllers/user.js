@@ -106,7 +106,7 @@ function loginUser(req, res){
           req.session.lastName = user.lastName
           req.session.avatar = user.avatar
 
-          return res.status(200).send({ message: 'Te has logueado correctamente', data, ok: 1, email: req.session.email})
+          return res.status(200).send({ message: 'Te has logueado correctamente', ok: 1})
         });
     
     }).select('_id firstName lastName avatar email + password');
@@ -115,6 +115,7 @@ function loginUser(req, res){
 function logoutUser(req, res){
     req.session.destroy();
     res.send({message: 'Ha cerrado sesion', ok: 1})
+    res.end()
 }
 
 function authenticateUser(req, res, next){
@@ -123,6 +124,7 @@ function authenticateUser(req, res, next){
     }else{
         // res.redirect('login.html')
         res.send({message: 'No tiene acceso', err: 1})
+        res.end()
     }
 }
 
