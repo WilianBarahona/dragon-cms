@@ -93,13 +93,6 @@ function loginUser(req, res){
           if (err) return res.send({ message: `Error al ingresar: ${err}` , err: 1})
           if (!isMatch) return res.send({ message: `Contraseña incorrecta!`, err:1 })
 
-          let data = {
-              firstName: user.firstName,
-              lastName: user.lastName,
-              avatar: user.avatar,
-              email: user.email
-          }
-
           req.session._id = user._id
           req.session.email = user.email
           req.session.firstName = user.firstName
@@ -118,20 +111,17 @@ function logoutUser(req, res){
     res.end()
 }
 
-function authenticateUser(req, res, next){
-    if(req.session.email){
-        return next()
-    }else{
-        // res.redirect('login.html')
-        res.send({message: 'No tiene acceso', err: 1})
-        res.end()
-    }
+function getUserData(req, res){
+    User.findById(req.session._id)
+    .then(data=>{
+      res.send(data);
+      res.end()
+    })
+    .catch(err=>{
+      res.send(err);
+      res.end()
+    });
 }
-
-function denyUser(req, res){
-    authenticate()
-}
-
 
 module.exports = {
     getUser,
@@ -141,6 +131,5 @@ module.exports = {
     deleteUser,
     loginUser,
     logoutUser,
-    authenticateUser,
-    denyUser
+    getUserData
 }
