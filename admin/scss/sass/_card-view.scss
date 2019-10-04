@@ -1,4 +1,4 @@
-.pages, .entries, .users{
+.pages, .entries, .users, .accion-data-table{
     .card{
         margin-top:15px;
         margin-bottom: 15px; 
@@ -37,26 +37,28 @@
         border-color:colo(primary-hover);
     }
 
-    .accion{
-        .btn{
-            padding: 0;
-            border: 0;
-            margin: 0;
-            box-shadow: none!important;
+    
 
-        }
-        .btn-edit{
-            color:color(green)!important; 
-            margin-right: 9px;
-        }
-        .btn-delete{
-            color:color(redIsInvalid)!important;
-        }
+}
 
-        .btn-view{
-            color:color(secondary)!important; 
-            margin-right: 9px;
-        }
+.accion{
+    .btn{
+        padding: 0;
+        border: 0;
+        margin: 0;
+        box-shadow: none!important;
+
+    }
+    .btn-edit{
+        color:color(green)!important; 
+        margin-right: 9px;
+    }
+    .btn-delete{
+        color:color(redIsInvalid)!important;
     }
 
+    .btn-view{
+        color:color(secondary)!important; 
+        margin-right: 9px;
+    }
 }

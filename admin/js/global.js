@@ -1,4 +1,5 @@
 $(document).ready(()=>{
+  $(".loader").fadeOut(200);
   renderDataUser()
 })
 
@@ -60,4 +61,44 @@ function logoutUser(){
         }
       }
     })
+}
+
+function dashboard(){
+  window.location.href = '/admin/dashboard'
+
+}
+function pages(){
+  window.location.href = '/admin/pages'
+}
+
+function entries(){
+  window.location.href = '/admin/entries'
+}
+
+function comments(){
+  window.location.href = '/admin/comments'
+}
+
+function filesBank(){
+  window.location.href = '/admin/files-bank'
+}
+
+function menus(){
+  window.location.href = '/admin/menus'
+}
+
+function breadcrumbs(){
+  window.location.href = '/admin/breadcrumbs'
+}
+
+function themes(){
+  window.location.href = '/admin/themes'
+}
+
+function users(){
+  window.location.href = '/admin/users'
+}
+
+function roles(){
+  window.location.href = '/admin/roles'
 }

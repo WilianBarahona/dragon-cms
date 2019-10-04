@@ -21,101 +21,102 @@
 
 <body>
 
+ <div class="loader"></div>
  <div id="wrapper">
-      <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-          <!-- Logo -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboard">
-          <div class="sidebar-brand-icon">
-              <i class="fas fa-dragon color-primary dragon"></i>
-          </div>
-          <div class="sidebar-brand-text ml-1">
-            <span>Dragon</span><span class="color-primary">CMS</span></div>
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <!-- Logo -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" onclick="dashboard()">
+        <div class="sidebar-brand-icon">
+            <i class="fas fa-dragon color-primary dragon"></i>
+        </div>
+        <div class="sidebar-brand-text ml-1">
+          <span class="color-white">Dragon</span><span class="color-primary">CMS</span></div>
+      </a>
+
+      <hr class="sidebar-divider my-0">
+      <!-- Item Simple -->
+      <li class="nav-item">
+        <a onclick="dashboard()" class="nav-link">
+          <i class="fas fa-home fa-fw"></i>
+          <span><b>Inicio</b></span></a>
+      </li>
+
+      <hr class="sidebar-divider">
+      <!-- Encabezado -->
+      <div class="sidebar-heading">
+        Sitio Web
+      </div>
+
+      <!-- Item collapsado-->
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapse-item-1" aria-expanded="true" aria-controls="collapseTwo">
+          <i class="fas fa-pen fa-fw"></i>
+          <span>Sitio Web</span>
         </a>
-
-        <hr class="sidebar-divider my-0">
-        <!-- Item Simple -->
-        <li class="nav-item">
-          <a href="dashboard" class="nav-link">
-            <i class="fas fa-home fa-fw"></i>
-            <span><b>Inicio</b></span></a>
-        </li>
-
-        <hr class="sidebar-divider">
-        <!-- Encabezado -->
-        <div class="sidebar-heading">
-          Sitio Web
-        </div>
-
-        <!-- Item collapsado-->
-        <li class="nav-item">
-          <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapse-item-1" aria-expanded="true" aria-controls="collapseTwo">
-            <i class="fas fa-pen fa-fw"></i>
-            <span>Sitio Web</span>
-          </a>
-          <div id="collapse-item-1" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-              <h6 class="collapse-header">Opciones:</h6>
-              <a href="pages" class="collapse-item">Paginas</a>
-              <a href="entries" class="collapse-item">Entradas</a>
-              <a href="comments" class="collapse-item">Comentarios</a>
-            </div>
+        <div id="collapse-item-1" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Opciones:</h6>
+            <a onclick="pages()" class="collapse-item">Paginas</a>
+            <a onclick="entries()" class="collapse-item">Entradas</a>
+            <a onclick="comments()" class="collapse-item">Comentarios</a>
           </div>
-        </li>
-        <hr class="sidebar-divider d-none d-md-block">
-
-          <!-- Encabezado -->
-        <div class="sidebar-heading">
-          Gestion
         </div>
-
-        <!-- Item collapsado-->
-        <li class="nav-item">
-          <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapse-item-2" aria-expanded="true" aria-controls="collapseTwo">
-            <i class="fas fa-user-cog fa-fw"></i>
-            <span>Administracion</span>
-          </a>
-          <div id="collapse-item-2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-              <h6 class="collapse-header">Opciones:</h6>
-              <a href="files-bank" class="collapse-item">Banco de archivos</a>
-              <a href="menus" class="collapse-item">Menus</a>
-              <a href="breadcrumbs" class="collapse-item">Breadcrumbs</a>
-              <a href="themes" class="collapse-item">Temas</a>
-              <a href="users" class="collapse-item">Usuarios</a>
-              <a href="roles" class="collapse-item">Roles</a>
-            </div>
-          </div>
-        </li>
-        <hr class="sidebar-divider d-none d-md-block">
+      </li>
+      <hr class="sidebar-divider d-none d-md-block">
 
         <!-- Encabezado -->
-        <div class="sidebar-heading">
-          Ajustes
-        </div>
+      <div class="sidebar-heading">
+        Gestion
+      </div>
 
-        <!-- Item collapsado-->
-        <li class="nav-item">
-          <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapse-item-3" aria-expanded="true" aria-controls="collapseTwo">
-            <i class="fas fa-fw fa-cog"></i>
-            <span>Configuraciones</span>
-          </a>
-          <div id="collapse-item-3" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-              <h6 class="collapse-header">Opciones:</h6>
-              <a href="site-settings" class="collapse-item">Configuracion del sitio</a>
-            </div>
+      <!-- Item collapsado-->
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapse-item-2" aria-expanded="true" aria-controls="collapseTwo">
+          <i class="fas fa-user-cog fa-fw"></i>
+          <span>Administracion</span>
+        </a>
+        <div id="collapse-item-2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Opciones:</h6>
+            <a onclick="filesBank()" class="collapse-item">Banco de archivos</a>
+            <a onclick="menus()" class="collapse-item">Menus</a>
+            <a onclick="breadcrumbk()" class="collapse-item">Breadcrumbs</a>
+            <a onclick="themes()" class="collapse-item">Temas</a>
+            <a onclick="users()" class="collapse-item">Usuarios</a>
+            <a onclick="roles()" class="collapse-item">Roles</a>
           </div>
-        </li>
-        <hr class="sidebar-divider d-none d-md-block">
-
-
-        <!-- Button para ocultar o mostrar el SideBar) -->
-        <div class="text-center d-none d-md-inline">
-          <button class="rounded-circle border-0" id="sidebarToggle"></button>
         </div>
+      </li>
+      <hr class="sidebar-divider d-none d-md-block">
 
-      </ul>
-      <!-- Fin del Sidebar -->
+      <!-- Encabezado -->
+      <div class="sidebar-heading">
+        Ajustes
+      </div>
+
+      <!-- Item collapsado-->
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapse-item-3" aria-expanded="true" aria-controls="collapseTwo">
+          <i class="fas fa-fw fa-cog"></i>
+          <span>Configuraciones</span>
+        </a>
+        <div id="collapse-item-3" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Opciones:</h6>
+            <a onclick="siteSettings()" class="collapse-item">Configuracion del sitio</a>
+          </div>
+        </div>
+      </li>
+      <hr class="sidebar-divider d-none d-md-block">
+
+
+      <!-- Button para ocultar o mostrar el SideBar) -->
+      <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+      </div>
+
+    </ul>
+    <!-- Fin del Sidebar -->
 
 
    <!-- Contenido -->

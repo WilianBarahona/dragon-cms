@@ -1,22 +1,22 @@
-var pages = ["Acerca de", "Contactos", "Informacion", "Derechos reservador", "Terminos y condiciones"]
+var pagesArray = ["Acerca de", "Contactos", "Informacion", "Derechos reservador", "Terminos y condiciones"]
 
 $(document).ready(()=>{
     llenarPages()
 })
 
 $('#btn-new-page').click(()=>{
-  window.location.href='new-page.html'
+  window.location.href='/admin/new-page'
 })
 
 
 function llenarPages(){
     $('#container-pages').html('')
-    for (let i = 0; i < pages.length; i++) {
+    for (let i = 0; i < pagesArray.length; i++) {
         $('#container-pages').append(`
             <div class="col-12">
                 <div class="row">
                 <div class="col-8 page-info">
-                    <h5>${pages[i]}</h5>
+                    <h5>${pagesArray[i]}</h5>
                     <p class="font-08rem"><span class="fas fa-history"></span>hace 8meses</p>
                 </div>
                 <div class="col-4 accion">

@@ -1,21 +1,21 @@
-var entries = ["La muerte de Iron Man", "Marvel 4ta fase" , "La bruja escarlata", "Muerte Black Widow", "Loki y el teseracto"]
+var entriesArray = ["La muerte de Iron Man", "Marvel 4ta fase" , "La bruja escarlata", "Muerte Black Widow", "Loki y el teseracto"]
 
 $(document).ready(()=>{
     llenarEntries()
 })
 
 $('#btn-new-entry').click(()=>{
-   window.location.href = 'new-entry.html'
+   window.location.href = '/admin/new-entry'
 })
 
 function llenarEntries(){
     $('#container-entries-list').html('')
-    for (let i = 0; i < entries.length; i++) {
+    for (let i = 0; i < entriesArray.length; i++) {
         $('#container-entries-list').append(`
             <div class="col-12">
                 <div class="row">
                     <div class="col-8 page-info">
-                        <h5>${entries[i]}</h5>
+                        <h5>${entriesArray[i]}</h5>
                         <p class="font-08rem"><span class="fas fa-history"></span>hace 8meses</p>
                     </div>
                     <div class="col-4 accion">

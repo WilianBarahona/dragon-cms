@@ -868,49 +868,69 @@ function viewZip(url, name){
 
 
  function deleteFile(codigo, type){
-    let settings = {
-        "async": true,
-        "crossDomain": true,
-        "url": `/admin/files-bank/files/${codigo}`,
-        "method": "DELETE",
-        "dataType": "json",
-        "headers": {
-          "content-type": "application/x-www-form-urlencoded"
-        }
-      }
-
-    $.ajax(settings).done((data)=>{
-       if(data.ok == 1){
-            $.alert({
-                title:'',
-                content: 'El archivo se ha eliminado con exito',
-                type:'blue',
-                closeIcon: true,
-                closeIconClass: 'fas fa-times',
-                theme: 'material',
-                buttons: {
-                    Ok: {
-                    text: 'Ok',
-                    btnClass: 'btn-primary',
-                    keys: ['enter', 'shift']
+    $.confirm({
+        theme: 'material',
+        closeIcon: true,
+        type: 'blue',
+        title:'',
+        content:'¿Esta seguro de eliminar este archivo?',
+        closeIconClass: 'fas fa-times',
+        columnClass: 'small',
+        buttons:{
+          Cerrar:{
+            text:"¡Si, seguro!",
+            btnClass:"btn-primary",
+            action:function(){
+                let settings = {
+                    "async": true,
+                    "crossDomain": true,
+                    "url": `/admin/files-bank/files/${codigo}`,
+                    "method": "DELETE",
+                    "dataType": "json",
+                    "headers": {
+                      "content-type": "application/x-www-form-urlencoded"
                     }
-                }
-        
-            })
+                  }
             
-            if(type == 'image'){
-                llenarImagenes()
+                $.ajax(settings).done((data)=>{
+                   if(data.ok == 1){
+                        $.alert({
+                            title:'',
+                            content: 'El archivo se ha eliminado con exito',
+                            type:'blue',
+                            closeIcon: true,
+                            closeIconClass: 'fas fa-times',
+                            theme: 'material',
+                            buttons: {
+                                Ok: {
+                                text: 'Ok',
+                                btnClass: 'btn-primary',
+                                keys: ['enter', 'shift']
+                                }
+                            }
+                    
+                        })
+                        
+                        if(type == 'image'){
+                            llenarImagenes()
+                        }
+                        if(type == 'video'){
+                            llenarVideos()
+                        }
+                        if(type == 'others'){
+                            llenarOtros()
+                        }
+                        
+                        $('#modal-detalle-archivo').modal('toggle')
+                   }
+                })
             }
-            if(type == 'video'){
-                llenarVideos()
-            }
-            if(type == 'others'){
-                llenarOtros()
-            }
-            
-            $('#modal-detalle-archivo').modal('toggle')
-       }
-    })
+          },
+          Cancelar:function(){
+          // --
+          }
+        }
+      })
 
  }
  
