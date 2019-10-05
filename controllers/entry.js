@@ -66,11 +66,13 @@ function deleteEntry(req, res){
 function createEntry(req, res){
     const entry = new Entry({
         title: req.body.title,
-        autor: req.body.autor,
-        image: req.body.image,
+        autorId: req.body.autorId,
+        autorName: req.body.autorName,
+        imageId: req.body.imageId,
         commentary: req.body.commentary,
         postHtml: req.body.postHtml,
-        category: req.body.category
+        categoryId: req.body.categoryId,
+        categoryName: req.body.categoryName
     })
 
     entry.save()

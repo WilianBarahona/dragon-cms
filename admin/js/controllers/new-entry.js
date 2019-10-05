@@ -41,13 +41,20 @@ function validarRegistro(){
   
   if(post == '')
     return printMessage('El contenido del post no puede estar vacio')
+  
+  
+  //postHtml: post.replace(/\n/g, '')
 
   let entry = {
       title: $('#txt-title-entry').val(),
-      autor: $('#slc-autor').val(),
-      image: $('#txt-img').val(),
+      autorId: $('#slc-autor').val(),
+      autorName: $('#slc-autor option:selected').text(),
+      imageId: $('#txt-img').val(),
+      categoryId: $('#slc-category').val(),
+      categoryName: $('#slc-category option:selected').text(),
       commentary: ($('#slc-comentario').val() == "1") ? true : false,
-      postHtml: post.replace(/\n/g, '')
+      postHtml: post
+     
   }
 
   return entry
@@ -156,6 +163,7 @@ function printMessageCreate(msg){
 function createEntry(){
   let entry = validarRegistro()
   if(entry != undefined){
+    console.log(entry)
     let settings = {
       "async": true,
       "crossDomain": true,

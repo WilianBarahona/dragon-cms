@@ -46,15 +46,15 @@ function updateFile(req, res){
 }
 
 function deletFile(req, res){
-    File.findOne({_id: req.params.id}, {url: 1, category:1, thumbnail:1})
+    File.findOne({_id: req.params.id}, {route: 1, category:1, thumbnailRoute:1})
     .then(response=>{
-        if (fs.existsSync(`.${response.url}`)) {
-            fs.unlinkSync(`.${response.url}`);
+        if (fs.existsSync(`${response.route}`)) {
+            fs.unlinkSync(`${response.route}`);
         }
         
         if(response.category == 'video'){
-            if (fs.existsSync(`.${response.thumbnail}`)) {
-                fs.unlinkSync(`.${response.thumbnail}`);
+            if (fs.existsSync(`${response.thumbnailRoute}`)) {
+                fs.unlinkSync(`${response.thumbnailRoute}`);
             }
         }
     })
@@ -82,8 +82,8 @@ function createFile(req, res){
     let file = req.files.file
     let  mimeType = file.mimetype //mimeType => tipo de archivo a subir
 
-    let ruta = './admin/files-bank' // ruta donde guardar
-    let url = `/admin/files-bank` //url para acceder al archivo 
+    let ruta = './files-bank' // ruta donde guardar
+    let url = `/files` //url para acceder al archivo 
     let categoria = ''
 
     let files = {
@@ -166,60 +166,60 @@ function createFile(req, res){
         case 'image':
             file.mv(ruta ,err => {
                 if(err) return res.send(err)
-                saveFile(res, req, file, categoria, url)
+                saveFile(res, req, file, categoria, url, ruta)
             })
             break
         case 'video':
             file.mv(ruta ,err => {
                 if(err) return res.send({ message : err , err: 1})
-                 saveFile(res, req, file, categoria, url)
+                 saveFile(res, req, file, categoria, url, ruta)
             })
             break
         case 'audio':
             file.mv(ruta ,err => {
                 if(err) return res.send({ message : err , err: 1})
-                 saveFile(res, req, file, categoria, url)
+                 saveFile(res, req, file, categoria, url, ruta)
             })
             break
         case 'word':
             file.mv(ruta ,err => {
                 if(err) return res.send({ message : err , err: 1})
-                 saveFile(res, req, file, categoria, url)
+                 saveFile(res, req, file, categoria, url, ruta)
             })
             break
         case 'text':
             file.mv(ruta ,err => {
                 if(err) return res.send({ message : err , err: 1})
-                 saveFile(res, req, file, categoria, url)
+                 saveFile(res, req, file, categoria, url, ruta)
             })
             break
         case 'compressed':
             file.mv(ruta ,err => {
                 if(err) return res.send({ message : err , err: 1})
-                 saveFile(res, req, file, categoria, url)
+                 saveFile(res, req, file, categoria, url, ruta)
             })
             break
         case 'pdf':
             file.mv(ruta ,err => {
                 if(err) return res.send({ message : err , err: 1})
-                 saveFile(res, req, file, categoria, url)
+                 saveFile(res, req, file, categoria, url, ruta)
             })
             break
         case 'others':
             file.mv(ruta ,err => {
                 if(err) return res.send({ message : err , err: 1})
-                 saveFile(res, req, file, categoria, url)
+                 saveFile(res, req, file, categoria, url, ruta)
             })
             break
     }
 }
 
-function saveFile(res, req, file, categoria, ruta){
+function saveFile(res, req, file, categoria, url, ruta){
     let thumbnail = ''
     let thumbnailRoute = ''
     if(categoria == 'video'){
-        thumbnail = `./admin/files-bank/videos/thumbnails/tb-${file.name}.png`
-        thumbnailRoute = `/admin/files-bank/videos/thumbnails/tb-${file.name}.png`
+        thumbnailRoute = `./files-bank/videos/thumbnails/tb-${file.name}.png`
+        thumbnail = `/files/videos/thumbnails/tb-${file.name}.png`
     }
 
    
@@ -228,18 +228,20 @@ function saveFile(res, req, file, categoria, ruta){
        if(data.length != 0) return res.send({message: 'El archivo ya existe', err: 1})
        let fs = new File({
             name: file.name,
-            url: ruta,
+            url: url,
+            route: ruta,
             description: req.body.description,
             category: categoria,
             mimeType: file.mimetype,
             size: file.size,
-            thumbnail: thumbnailRoute
+            thumbnail: thumbnail,
+            thumbnailRoute: thumbnailRoute
         })
         if(categoria == 'video'){
             //let thumbnailRoute = `./admin/files-bank/videos/thumbnails/tb-${file.name}.png`
             mt.forVideo(
-                `./admin/files-bank/videos/${file.name}`,
-                    thumbnail,{
+                `./files-bank/videos/${file.name}`,
+                    thumbnailRoute,{
                     width: 200
                 }).then(()=>{
                     fs.save()

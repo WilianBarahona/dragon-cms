@@ -23,8 +23,10 @@ const database = require('./modules/database')
 const app = express();
 
 //Middlewares
-app.use('/admin', express.static('admin'))
 app.use(express.static('public')); //Carpeta publica
+
+app.use('/admin', express.static('admin'))
+app.use('/files', express.static('files-bank'))
 
 app.use(fileUpload())
 app.use(bodyParser.urlencoded({ extended: false })) 
