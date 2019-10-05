@@ -715,31 +715,23 @@ function audioPause(){
  }
 
  function viewWord(url, name){
-   var link = document.createElement("a");
-   link.download = name;
-   link.href = url;
-   link.click();
+//    var link = document.createElement("a");
+//    link.download = name;
+//    link.href = url;
+//    link.click();
+    window.location.href = url
 }
 
 function viewZip(url, name){
-    var link = document.createElement("a");
-    link.download = name;
-    link.href = url;
-    link.click();
+    window.location.href = url
  }
 
  function viewTxt(url, name){
-    var link = document.createElement("a");
-    link.download = name;
-    link.href = url;
-    link.click();
+    window.location.href = url
  }
 
  function viewArchivo(url, name){
-    var link = document.createElement("a");
-    link.download = name;
-    link.href = url;
-    link.click();
+    window.location.href = url
  }
 
 

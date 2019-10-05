@@ -13,6 +13,8 @@ const auth = require('./middlewares/auth')
 const filesRoute = require('./routes/file-route')
 const usersRoute = require('./routes/user-route')
 const adminRoute = require('./routes/admin-route')
+const categoryRoute = require('./routes/category-route')
+const entryRoute = require('./routes/entry-route')
 
 //Modules 
 const database = require('./modules/database')
@@ -48,6 +50,10 @@ app.use(session({
 //Middlewares routers
 app.use('/admin/files-bank', filesRoute)
 app.use('/admin/users', usersRoute)
+app.use('/admin/categories', categoryRoute)
+app.use('/admin/entries', entryRoute)
+
+//Route pages admin
 app.use('/admin', adminRoute)
 
 

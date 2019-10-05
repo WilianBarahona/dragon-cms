@@ -35,6 +35,10 @@ router.get('/users', auth, (req, res)=>{
     res.render('users')
 })
 
+router.get('/categories', auth, (req, res)=>{
+    res.render('categories')
+})
+
 router.get('*', auth, (req, res)=>{
     res.render('dashboard')
 })

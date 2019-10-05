@@ -58,6 +58,7 @@
             <h6 class="collapse-header">Opciones:</h6>
             <a onclick="pages()" class="collapse-item">Paginas</a>
             <a onclick="entries()" class="collapse-item">Entradas</a>
+            <a onclick="category()" class="collapse-item">Categorias entradas</a>
             <a onclick="comments()" class="collapse-item">Comentarios</a>
           </div>
         </div>
@@ -162,16 +163,41 @@
                 </div>
                 <div class="col-12 mb-4">
                     <div class="row">
-                    <div class="col-6">
-                        <input id="txt-title-entry" type="text" class="form-control" placeholder="Titulo de la entrada">
-                    </div>
-                    <div class="col-6">
-                        <button id="btn-create-entry" type="button" class="btn btn-success">Agregar entrada</button>
-                    </div>
+                      <div class="col-6 mb-2">
+                          <input id="txt-title-entry" type="text" class="form-control font-09rem" placeholder="Titulo de la entrada">
+                          <div class="text-left invalid-feedback">Titulo vacio</div>
+                      </div>
+                      <div class="col-6 mb-2">
+                          <select id="slc-autor" class="form-control font-09rem">
+                            <option value="0">Seleccione un autor</option>
+                          </select>
+                          <div class="text-left invalid-feedback">Seleccione un autor</div>
+                      </div>
+                      <div class="col-6 mb-2">
+                        <input type="text" id="txt-img" class="form-control font-09rem" placeholder="Codigo de imagen representativa">
+                        <div class="text-left invalid-feedback">Imagen vacia</div>
+                      </div>
+                      <div class="col-6 mb-2">
+                          <select id="slc-category" class="form-control font-09rem">
+                            <option value="0">Seleccione una categoria</option>
+                          </select>
+                          <div class="text-left invalid-feedback">Seleccione una categoria</div>                      
+                      </div>
+                       <div class="col-6 mb-2">
+                          <select id="slc-comentario" class="form-control font-09rem">
+                              <option value="0">¿Permite comentarios?</option>
+                              <option value="1">Si</option>
+                              <option value="2">No</option>
+                          </select>    
+                          <div class="text-left invalid-feedback">Seleccione una opción</div>                  
+                      </div>
+                      <div class="col-12 mt-2">
+                          <button id="btn-create-entry" type="button" class="btn btn-success">Agregar entrada</button>
+                      </div>
                     </div>
                 </div>
-                <div class="col-12">
-                    <textarea  id="editor1" name="editor1"></textarea>
+                <div class="col-12 mb-5">
+                    <textarea  id="editor-entry" name="editor-entry"></textarea>
                 </div>
             </div>
        </div>

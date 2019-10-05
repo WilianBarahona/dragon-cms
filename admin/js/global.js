@@ -102,3 +102,7 @@ function users(){
 function roles(){
   window.location.href = '/admin/roles'
 }
+
+function category(){
+  window.location.href = '/admin/categories'
+}

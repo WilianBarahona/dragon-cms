@@ -1,5 +1,4 @@
 $(document).ready(function() {
-    $(".loader").fadeOut(200);
     llenarUsuarios()
 });
 
@@ -145,7 +144,7 @@ function llenarUsuarios(){
 
             { data: null, title: "Rol",
             render: function (data, type, row) {
-                return `<span class="badge badge-success" style="width:55%;">Administrdo</span>`
+                return `<span class="badge badge-success" style="width:55%;">Administrador</span>`
             }},
 
             {data: null, title: "Accion",
@@ -215,8 +214,8 @@ function printMessage(msg){
 function limpiarModal(){
     $('#modal-agregar-usuario').modal('toggle')
 
-    $('#txt-nombre').val(''),
-    $('#txt-apellido').val(''),
+    $('#txt-nombre').val('')
+    $('#txt-apellido').val('')
     $('#txt-email').val(''),
     $('#txt-password').val('')
 

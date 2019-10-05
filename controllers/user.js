@@ -14,7 +14,7 @@ function getUser(req, res){
 }
 
 function getUsers(req, res){
-    User.find(req.params.id)
+    User.find()
     .then(data => {
         res.send(data)
         res.end()
