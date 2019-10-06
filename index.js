@@ -61,4 +61,4 @@ app.use('/admin', adminRoute)
 
 app.listen(config.port, function(){
     console.log(`Servidor levantado port: ${config.port}`);
-});
+}); 
