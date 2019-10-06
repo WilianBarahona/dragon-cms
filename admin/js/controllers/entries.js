@@ -28,16 +28,19 @@ function llenarEntries(){
         },
         columnDefs: [
             {
-                "targets": 1, 
+                "targets": 4, 
                 "className": "text-center"
             },
             {
-                "targets": 2, 
+                "targets": 5, 
                 "className": "text-center"
             }
         ],
         columns : [ 
+            {data : "_id", title:"Codigo"},
             {data : "title", title:"Titulo post"},
+            {data : "autorName", title:"Autor"},
+            {data : "categoryName", title:"Categoria"},
             { data: null, title: "Comentarios",
             render: function (data, type, row) {
                 if(row.commentary){

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="shortcut icon" href="" type="image/x-icon">
+</head>
+<body>
+    
+    <h1>Extract JSON</h1>
+   
+    <script>
+        function extractJSON(str) {
+            var firstOpen, firstClose, candidate;
+            firstOpen = str.indexOf('{', firstOpen + 1);
+            do {
+                firstClose = str.lastIndexOf('}');
+                console.log('firstOpen: ' + firstOpen, 'firstClose: ' + firstClose);
+                if(firstClose <= firstOpen) {
+                    return null;
+                }
+                do {
+                    candidate = str.substring(firstOpen, firstClose + 1);
+                    console.log('candidate: ' + candidate);
+                    try {
+                        var res = JSON.parse(candidate);
+                        console.log('...found');
+                        return [res, firstOpen, firstClose + 1];
+                    }
+                    catch(e) {
+                        console.log('...failed');
+                    }
+                    firstClose = str.substr(0, firstClose).lastIndexOf('}');
+                } while(firstClose > firstOpen);
+                firstOpen = str.indexOf('{', firstOpen + 1);
+            } while(firstOpen != -1);
+        }
+
+        /*
+        Descomentar las lineas siguientes para probar extractJSON, en caso de enviar un json en durao
+        Usar el formato '{"foo":"foo"}'
+        
+        */
+        // var obj = {'foo': 'bar', xxx: '} me[ow]'};
+        // var str = 'blah blah { not {json but here is json: ' + JSON.stringify(obj) + ' and here we have stuff that is } really } not ] json }} at all';
+        // console.log(JSON.stringify(obj) + 'stringify')
+        // var result = extractJSON(JSON.stringify(obj));
+        // console.log(result)
+        // console.log('extracted object:', result[0]);
+        // console.log('expected object :', obj);
+        // console.log('did it work     ?', JSON.stringify(result[0]) == JSON.stringify(obj) ? 'yes!' : 'no');
+        // console.log('surrounding str :', str.substr(0, result[1]) + '<JSON>' + str.substr(result[2]));
+
+        var str = "<p>{&nbsp; &#39;tipo&#39;: &#39;image&#39;&nbsp;}</p>"
+        let json = str.replace(/&#39;/g, '\"').replace(/&quot;/g, '\"').replace(/&nbsp;/g, '')
+        console.log(extractJSON(`'${json}'`))
+    </script>
+</body>
+</html>
