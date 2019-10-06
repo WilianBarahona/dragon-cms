@@ -1,9 +1,2 @@
 node_modules
-files-bank/audios
-files-bank/compressed
-files-bank/images
-files-bank/others
-files-bank/pdf
-files-bank/text
-files-bank/videos
-files-bank/word
+files-bank
