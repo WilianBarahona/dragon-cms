@@ -26,6 +26,18 @@ function getUsers(req, res){
     
 }
 
+function getUsersNumber(req, res){
+    User.find()
+    .then(data => {
+        res.send({number: data.length})
+        res.end()
+    })
+    .catch(err => {
+        res.send(err)
+        res.end()
+    })
+}
+
 function createUser(req, res){
     const user = new User({
         firstName: req.body.firstName,
@@ -128,6 +140,7 @@ function getUserAdminData(req, res){
 module.exports = {
     getUser,
     getUsers,
+    getUsersNumber,
     createUser,
     updateUser,
     deleteUser,

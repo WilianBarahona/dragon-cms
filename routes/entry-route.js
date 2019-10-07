@@ -7,6 +7,7 @@ const router = express.Router()
 
 router.get('/entries/:id', auth, entryCtrl.getEntry)
 router.get('/entries/', auth, entryCtrl.getEntries)
+router.get('/number', auth, entryCtrl.getEntriesNumber)
 router.put('/entries/:id', auth, entryCtrl.updateEntry)
 router.delete('/entries/:id', auth, entryCtrl.deleteEntry)
 router.post('/entries/', auth, entryCtrl.createEntry)

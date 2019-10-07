@@ -15,6 +15,9 @@
   <link href="/admin/vendor/fonts/font-nunito.css" rel="stylesheet">
   <link rel="stylesheet" href="/admin/vendor/jquery-confirm/css/jquery-confirm.css">
 
+  <!-- Chart js  -->
+  <link href="/admin/vendor/chart-js/chart.min.css" rel="stylesheet">
+
   <!-- Sytle  -->
   <link href="/admin/css/style.min.css" rel="stylesheet">
 </head>
@@ -155,13 +158,125 @@
           </nav>
           <!-- Fin del NavBar -->
 
-       <!-- Container ==> El contenido se llenara dinamicamente -->
-       <div id="container" class="container-fluid">
+       <!-- Container -->
+       <div id="container-dashboard" class="container-fluid">
          <div class="row">
-           <div class="col-12">
-           </div>
+               <!-- Card Numero Entradas-->
+                <div class="col-12 col-md-4 mb-4">
+                  <div class="card border-bottom-primary shadow h-100 py-2">
+                    <div class="card-body">
+                      <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                          <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Entradas/Post</div>
+                          <div id="number-entries" class="h5 mb-0 font-weight-bold text-gray-800"></div>
+                        </div>
+                        <div class="col-auto">
+                          <i class="fas fa-clone fa-2x color-secondary"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card Numero Archivos-->
+                <div class="col-12 col-md-4 mb-4">
+                  <div class="card border-bottom-primary shadow h-100 py-2">
+                    <div class="card-body">
+                      <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                          <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Numero de archivos</div>
+                          <div id="number-files" class="h5 mb-0 font-weight-bold text-gray-800"></div>
+                        </div>
+                        <div class="col-auto">
+                          <i class="fas fa-file-archive fa-2x color-secondary"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                 <!-- Card Numero Archivos-->
+                <div class="col-12 col-md-4 mb-4">
+                  <div class="card border-bottom-primary shadow h-100 py-2">
+                    <div class="card-body">
+                      <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                          <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Usuarios</div>
+                          <div id="number-users" class="h5 mb-0 font-weight-bold text-gray-800"></div>
+                        </div>
+                        <div class="col-auto">
+                          <i class="fas fa-user fa-2x color-secondary"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
          </div>
-       </div>
+
+         <div class="row">
+            <div class="col-12">
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                      <h6 class="m-0 font-weight-bold text-primary">Ejemplos de shortcuts</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                          <div class="col-12 mb-2">
+                            <p class="font-09rem color-gray-800">Los shortcuts son codigos cortos que permiten crear contenido de una forma mas dinamica, a traves de los cuales se podra incrustar diversos recursos en páginas o entradas utilizando secuencias de caracteres</p>
+                          </div>
+                          <div class="col-12 mb-2 mb-2">
+                              <span class="badge badge-primary font-1rem" style="width:20%;">Imagen</span>
+                              <span class="font-09rem color-gray-800">{"tipo": "imagen", "id": "id", "estilo": "izquierda"}</span>
+                          </div>
+                          <div class="col-12 mb-2">
+                              <span class="badge badge-primary font-1rem" style="width:20%;">Galeria</span>
+                              <span class="font-09rem color-gray-800">{"tipo": "galeria", "imagenes":["id1", "id2",...]}</span>
+                          </div>
+                          <div class="col-12 mb-2">
+                              <span class="badge badge-primary font-1rem" style="width:20%;">Video</span>
+                              <span class="font-09rem color-gray-800">{"tipo": "video", "id": "id", "estilo": "derecha"}</span>
+                          </div>
+                          <div class="col-12 mb-2">
+                              <span class="badge badge-primary font-1rem" style="width:20%;">Audio</span>
+                              <span class="font-09rem color-gray-800">{"tipo": "audio", "id": "id","estilo": "centro"}</span>
+                          </div>
+                           <div class="col-12 mb-2">
+                              <span class="badge badge-primary font-1rem" style="width:20%;">Entrada</span>
+                              <span class="font-09rem color-gray-800">{"tipo": "entrada", "id": "id"}</span>
+                          </div>
+                           <div class="col-12 mb-2">
+                              <span class="badge badge-primary font-1rem" style="width:20%;">Login</span>
+                              <span class="font-09rem color-gray-800">{"tipo": "login"}</span>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+           </div>
+
+           <div class="col-12 col-md-12">
+                  <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                      <h6 class="m-0 font-weight-bold text-primary">Estadisticas de archivos</h6>
+                    </div>
+                    <div class="card-body">
+                          <div class="chart-pie pt-4 pb-2">
+                              <canvas id="chart-files"></canvas>
+                          </div>
+                        <div class="mt-4 text-center small">
+                            <span class="mr-2">
+                              <i class="fas fa-circle text-primary"></i>Imagenes
+                            </span>
+                            <span class="mr-2">
+                              <i class="fas fa-circle color-success"></i>Videos
+                            </span>
+                            <span class="mr-2">
+                              <i class="fas fa-circle color-gray-800"></i> Otros
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
        
      </div>
      <!-- Fin Contenido -->
@@ -172,6 +287,7 @@
  </div>
  <!-- Fin del wrapper -->
 
+
  <!-- Script Vendor -->
  <script src="/admin/vendor/jquery/jquery.min.js"></script>
  <script src="/admin/vendor/bootstrap/js/bootstrap.min.js"></script>
@@ -179,10 +295,17 @@
  <script src="/admin/vendor/jquery-easing/jquery.easing.min.js"></script>
  <script src="/admin/vendor/jquery-confirm/js/jquery-confirm.js"></script>
 
+ <!-- Chart js-->
+ <script src="/admin/vendor/chart-js/chart.min.js"></script>
+
  <!-- Script -->
  <script src="/admin/js/controllers/sidebar.js"></script>
  <script src="/admin/js/controllers/dashboard.js"></script>
  <script src="/admin/js/global.js"></script>
+
+ <script>
+
+ </script>
  
 </body>
 

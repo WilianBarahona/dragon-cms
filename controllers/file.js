@@ -27,6 +27,18 @@ function getFiles(req, res){
     })
 }
 
+function getFilesNumber(req, res){
+    File.find()
+    .then(data => {
+        res.send({number: data.length})
+        res.end()
+    })
+    .catch(err => {
+        res.send(err)
+        res.end()
+    })
+}
+
 function updateFile(req, res){
     File.updateOne(
         { _id: req.params.id},
@@ -275,6 +287,7 @@ function saveFile(res, req, file, categoria, url, ruta){
 module.exports = {
     getFile,
     getFiles,
+    getFilesNumber,
     updateFile,
     deletFile,
     createFile

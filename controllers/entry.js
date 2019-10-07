@@ -116,6 +116,18 @@ function getEntries(req, res){
         
 }
 
+function getEntriesNumber(req, res){
+    Entry.find()
+    .then(data => {
+        res.send({number: data.length})
+        res.end()
+    })
+    .catch(err => {
+        res.send(err)
+        res.end()
+    })
+}
+
 function updateEntry(req, res){
     Entry.updateOne(
         {_id: req.params.id},
@@ -179,6 +191,7 @@ function createEntry(req, res){
 module.exports = {
     getEntry,
     getEntries,
+    getEntriesNumber,
     updateEntry,
     deleteEntry,
     createEntry
