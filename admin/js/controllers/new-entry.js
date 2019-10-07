@@ -304,6 +304,55 @@ function embedElement(json){
       }
     }
 
+    //Shortcut audio
+    if(json.tipo == 'audio'){
+      if(json.id != undefined){
+          let response = ''
+          let style = ''
+          if(json.estilo != undefined){
+            if(json.estilo != 'izquierda' && json.estilo != 'derecha' && json.estilo != 'centro'){
+              style = 'center'
+            }else{
+              if(json.estilo == 'izquierda'){
+                style = 'left'
+              }
+              if(json.estilo == 'derecha'){
+                style = 'right'
+              }
+              if(json.estilo == 'centro'){
+                style = 'center'
+              }
+            }
+          }else{
+            style = 'center'
+          }
+          let settings = {
+            "async": false,
+            "crossDomain": true,
+            "url": `/admin/files-bank/files/${json.id}`,
+            "method": "GET",
+            "dataType": "json",
+            "headers": {
+              "content-type": "application/x-www-form-urlencoded"
+            }
+          }
+
+          $.ajax(settings).done((res)=>{
+            if(res.category == 'audio'){
+              response = `<div style=" text-align:${style};">
+                              <audio  controls="" style="width: 50%;">
+                                  <source src="${res.url}" type="${res.mimeType}">
+                              </audio>
+                          </div>
+                          <br>`
+            }
+          })
+
+          return response
+      }
+    }
+
+
     //Shortcut galeria de imagenes
     if(json.tipo == 'galeria'){
       if(json.imagenes != undefined && json.imagenes.length != 0){
