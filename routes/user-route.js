@@ -7,11 +7,11 @@ const router = express.Router()
 
 router.get('/users/:id', auth, usersCtrl.getUser)
 router.get('/users/', auth, usersCtrl.getUsers)
-router.get('/userData', auth, usersCtrl.getUserData)
+router.get('/userData', auth, usersCtrl.getUserAdminData)
 router.put('/users/:id', auth, usersCtrl.updateUser)
 router.delete('/users/:id', auth, usersCtrl.deleteUser)
 router.post('/users/', auth, usersCtrl.createUser)
-router.post('/users/login', usersCtrl.loginUser)
-router.post('/users/logout', auth, usersCtrl.logoutUser)
+router.post('/users/login', usersCtrl.loginUserAdmin)
+router.post('/users/logout', auth, usersCtrl.logoutUserAdmin)
 
 module.exports = router

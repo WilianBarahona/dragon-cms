@@ -17,7 +17,8 @@ class Database{
                         firstName: 'Dragon',
                         lastName: 'CMS',
                         password: 'admin',
-                        email: 'admin@dragoncms.com'
+                        email: 'admin@dragon.com',
+                        type: 'Admin'
                     })
                 
                     user.avatar = user.gravatar()

@@ -6,7 +6,6 @@ $(document).ready(()=>{
     CKEDITOR.config.height = '70vh'
 
     llenarCategorias()
-    llenarAutores()
 })
 
 
@@ -25,7 +24,6 @@ $('#btn-view-entry').click(()=>{
 */
 let camposForm = [
     {id:'txt-title-entry', isValid:false},
-    {id:'slc-autor', isValid:false},
     {id:'txt-img', isValid:false},
     {id:'slc-category', isValid:false},
     {id:'slc-comentario', isValid:false}
@@ -41,30 +39,29 @@ function validarRegistro(){
     if(!camposForm[i].isValid)
       return  // Si hay un campo invalido salir de  la funcion registrar
 
-  let post = CKEDITOR.instances["editor-entry"].getData()
+  let postCkeditor = CKEDITOR.instances["editor-entry"].getData()
   
-  if(post == '')
+  if(postCkeditor == '')
     return printMessage('El contenido del post no puede estar vacio')
   
-  
+  // autorName: $('#slc-autor option:selected').text(),
   //postHtml: post.replace(/\n/g, '')
+  let postHtml = getEntryHtml()
 
   let entry = {
       title: $('#txt-title-entry').val(),
-      autorId: $('#slc-autor').val(),
-      autorName: $('#slc-autor option:selected').text(),
+      autorId: $('#userId').val(),
       imageId: $('#txt-img').val(),
       categoryId: $('#slc-category').val(),
-      categoryName: $('#slc-category option:selected').text(),
       commentary: ($('#slc-comentario').val() == "1") ? true : false,
-      postHtml: post
+      postHtml: postHtml,
+      postCkeditor: postCkeditor
      
   }
 
   return entry
   
 }
-
 
 function marcarInput(id, isValid){
   if (isValid) {
@@ -96,28 +93,6 @@ function llenarCategorias(){
               `)
           });
     })
-
-  }
-
-function llenarAutores(){
-  let settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": `/admin/users/users`,
-    "method": "GET",
-    "dataType": "json",
-    "headers": {
-      "content-type": "application/x-www-form-urlencoded"
-    }
-  }
-
-  $.ajax(settings).done((res)=>{
-        res.forEach(elem => {
-            $('#slc-autor').append(`
-              <option value="${elem._id}">${elem.firstName} ${elem.lastName}</option>
-            `)
-        });
-  })
 
 }
 
@@ -167,7 +142,6 @@ function printMessageCreate(msg){
 function createEntry(){
   let entry = validarRegistro()
   if(entry != undefined){
-    console.log(entry)
     let settings = {
       "async": true,
       "crossDomain": true,
@@ -236,7 +210,6 @@ function extractJSON(str) {
 }
 
 function embedElement(json){
-
     //ShortCut image
     if(json.tipo == 'imagen'){
       if(json.id != undefined){
@@ -336,7 +309,6 @@ function embedElement(json){
       if(json.imagenes != undefined && json.imagenes.length != 0){
         let response = ''
         json.imagenes.forEach(elem =>{
-          console.log(elem)
               let settings = {
               "async": false,
               "crossDomain": true,
@@ -400,8 +372,9 @@ function embedElement(json){
           }
 
           $.ajax(settings).done((res)=>{
-            if(res._id != undefined){
-              response = res.postHtml
+            if(res[0]._id != undefined){
+              let post = res[0].postHtml
+              response = post
             }
           })
 

@@ -1,5 +1,5 @@
 {
-  "name": "dino-cms",
+  "name": "dragon-cms",
   "version": "1.0.0",
   "description": "CMS",
   "main": "index.js",
@@ -27,7 +27,7 @@
     "express-session": "^1.16.2",
     "media-thumbnail": "^1.0.0",
     "moment": "^2.24.0",
-    "mongoose": "^5.7.1",
+    "mongoose": "^5.7.3",
     "path": "^0.12.7"
   }
 }

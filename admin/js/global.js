@@ -19,6 +19,7 @@ function renderDataUser(){
       $('.img-profile').attr("src", data.avatar);
       $('#user-name').html(`
         <b>${data.firstName} ${data.lastName}</b>
+        <input type="hidden" value="${data._id}" id="userId">
       `)
     })
 }

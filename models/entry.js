@@ -4,12 +4,11 @@ const mongoose = require('mongoose')
 const entrySchema = new mongoose.Schema({
     title: String,
     autorId: mongoose.Types.ObjectId,
-    autorName: String,
     imageId: mongoose.Types.ObjectId,
+    categoryId: mongoose.Types.ObjectId,
     commentary: Boolean,
     postHtml: String,
-    categoryId: mongoose.Types.ObjectId,
-    categoryName: String,
+    postCkeditor: String,
     date: {type: Date, default: Date.now()}
 
 })

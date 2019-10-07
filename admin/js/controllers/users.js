@@ -52,7 +52,8 @@ function validarRegistro(){
         firstName: $('#txt-nombre').val(),
         lastName: $('#txt-apellido').val(),
         email: $('#txt-email').val(),
-        password: $('#txt-password').val()
+        password: $('#txt-password').val(),
+        type: 'Admin'
     }
 
     return user

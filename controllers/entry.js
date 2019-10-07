@@ -1,29 +1,119 @@
 'use strict'
 const Entry = require('../models/entry')
+const mongoose = require('mongoose')
 
 function getEntry(req, res){
-    Entry.findById(req.params.id)
-    .then(data=>{
-        res.send(data)
-        res.end()
-    })
-    .catch(err => {
-        res.send(err)
-        res.end()
-    })
+    Entry.aggregate([
+        {
+            '$match':{
+                '_id': mongoose.Types.ObjectId(req.params.id)
+            }
+        },
+        {
+            '$lookup': {
+                'from': 'categories', 
+                'localField': 'categoryId', 
+                'foreignField': '_id', 
+                'as': 'category'
+             }
+        }, 
+        {
+            '$lookup': {
+                'from': 'users', 
+                'localField': 'autorId', 
+                'foreignField': '_id', 
+                'as': 'autor'
+             }
+        }, 
+        {
+            '$lookup': {
+                'from': 'files', 
+                'localField': 'imageId', 
+                'foreignField': '_id', 
+                'as': 'image'
+            }
+        }, 
+        {
+            '$project': {
+                '_id': true, 
+                'data': true, 
+                'title': true, 
+                'commentary': true, 
+                'postHtml': true, 
+                'postCkeditor': true,
+                'category._id': true, 
+                'category.category': true, 
+                'autor._id': true, 
+                'autor.firstName': true, 
+                'autor.lastName': true, 
+                'image._id': true, 
+                'image.url': true
+             }
+        }
+    ])
+    .then(data => {
+            res.send(data)
+            res.end()
+        })
+        .catch(err => {
+            res.send(err)
+            res.end()
+        })
 }
 
 function getEntries(req, res){
-    Entry.find()
-    .then(data=>{
-        res.send(data)
-        res.end()
-    })
-    .catch(err => {
-        res.send(err)
-        res.end()
-    })
-    
+    Entry.aggregate([
+            {
+                '$lookup': {
+                    'from': 'categories', 
+                    'localField': 'categoryId', 
+                    'foreignField': '_id', 
+                    'as': 'category'
+                 }
+            }, 
+            {
+                '$lookup': {
+                    'from': 'users', 
+                    'localField': 'autorId', 
+                    'foreignField': '_id', 
+                    'as': 'autor'
+                 }
+            }, 
+            {
+                '$lookup': {
+                    'from': 'files', 
+                    'localField': 'imageId', 
+                    'foreignField': '_id', 
+                    'as': 'image'
+                }
+            }, 
+            {
+                '$project': {
+                    '_id': true, 
+                    'data': true, 
+                    'title': true, 
+                    'commentary': true, 
+                    'postHtml': true, 
+                    'postCkeditor': true,
+                    'category._id': true, 
+                    'category.category': true, 
+                    'autor._id': true, 
+                    'autor.firstName': true, 
+                    'autor.lastName': true, 
+                    'image._id': true, 
+                    'image.url': true
+                 }
+            }
+      ])
+      .then(data => {
+            res.send(data)
+            res.end()
+        })
+        .catch(err => {
+            res.send(err)
+            res.end()
+        })
+        
 }
 
 function updateEntry(req, res){
@@ -31,11 +121,11 @@ function updateEntry(req, res){
         {_id: req.params.id},
         {$set:
             { title: req.body.title,
-              autor: req.body.autor,
-              image: req.body.image,
+              imageId: req.body.imageId,
+              categoryId: req.body.categoryId,
               commentary: req.body.commentary,
               postHtml: req.body.postHtml,
-              category: req.body.category
+              postCkeditor: req.body.postCkeditor
             }
         }
         )
@@ -67,12 +157,11 @@ function createEntry(req, res){
     const entry = new Entry({
         title: req.body.title,
         autorId: req.body.autorId,
-        autorName: req.body.autorName,
         imageId: req.body.imageId,
+        categoryId: req.body.categoryId,
         commentary: req.body.commentary,
         postHtml: req.body.postHtml,
-        categoryId: req.body.categoryId,
-        categoryName: req.body.categoryName
+        postCkeditor: req.body.postCkeditor
     })
 
     entry.save()

@@ -31,7 +31,8 @@ function createUser(req, res){
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         password: req.body.password,
-        email: req.body.email
+        email: req.body.email,
+        type: req.body.type
     })
 
     user.avatar = user.gravatar()
@@ -84,10 +85,11 @@ function deleteUser(req, res){
 }
 
 
-function loginUser(req, res){
+function loginUserAdmin(req, res){
     User.findOne({ email: req.body.email }, (err, user) => {
         if (err) return res.send({ message: `Error al ingresar: ${err}` , err: 1})
         if (!user) return res.send({ message: `No existe el usuario con email ${req.body.email}` , err: 1})
+        if (user.type != 'Admin') return res.send({ message: `No es un usuario administrador` , err: 1})
     
         return user.comparePassword(req.body.password, (err, isMatch) => {
           if (err) return res.send({ message: `Error al ingresar: ${err}` , err: 1})
@@ -102,16 +104,16 @@ function loginUser(req, res){
           return res.status(200).send({ message: 'Te has logueado correctamente', ok: 1})
         });
     
-    }).select('_id firstName lastName avatar email + password');
+    }).select('_id firstName lastName avatar email type + password');
 }
 
-function logoutUser(req, res){
+function logoutUserAdmin(req, res){
     req.session.destroy();
     res.send({message: 'Ha cerrado sesion', ok: 1})
     res.end()
 }
 
-function getUserData(req, res){
+function getUserAdminData(req, res){
     User.findById(req.session._id)
     .then(data=>{
       res.send(data);
@@ -129,7 +131,7 @@ module.exports = {
     createUser,
     updateUser,
     deleteUser,
-    loginUser,
-    logoutUser,
-    getUserData
+    loginUserAdmin,
+    logoutUserAdmin,
+    getUserAdminData
 }
