@@ -39,6 +39,11 @@ router.get('/categories', auth, (req, res)=>{
     res.render('categories')
 })
 
+router.get('/comments', auth, (req, res)=>{
+    res.render('comments')
+})
+
+
 router.get('*', auth, (req, res)=>{
     res.render('dashboard')
 })

@@ -13,14 +13,17 @@ const auth = require('./middlewares/auth')
 const filesRoute = require('./routes/file-route')
 const usersRoute = require('./routes/user-route')
 const adminRoute = require('./routes/admin-route')
+const userViewRoute = require('./routes/user-route-view')
 const categoryRoute = require('./routes/category-route')
 const entryRoute = require('./routes/entry-route')
+const commentRoute = require('./routes/comment-router')
 
 //Modules 
 const database = require('./modules/database')
 
 //Server
 const app = express();
+
 
 //Middlewares
 app.use(express.static('public')); //Carpeta publica
@@ -39,7 +42,7 @@ app.engine('.hbs', hbs({
   extname: '.hbs'
 }))
 
-app.set('views', path.join(__dirname, 'admin/views'));
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine','.hbs') //usar motor de vistas con extencion .hbs
 
 //Session 
@@ -54,9 +57,15 @@ app.use('/admin/files-bank', filesRoute)
 app.use('/admin/users', usersRoute)
 app.use('/admin/categories', categoryRoute)
 app.use('/admin/entries', entryRoute)
+app.use('/admin/comments', commentRoute)
+
+app.use('/user', userViewRoute)
 
 //Route pages admin
 app.use('/admin', adminRoute)
+
+//Route pages user
+app.use('/', userViewRoute)
 
 
 app.listen(config.port, function(){

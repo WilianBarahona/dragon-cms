@@ -63,11 +63,3 @@ let typed = new Typed('#typed', {
 $('#btn-empezar').click(()=>{
   window.open('https://github.com/WilianBarahona/dragon-cms', '_blank')
 })
-
-function login(){
-  window.location.href = 'login'
-}
-
-function registro(){
-  window.location.href = 'registro'
-}
