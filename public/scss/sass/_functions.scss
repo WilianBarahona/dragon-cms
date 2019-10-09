@@ -1,5 +1,0 @@
-// Function
-@function color($color-name) {
-    //map-get ==> metodo para obtener el valor los objetos internos del json
-    @return map-get($colors,$color-name);
-}
