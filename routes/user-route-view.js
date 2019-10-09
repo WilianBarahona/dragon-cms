@@ -19,4 +19,11 @@ router.get('/index',auth, (req, res)=>{
 router.get('', (req, res)=>{
     res.render('user/landing')
 })
+
+router.get('/html', (req, res)=>{
+    res.setHeader('Content-type', 'text/html');
+    res.write('<h1>html</h1>')
+    res.end()
+})
+
 module.exports = router

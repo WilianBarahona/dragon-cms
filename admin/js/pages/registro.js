@@ -44,7 +44,7 @@ let camposForm = [
         lastName: $('#txt-apellido').val(),
         email: $('#txt-email').val(),
         password: $('#txt-password').val(),
-        type: 'Admin'
+        type: 'Generic'
     }
 
    return user
@@ -86,6 +86,8 @@ let camposForm = [
     }
 
     $.ajax(settings).done(function(data){
+      if(data._id != undefined)
+        printMessage(`Regitro exitoso!`)
 
     })
    }

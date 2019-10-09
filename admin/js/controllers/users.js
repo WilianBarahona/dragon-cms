@@ -145,7 +145,11 @@ function llenarUsuarios(){
 
             { data: null, title: "Rol",
             render: function (data, type, row) {
-                return `<span class="badge badge-success" style="width:55%;">Administrador</span>`
+                if(row.type == 'Admin'){
+                    return `<span class="badge badge-success" style="width:55%;">Administrador</span>`
+                }else{
+                    return `<span class="badge badge-secondary" style="width:55%;">Registrado</span>`
+                }
             }},
 
             {data: null, title: "Accion",
@@ -156,10 +160,17 @@ function llenarUsuarios(){
                                     <button type="button" onclick="printMessage('El Administrador por defecto no se puede eliminar')" class="btn btn-default btn-sm btn-delete"><span class="far fa-trash-alt trash"></span></button>
                                 </div>`;
                     }else{
-                        return `<div class="accion">
-                                    <button type="button" onclick="fillUser('${row._id}')" class="btn btn-default btn-sm btn-edit"><span class="far fa-edit edit"></span></button>
-                                    <button type="button" onclick="deleteUser('${row._id}')" class="btn btn-default btn-sm btn-delete"><span class="far fa-trash-alt trash"></span></button>
-                                </div>`;
+                        if(row.type == 'Admin' ){
+                            return `<div class="accion">
+                                        <button type="button" onclick="fillUser('${row._id}')" class="btn btn-default btn-sm btn-edit"><span class="far fa-edit edit"></span></button>
+                                        <button type="button" onclick="deleteUser('${row._id}')" class="btn btn-default btn-sm btn-delete"><span class="far fa-trash-alt trash"></span></button>
+                                    </div>`;
+                        }else{
+                            return `<div class="accion">
+                                        <button type="button" onclick="printMessage('No puede modificar un usuario registrado!')" class="btn btn-default btn-sm btn-edit"><span class="far fa-edit edit"></span></button>
+                                        <button type="button" onclick="printMessage('No puede eliminar un usuario registrado!')" class="btn btn-default btn-sm btn-delete"><span class="far fa-trash-alt trash"></span></button>
+                                    </div>`;
+                        }
                     }
             }}
         ]

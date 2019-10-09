@@ -16,7 +16,12 @@ const adminRoute = require('./routes/admin-route')
 const userViewRoute = require('./routes/user-route-view')
 const categoryRoute = require('./routes/category-route')
 const entryRoute = require('./routes/entry-route')
-const commentRoute = require('./routes/comment-router')
+const commentRoute = require('./routes/comment-route')
+const pageRoute = require('./routes/page-route')
+
+
+const userRoute = require('./routes/user/user-route')
+
 
 //Modules 
 const database = require('./modules/database')
@@ -58,8 +63,9 @@ app.use('/admin/users', usersRoute)
 app.use('/admin/categories', categoryRoute)
 app.use('/admin/entries', entryRoute)
 app.use('/admin/comments', commentRoute)
+app.use('/admin/pages', pageRoute)
 
-app.use('/user', userViewRoute)
+app.use('/user', userRoute)
 
 //Route pages admin
 app.use('/admin', adminRoute)

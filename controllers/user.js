@@ -57,9 +57,7 @@ function createUser(req, res){
     .catch(err => {
         res.send(err)
         res.end()
-    })
-    
-    
+    })  
 }
 
 function updateUser(req, res){

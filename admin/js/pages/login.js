@@ -45,10 +45,6 @@ let camposForm = [
    for (let i = 0; i < camposForm.length; i++)
      camposForm[i].isValid = marcarInput(camposForm[i].id,($(`#${camposForm[i].id}`).val() == "" || $(`#${camposForm[i].id}`).val() == 0) ? false : true)
    
-   // let email = validarEmail()
-   // if (!validoChk || !validoRadio || !email)
-   //   return
-
    let email = validarEmail()
    
    for (let i = 0; i < camposForm.length; i++)
@@ -66,7 +62,7 @@ let camposForm = [
    let settings = {
       "async": true,
       "crossDomain": true,
-      "url": "loginUser",
+      "url": "/user/login",
       "method": "POST",
       "dataType": "json",
       "data": user,
@@ -93,7 +89,7 @@ let camposForm = [
           }
       })
      }else{
-      renderDashboard()
+      renderIndex()
     }
 
   })
@@ -123,7 +119,7 @@ $('#btn-registro').click(()=>{
   // window.location.href = '/admin/registro'
 })
 
-function renderDashboard(){
-  window.location.href = '/admin/dashboard'
+function renderIndex(){
+  window.location.href = '/index'
 }
  
