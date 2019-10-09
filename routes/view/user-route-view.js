@@ -1,6 +1,6 @@
 'use strict'
 const express = require('express')
-const auth = require('../middlewares/authUser')
+const auth = require('../../middlewares/authUser')
 
 const router = express.Router()
 

@@ -1,7 +1,7 @@
 'use strict'
 const express = require('express')
-const categoryCtrl = require('../controllers/category')
-const auth = require('../middlewares/auth')
+const categoryCtrl = require('../../controllers/category')
+const auth = require('../../middlewares/auth')
 
 const router = express.Router()
 

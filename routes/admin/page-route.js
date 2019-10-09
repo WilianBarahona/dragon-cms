@@ -1,8 +1,8 @@
 'use strict'
 const express = require('express')
-const pageCtrl = require('../controllers/page')
+const pageCtrl = require('../../controllers/page')
+const auth = require('../../middlewares/auth')
 
-const auth = require('../middlewares/auth')
 const router = express.Router()
 
 router.get('/pages/:id', auth , pageCtrl.getPage)

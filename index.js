@@ -9,17 +9,19 @@ const bodyParser = require('body-parser')
 const config = require('./config')
 const auth = require('./middlewares/auth')
 
-//Routers
-const filesRoute = require('./routes/file-route')
-const usersRoute = require('./routes/user-route')
-const adminRoute = require('./routes/admin-route')
-const userViewRoute = require('./routes/user-route-view')
-const categoryRoute = require('./routes/category-route')
-const entryRoute = require('./routes/entry-route')
-const commentRoute = require('./routes/comment-route')
-const pageRoute = require('./routes/page-route')
+//Routers Admin
+const filesRoute = require('./routes/admin/file-route')
+const usersRoute = require('./routes/admin/user-route')
+const categoryRoute = require('./routes/admin/category-route')
+const entryRoute = require('./routes/admin/entry-route')
+const commentRoute = require('./routes/admin/comment-route')
+const pageRoute = require('./routes/admin/page-route')
 
+//Routers views
+const adminRouteView = require('./routes/view/admin-route-view')
+const userRouteView = require('./routes/view/user-route-view')
 
+//Router users
 const userRoute = require('./routes/user/user-route')
 
 
@@ -57,7 +59,7 @@ app.use(session({
     saveUninitialized: true,
 }))
 
-//Middlewares routers
+//Middlewares routers admin
 app.use('/admin/files-bank', filesRoute)
 app.use('/admin/users', usersRoute)
 app.use('/admin/categories', categoryRoute)
@@ -65,13 +67,15 @@ app.use('/admin/entries', entryRoute)
 app.use('/admin/comments', commentRoute)
 app.use('/admin/pages', pageRoute)
 
+
+//Middlewares routers user
 app.use('/user', userRoute)
 
-//Route pages admin
-app.use('/admin', adminRoute)
+//Route views admin
+app.use('/admin', adminRouteView)
 
-//Route pages user
-app.use('/', userViewRoute)
+//Route views user
+app.use('/', userRouteView)
 
 
 app.listen(config.port, function(){
