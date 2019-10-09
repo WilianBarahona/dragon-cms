@@ -164,12 +164,83 @@
                 </div>
                 <div class="col-12 mb-4">
                     <div class="row">
-                    <div class="col-6">
-                        <input id="txt-title-page" type="text" class="form-control" placeholder="Titulo de la pagina">
+                      <div class="col-6 mb-2">
+                          <input id="txt-title" type="text" class="form-control" placeholder="Titulo de la pagina">
+                          <div class="text-left invalid-feedback">Titulo vacio</div>                  
+                      </div>
+                      <div class="col-6 mb-2">
+                          <input id="txt-description" type="text" class="form-control" placeholder="Descripción">
+                          <div class="text-left invalid-feedback">Descripcion vacia</div>                  
+                      </div>
+                      <div class="col-6 mb-2">
+                          <input id="txt-menu-title" type="text" class="form-control" placeholder="Titulo del menu">
+                          <div class="text-left invalid-feedback">Titulo menu vacio</div>                  
+                      </div>
+                      <div class="col-6 mb-2">
+                          <input id="txt-url" type="text" class="form-control" placeholder="Url">
+                          <div class="text-left invalid-feedback">Url vacio</div>                  
+                      </div>
+                      <div class="col-6 mb-2">
+                          <input id="txt-keywords" type="text" class="form-control" placeholder="Palabras claves">
+                          <div class="text-left invalid-feedback">Campo vacio</div>                  
+                      </div>
+                       <div class="col-6 mb-2">
+                          <select id="slc-status" class="form-control font-09rem">
+                              <option value="0">Estado de la pagina</option>
+                              <option value="1">Activa</option>
+                              <option value="2">Inactiva</option>
+                          </select>    
+                          <div class="text-left invalid-feedback">Seleccione una opción</div>                  
+                      </div>
+                      <div class="col-6 mb-2">
+                          <select id="slc-parent-page" class="form-control font-09rem">
+                              <option value="0">Pagina padre</option>
+                          </select>    
+                          <div class="text-left invalid-feedback">Seleccione una opción</div>                  
+                      </div>
                     </div>
-                    <div class="col-6">
-                        <button id="btn-create-page" type="button" class="btn btn-success">Agregar pagina</button>
-                    </div>
+                </div>
+                <div class="col-12 mb-1">
+                    <h4>Otras opciones</h4>
+                    <hr>
+                </div>
+                <div class="col-12 mb-4">
+                    <div class="row">
+                        <div class="col-6 mb-2">
+                            <select id="slc-header" class="form-control font-09rem">
+                                <option value="0">¿Incluir encabezado?</option>
+                                <option value="1">Si</option>
+                                <option value="2">No</option>
+                            </select>    
+                            <div class="text-left invalid-feedback">Seleccione una opción</div>                  
+                        </div>
+                        <div class="col-6 mb-2">
+                            <select id="slc-footer" class="form-control font-09rem">
+                                <option value="0">¿Incluir pie de pagina?</option>
+                                <option value="1">Si</option>
+                                <option value="2">No</option>
+                            </select>    
+                            <div class="text-left invalid-feedback">Seleccione una opción</div>                  
+                        </div>
+                        <div class="col-6 mb-2">
+                            <select id="slc-menu" class="form-control font-09rem">
+                                <option value="0">¿Incluir menu?</option>
+                                <option value="1">Si</option>
+                                <option value="2">No</option>
+                            </select>    
+                            <div class="text-left invalid-feedback">Seleccione una opción</div>                  
+                        </div>
+                        <div class="col-6 mb-2">
+                            <select id="slc-breadcrumb" class="form-control font-09rem">
+                                <option value="0">¿Incluir breadcrumb</option>
+                                <option value="1">Si</option>
+                                <option value="2">No</option>
+                            </select>    
+                            <div class="text-left invalid-feedback">Seleccione una opción</div>                  
+                        </div>
+                        <div class="col-6 mt-3">
+                           <button id="btn-create-page" type="button" class="btn btn-success">Agregar pagina</button>
+                        </div>
                     </div>
                 </div>
                 <div class="col-12">
