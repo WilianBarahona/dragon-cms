@@ -86,7 +86,15 @@ function getEntries(req, res){
                     'foreignField': '_id', 
                     'as': 'image'
                 }
-            }, 
+            },
+            {
+                    '$lookup': {
+                      'from': 'comments', 
+                      'localField': '_id', 
+                      'foreignField': 'entryId', 
+                      'as': 'comments'
+                    }
+            },
             {
                 '$project': {
                     '_id': true, 
@@ -101,7 +109,8 @@ function getEntries(req, res){
                     'autor.firstName': true, 
                     'autor.lastName': true, 
                     'image._id': true, 
-                    'image.url': true
+                    'image.url': true,
+                    'comments':true
                  }
             }
       ])

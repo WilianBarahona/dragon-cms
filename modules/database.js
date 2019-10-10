@@ -46,17 +46,17 @@ class Database{
                         title: 'Pagina principal',
                         description: 'Esta es la pagina principal',
                         menuTitle: 'Home',
-                        keywords: ['Principal', 'Home', 'Inicio'],
+                        keywords: 'Principal, Home, Inicio',
                         status: true,
                         parentPage: null,
-                        url: String,
+                        url: 'home',
                         options: {
                             header: false,
                             footer: false,
                             menu: false,
                             breadcrumb: false
                         },
-                        settings: {},
+                        settings: null,
                         type: 'principal',
                         pageHtml: '<h1>Pagina principal<h1>',
                         pageCkeditor: '<h1>Pagina principal<h1>'

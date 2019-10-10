@@ -3,7 +3,7 @@ $(document).ready(()=>{
       extraPlugins: 'codemirror',
     });
 
-    CKEDITOR.config.height = '70vh'
+    CKEDITOR.config.height = '80vh'
 
     llenarCategorias()
 })

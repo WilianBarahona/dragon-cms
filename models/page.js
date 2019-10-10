@@ -5,7 +5,7 @@ const pageSchema = new mongoose.Schema({
     title: String,
     description: String,
     menuTitle: String,
-    keywords: Array,
+    keywords: String,
     status: Boolean,
     parentPage: mongoose.Types.ObjectId,
     url: String,

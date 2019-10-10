@@ -240,11 +240,12 @@
                         </div>
                         <div class="col-6 mt-3">
                            <button id="btn-create-page" type="button" class="btn btn-success">Agregar pagina</button>
+                           <button id="btn-view-page" type="button" class="btn btn-primary" style="font-size: .9rem">Vista previa</button>
                         </div>
                     </div>
                 </div>
                 <div class="col-12">
-                    <textarea  id="editor1" name="editor1"></textarea>
+                    <textarea  id="editor-page" name="editor-page"></textarea>
                 </div>
             </div>
        </div>
@@ -257,6 +258,28 @@
 
  </div>
  <!-- Fin del wrapper -->
+
+
+ <!-- Inicio Modal vista previa pagina -->
+<div class="modal fade" id="modal-vista-previa-pagina" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" style="max-width: 90%!important">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 id="title-modal" class="modal-title w-100 font-weight-bold">Vista previa pagina</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span class="fas fa-times"></span>
+                </button>
+            </div>
+            <div class="modal-body mx-3">
+                <div class="row mt-3 view-post">
+                  <div id="container-view-page" class="col-12"></div>
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Fin Modal de vista previa pagina -->
 
  <!-- Script Vendor -->
  <script src="/admin/vendor/jquery/jquery.min.js"></script>

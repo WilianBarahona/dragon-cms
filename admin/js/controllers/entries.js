@@ -508,7 +508,7 @@ function editEntry(codigo){
   
   }
   
-  function viewEntry(){
+function viewEntry(){
     let posthtml = getEntryHtml()
     $('#container-view-post').html(`
         <!DOCTYPE html>
@@ -523,11 +523,10 @@ function editEntry(codigo){
     `)
   
     $('#modal-vista-previa-entrada').modal('show')
-  
-  
-  }
+    
+}
 
-  function fillEntry(codigo){
+function fillEntry(codigo){
       $("#container").html(`
         <div class="row entries">
             <div class="col-12 mb-1">

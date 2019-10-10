@@ -39,7 +39,7 @@ app.use('/admin', express.static('admin'))
 app.use('/files', express.static('files-bank'))
 
 app.use(fileUpload())
-app.use(bodyParser.urlencoded({ extended: false })) 
+app.use(bodyParser.urlencoded({ extended: true })) 
 app.use(bodyParser.json())
 
 //Engine handlebars
