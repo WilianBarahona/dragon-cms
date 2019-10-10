@@ -11,6 +11,12 @@ Los requisitos para ejecutar dragon-cms son:
 
 1. Abrir una consola en la carpeta raiz dragon-cms y ejecutar el siguiente comando:
 
-    ```sh
+    ```
     npm i -S bcrypt-nodejs body-parser crypto express express-fileupload express-handlebars express-session media-thumbnail moment mongoose path
+    ```
+
+1. Instalar nodemon, dependecia global de Node JS:
+
+    ```
+    npm i -g nodemon
     ```
