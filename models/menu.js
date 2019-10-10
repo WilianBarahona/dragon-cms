@@ -6,4 +6,4 @@ const menuSchema = new mongoose.Schema({
     options: mongoose.SchemaTypes.Mixed
 })
 
-module.exports = mongoose.model('menus', pageSchema)
+module.exports = mongoose.model('menus', menuSchema)
