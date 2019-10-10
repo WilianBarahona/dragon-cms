@@ -66,7 +66,7 @@ function llenarImagenes(){
 
 function addItemImage(image){
     $('#container-images').append(`
-        <div onclick="detalleImagen('${image._id}')" class="col-6 col-md-3 col-lg-2 tarjeta">
+        <div onclick="detalleImagen('${image._id}')" class="col-6 col-md-3 col-lg-2 tarjeta mb-3">
             <div class="card card-body">
                 <div class="thumbnail">
                     <img src="${image.url}" class="img-card-thumbnail">
@@ -110,7 +110,7 @@ function llenarVideos(){
 
 function addItemVideo(video){
     $('#container-videos').append(`
-        <div onclick="detalleVideo('${video._id}')" class="col-6 col-md-3 col-lg-2 tarjeta">
+        <div onclick="detalleVideo('${video._id}')" class="col-6 col-md-3 col-lg-2 tarjeta mb-3">
             <div class="card card-body">
                 <div class="thumbnail">
                     <img src="${video.thumbnail}" class="img-card-thumbnail">
@@ -197,7 +197,7 @@ function llenarOtros(){
 function addItemAudio(elem){
     let name = (elem.name.toLowerCase(elem.name)).substr(0,13) + '...'
     $('#container-others').append(`
-        <div onclick="detalleAudio('${elem._id}')" class="col-6 col-md-3 col-lg-2 tarjeta text-center">
+        <div onclick="detalleAudio('${elem._id}')" class="col-6 col-md-3 col-lg-2 tarjeta mb-3 text-center">
             <i class="far fa-file-audio fa-7x audio"></i> 
             <p>${name}</p>
         </div>
@@ -207,7 +207,7 @@ function addItemAudio(elem){
 function addItemWord(elem){
     let name = (elem.name.toLowerCase(elem.name)).substr(0,13) + '...'
     $('#container-others').append(`
-        <div onclick="detalleWord('${elem._id}')" class="col-6 col-md-3 col-lg-2 tarjeta text-center">
+        <div onclick="detalleWord('${elem._id}')" class="col-6 col-md-3 col-lg-2 tarjeta mb-3 text-center">
             <i class="far fa-file-word fa-7x word"></i> 
             <p>${name}</p>
         </div>
@@ -217,7 +217,7 @@ function addItemWord(elem){
 function addItemText(elem){
     let name = (elem.name.toLowerCase(elem.name)).substr(0,13) + '...'
     $('#container-others').append(`
-        <div onclick="detalleTxt('${elem._id}')" class="col-6 col-md-3 col-lg-2 tarjeta text-center">
+        <div onclick="detalleTxt('${elem._id}')" class="col-6 col-md-3 col-lg-2 tarjeta mb-3 text-center">
             <i class="far fa-file-alt fa-7x alt"></i>
             <p>${name}</p>
         </div>
@@ -227,7 +227,7 @@ function addItemText(elem){
 function addItemCompressed(elem){
     let name = (elem.name.toLowerCase(elem.name)).substr(0,13) + '...'
     $('#container-others').append(`
-        <div onclick="detalleZip('${elem._id}')" class="col-6 col-md-3 col-lg-2 tarjeta text-center">
+        <div onclick="detalleZip('${elem._id}')" class="col-6 col-md-3 col-lg-2 tarjeta mb-3 text-center">
             <i class="far fa-file-archive fa-7x archive"></i>   
             <p>${name}</p>
         </div>
@@ -237,7 +237,7 @@ function addItemCompressed(elem){
 function addItemPdf(elem){
     let name = (elem.name.toLowerCase(elem.name)).substr(0,13) + '...'
     $('#container-others').append(`
-        <div onclick="detallePdf('${elem._id}')" class="col-6 col-md-3 col-lg-2 tarjeta text-center">
+        <div onclick="detallePdf('${elem._id}')" class="col-6 col-md-3 col-lg-2 tarjeta mb-3 text-center">
             <i class="far fa-file-pdf fa-7x pdf"></i> 
             <p>${name}</p>
         </div>
@@ -247,7 +247,7 @@ function addItemPdf(elem){
 function addItemOther(elem){
     let name = (elem.name.toLowerCase(elem.name)).substr(0,13) + '...'
     $('#container-others').append(`
-        <div onclick="detalleArchivo('${elem._id}')" class="col-6 col-md-3 col-lg-2 tarjeta text-center">
+        <div onclick="detalleArchivo('${elem._id}')" class="col-6 col-md-3 col-lg-2 tarjeta mb-3 text-center">
             <i class="far fa-file fa-7x file"></i>  
             <p>${name}</p>
         </div>
