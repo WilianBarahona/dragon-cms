@@ -62,7 +62,7 @@ function llenarComentarios(codigo){
     let settings = {
         "async": true,
         "crossDomain": true,
-        "url": `/admin/comments/commentsByEntry/${codigo}`,
+        "url": `/user/commentsByEntry/${codigo}`,
         "method": "GET",
         "dataType": "json",
         "headers": {
