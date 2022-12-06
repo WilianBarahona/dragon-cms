@@ -19,9 +19,9 @@
   "homepage": "https://github.com/WilianBarahona/dino-cms#readme",
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
-    "body-parser": "^1.19.0",
+    "body-parser": "^1.20.1",
     "crypto": "^1.0.1",
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "express-fileupload": "^1.1.6-alpha.5",
     "express-handlebars": "^3.1.0",
     "express-session": "^1.16.2",
